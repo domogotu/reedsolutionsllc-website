@@ -3,82 +3,65 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Reeds Solutions, LLC — Contact</title>
+  <title>Contact — Reeds Solutions, LLC</title>
   <link rel="canonical" href="https://reedssolutionsllc.org/contact.html" />
   <link rel="stylesheet" href="styles.css" />
-  <meta name="description" content="Contact Reeds Solutions, LLC for federal contracting partnerships, subcontracting opportunities, and capability inquiries." />
 </head>
 <body>
-
-  <!-- Site Header -->
   <header class="site-header">
     <div class="container nav">
-      <a class="brand" href="index.html" aria-label="Reeds Solutions, LLC home">Reeds Solutions, LLC</a>
-      <nav aria-label="Primary">
+      <a class="brand" href="index.html">Reeds Solutions, LLC</a>
+      <nav>
         <a href="about.html">About</a>
         <a href="capabilities.html">Capabilities</a>
         <a href="contracting.html">Contracting</a>
-        <a href="contact.html" aria-current="page">Contact</a>
+        <a href="contact.html">Contact</a>
       </nav>
     </div>
   </header>
 
   <main>
+    <section class="hero">
+      <div class="container hero-inner">
+        <h1>Contact Us</h1>
+        <p class="subtitle">We respond quickly and keep communications clear.</p>
+      </div>
+    </section>
+
     <section class="section">
       <div class="container">
-        <h1>Contact Reeds Solutions, LLC</h1>
-        <p><strong>Email:</strong> <a href="mailto:Reedssolutionsllcorg@gmail.com">Reedssolutionsllcorg@gmail.com</a></p>
+        <h2>Email</h2>
+        <p><strong>General:</strong> <a href="mailto:reedssolutionsllcorg@gmail.com">reedssolutionsllcorg@gmail.com</a></p>
+      </div>
+    </section>
 
+    <section class="section">
+      <div class="container">
+        <h2>Send a Message</h2>
+        <!-- If you use Netlify, this works out of the box -->
         <form name="contact" method="POST" data-netlify="true">
           <input type="hidden" name="form-name" value="contact" />
-
-          <label>Full Name
-            <input type="text" name="name" required />
-          </label>
-
-          <label>Email
-            <input type="email" name="email" required />
-          </label>
-
-          <label>Company / Agency
-            <input type="text" name="company" />
-          </label>
-
-          <label>Message
-            <textarea name="message" required></textarea>
-          </label>
-
-          <button type="submit" class="button">Send Message</button>
+          <p><label>Full Name<br/><input type="text" name="name" required /></label></p>
+          <p><label>Email<br/><input type="email" name="email" required /></label></p>
+          <p><label>Company / Agency<br/><input type="text" name="company" /></label></p>
+          <p><label>Message<br/><textarea name="message" rows="6" required></textarea></label></p>
+          <p><button class="btn primary" type="submit">Send</button></p>
         </form>
       </div>
     </section>
   </main>
 
-  <!-- Footer -->
   <footer class="site-footer">
     <div class="container footer-inner">
-      <div>&copy; 2025 Reeds Solutions, LLC. All rights reserved.</div>
-
+      <div>&copy; 2025 Reeds Solutions, LLC</div>
       <div class="social" aria-label="Social links">
-        <a href="https://www.facebook.com/" aria-label="Facebook">
-          <img src="facebook.svg" alt="Facebook" width="20" height="20" />
-        </a>
-        <a href="https://www.linkedin.com/" aria-label="LinkedIn">
-          <img src="linkedin.svg" alt="LinkedIn" width="20" height="20" />
-        </a>
-        <a href="https://x.com/" aria-label="X">
-          <img src="x.svg" alt="X (Twitter)" width="20" height="20" />
-        </a>
-        <a href="https://www.youtube.com/" aria-label="YouTube">
-          <img src="youtube.svg" alt="YouTube" width="20" height="20" />
-        </a>
+        <a href="https://www.facebook.com/" aria-label="Facebook"><img src="facebook.svg" alt="Facebook" /></a>
+        <a href="https://www.linkedin.com/" aria-label="LinkedIn"><img src="linkedin.svg" alt="LinkedIn" /></a>
+        <a href="https://x.com/" aria-label="X (Twitter)"><img src="x.svg" alt="X (Twitter)" /></a>
+        <a href="https://www.youtube.com/" aria-label="YouTube"><img src="youtube.svg" alt="YouTube" /></a>
       </div>
-
-      <div class="tiny">
-        <a href="privacy.html">Privacy</a>
-      </div>
+      <div class="tiny"><a href="privacy.html">Privacy</a></div>
     </div>
   </footer>
-
 </body>
 </html>
