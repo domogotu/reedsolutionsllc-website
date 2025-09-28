@@ -58,8 +58,12 @@ body {
   color: #f0f0f0; /* Silver text */
 }
 
+.mission-section {
+  color: #000; /* Force black text */
+}
+
 .mission-section h2 {
-  color: #f0f0f0; /* Make header text light too */
+  color: #000; /* Black heading */
 }
 
 /* Footer */
