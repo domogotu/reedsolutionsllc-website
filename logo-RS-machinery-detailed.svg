@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img" aria-label="Reeds Solutions RS logo">
+<defs><linearGradient id="g" x1="0" x2="1"><stop stop-color="#3b82f6"/><stop offset="1" stop-color="#22d3ee"/></linearGradient></defs>
+<rect width="240" height="240" rx="28" fill="#0b1320"/>
+<path d="M60 170V70h55c22 0 35 11 35 28 0 13-8 24-22 27l28 45h-26l-26-42H86v42H60zm26-63h29c11 0 18-5 18-13s-7-13-18-13H86v26z" fill="url(#g)"/>
+<path d="M120 175c-18 0-30-8-30-22h22c1 6 4 9 10 9 7 0 11-3 11-8s-4-7-13-9l-9-2c-16-3-24-10-24-23 0-15 14-26 33-26 18 0 30 8 31 21h-22c-1 6-4 8-10 8-6 0-10 3-10 7 0 5 4 7 13 9l9 2c16 3 24 10 24 23 0 16-14 27-35 27z" fill="#46d27e" opacity=".8"/>
+</svg>
