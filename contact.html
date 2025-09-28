@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact | Reeds Solutions, LLC</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Header / Hero -->
+  <section class="hero">
+    <div class="container hero-inner">
+      <h1>Contact Reeds Solutions, LLC</h1>
+      <p class="subtitle">Reach out for teaming, RFQs, or capability discussions — we’d love to hear from you.</p>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <main>
+    <section class="section">
+      <div class="container">
+        <div class="contact-grid">
+          <!-- Direct Contact Info -->
+          <div>
+            <h2>Direct</h2>
+            <p><strong>Email:</strong> 
+              <a href="mailto:dominique@reedssolutionsllc.org">dominique@reedssolutionsllc.org</a>
+            </p>
+            <p><strong>Website:</strong> 
+              <a href="https://reedssolutionsllc.org">https://reedssolutionsllc.org</a>
+            </p>
+            <p class="muted small">We keep sensitive information secure.</p>
+          </div>
+
+          <!-- Contact Form -->
+          <form name="contact" method="POST" data-netlify="true" action="/thanks.html">
+            <input type="hidden" name="form-name" value="contact">
+
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="company">Company / Agency:</label>
+            <input type="text" id="company" name="company">
+
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+
+            <button type="submit">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>&copy; 2025 Reeds Solutions, LLC. All Rights Reserved.</div>
+      <div><a href="https://reedssolutionsllc.org">reedssolutionsllc.org</a></div>
+    </div>
+  </footer>
+</body>
+</html>
