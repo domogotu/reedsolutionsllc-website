@@ -1,0 +1,36 @@
+/* 
+  Strict security + caching headers for Reeds Solutions, LLC
+*/
+
+/*
+  Global security headers
+*/
+https://reedssolutionsllc.org/*
+  Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: DENY
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: geolocation=(), microphone=(), camera=(), payment=()
+  X-XSS-Protection: 0
+  Content-Security-Policy: default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; font-src 'self' data:; script-src 'self'; connect-src 'self';
+
+/*
+  Cache static assets aggressively
+*/
+https://reedssolutionsllc.org/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+https://reedssolutionsllc.org/*.svg
+  Cache-Control: public, max-age=31536000, immutable
+
+https://reedssolutionsllc.org/*.png
+  Cache-Control: public, max-age=31536000, immutable
+
+https://reedssolutionsllc.org/*.jpg
+  Cache-Control: public, max-age=31536000, immutable
+
+/*
+  HTML: short cache so updates show up quickly
+*/
+https://reedssolutionsllc.org/*.html
+  Cache-Control: public, max-age=60
