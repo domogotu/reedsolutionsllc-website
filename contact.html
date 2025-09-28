@@ -3,78 +3,53 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Contact — Reeds Solutions, LLC</title>
+  <title>Reeds Solutions, LLC — Contact</title>
   <link rel="canonical" href="https://reedssolutionsllc.org/contact.html" />
   <link rel="stylesheet" href="styles.css" />
-  <meta name="description" content="Contact Reeds Solutions, LLC for teaming, RFQs, and federal contracting support.">
+  <meta name="description" content="Contact Reeds Solutions, LLC for federal contracting partnerships, subcontracting opportunities, and capability inquiries." />
 </head>
 <body>
 
-  <!-- Site Header / Nav -->
+  <!-- Site Header -->
   <header class="site-header">
     <div class="container nav">
-      <a class="brand" href="index.html">Reeds Solutions, LLC</a>
-      <nav>
+      <a class="brand" href="index.html" aria-label="Reeds Solutions, LLC home">Reeds Solutions, LLC</a>
+      <nav aria-label="Primary">
         <a href="about.html">About</a>
         <a href="capabilities.html">Capabilities</a>
         <a href="contracting.html">Contracting</a>
-        <a aria-current="page" href="contact.html">Contact</a>
+        <a href="contact.html" aria-current="page">Contact</a>
       </nav>
     </div>
   </header>
 
   <main>
-    <!-- Hero -->
-    <section class="hero" style="padding:4rem 0 2rem;">
-      <div class="container hero-inner">
-        <h1>Contact Reeds Solutions, LLC</h1>
-        <p class="subtitle">Reach out for teaming, RFQs, or capability inquiries.</p>
-      </div>
-    </section>
-
-    <!-- Contact Grid -->
     <section class="section">
-      <div class="container contact-grid">
+      <div class="container">
+        <h1>Contact Reeds Solutions, LLC</h1>
+        <p><strong>Email:</strong> <a href="mailto:Reedssolutionsllcorg@gmail.com">Reedssolutionsllcorg@gmail.com</a></p>
 
-        <!-- Direct contact block -->
-        <div>
-          <h2>Direct</h2>
-          <p><strong>Email:</strong>
-            <a href="mailto:Reedssolutionsllcorg@gmail.com">Reedssolutionsllcorg@gmail.com</a>
-          </p>
-          <p><strong>Website:</strong>
-            <a href="https://reedssolutionsllc.org/">https://reedssolutionsllc.org/</a>
-          </p>
-          <p class="muted small">We keep sensitive information off email—use the form for secure outreach.</p>
-        </div>
+        <form name="contact" method="POST" data-netlify="true">
+          <input type="hidden" name="form-name" value="contact" />
 
-        <!-- Netlify form block -->
-        <div>
-          <!-- Netlify Forms: the name attribute is the inbox name -->
-          <form name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" action="thanks.html">
-            <!-- Netlify required hidden input -->
-            <input type="hidden" name="form-name" value="contact" />
-            <!-- Honeypot (keeps spam down) -->
-            <p class="hidden">
-              <label>Don’t fill this out: <input name="bot-field" /></label>
-            </p>
+          <label>Full Name
+            <input type="text" name="name" required />
+          </label>
 
-            <label for="name">Full Name</label>
-            <input id="name" type="text" name="name" required autocomplete="name" />
+          <label>Email
+            <input type="email" name="email" required />
+          </label>
 
-            <label for="email">Email</label>
-            <input id="email" type="email" name="email" required autocomplete="email" />
+          <label>Company / Agency
+            <input type="text" name="company" />
+          </label>
 
-            <label for="company">Company / Agency</label>
-            <input id="company" type="text" name="company" autocomplete="organization" />
+          <label>Message
+            <textarea name="message" required></textarea>
+          </label>
 
-            <label for="message">Message</label>
-            <textarea id="message" name="message" rows="5" required></textarea>
-
-            <button type="submit" class="btn">Send Message</button>
-          </form>
-        </div>
-
+          <button type="submit" class="button">Send Message</button>
+        </form>
       </div>
     </section>
   </main>
@@ -84,19 +59,18 @@
     <div class="container footer-inner">
       <div>&copy; 2025 Reeds Solutions, LLC. All rights reserved.</div>
 
-      <!-- Social icons (SVGs should exist in repo: facebook.svg, linkedin.svg, x.svg, youtube.svg) -->
-      <div class="social">
+      <div class="social" aria-label="Social links">
         <a href="https://www.facebook.com/" aria-label="Facebook">
-          <img src="facebook.svg" alt="Facebook" width="22" height="22" loading="lazy" />
+          <img src="facebook.svg" alt="Facebook" width="20" height="20" />
         </a>
         <a href="https://www.linkedin.com/" aria-label="LinkedIn">
-          <img src="linkedin.svg" alt="LinkedIn" width="22" height="22" loading="lazy" />
+          <img src="linkedin.svg" alt="LinkedIn" width="20" height="20" />
         </a>
-        <a href="https://x.com/" aria-label="X (Twitter)">
-          <img src="x.svg" alt="X" width="22" height="22" loading="lazy" />
+        <a href="https://x.com/" aria-label="X">
+          <img src="x.svg" alt="X (Twitter)" width="20" height="20" />
         </a>
         <a href="https://www.youtube.com/" aria-label="YouTube">
-          <img src="youtube.svg" alt="YouTube" width="22" height="22" loading="lazy" />
+          <img src="youtube.svg" alt="YouTube" width="20" height="20" />
         </a>
       </div>
 
