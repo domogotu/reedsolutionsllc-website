@@ -1,0 +1,2 @@
+# Force www → apex (edit if you prefer www primary)
+https://www.reedssolutionsllc.org/*  https://reedssolutionsllc.org/:splat  301!
