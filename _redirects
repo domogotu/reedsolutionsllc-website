@@ -1,0 +1,2 @@
+# Redirect www to apex (set apex as primary in Netlify too)
+https://www.reedssolutionsllc.org/* https://reedssolutionsllc.org/:splat 301!
