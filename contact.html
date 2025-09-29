@@ -2,82 +2,84 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Contact — Reeds Solutions, LLC</title>
-  <meta name="description" content="Contact Reeds Solutions, LLC for IT, Facilities, and Federal Contracting Services.">
-  <link rel="icon" href="./favicon 2.svg">
-  <link rel="stylesheet" href="./styles.css">
+  <meta name="description" content="Contact Reeds Solutions, LLC for federal contracting, IT services, and facilities support." />
+  <link rel="icon" href="./favicon 2.svg" />
+  <link rel="stylesheet" href="./styles.css" />
 </head>
 <body>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="./">Reeds Solutions, LLC</a>
+      <nav aria-label="Primary">
+        <a href="./index.html">Home</a>
+        <a href="./about.html">About</a>
+        <a href="./capabilities.html">Capabilities</a>
+        <a href="./contracting.html">Contracting Info</a>
+        <a href="./contact.html" aria-current="page">Contact</a>
+      </nav>
+    </div>
+  </header>
 
-<header class="site-header">
-  <div class="container nav">
-    <a class="brand" href="./">Reeds Solutions, LLC</a>
-    <nav aria-label="Primary">
-      <a href="./index.html">Home</a>
-      <a href="./about.html">About</a>
-      <a href="./capabilities.html">Capabilities</a>
-      <a href="./contracting.html">Contracting</a>
-      <a href="./contact.html" aria-current="page">Contact</a>
-    </nav>
-  </div>
-</header>
+  <main class="section">
+    <div class="container">
+      <h1>Request Info / RFQ</h1>
+      <p>Tell us about your requirements and we will respond promptly.</p>
 
-<main class="section">
-  <div class="container">
-    <h1>Request Info / RFQ</h1>
-    <p>Tell us about your requirements and we’ll get back to you quickly.</p>
+      <form name="rfq"
+            method="POST"
+            action="/.netlify/functions/send-email"
+            enctype="multipart/form-data">
 
-    <!-- ✅ Corrected action -->
-    <form name="rfq" method="POST"
-          action="/.netlify/functions/send-email"
-          enctype="multipart/form-data">
+        <!-- Spam trap (honeypot) -->
+        <input type="text" name="bot-field" style="position:absolute;left:-9999px" tabindex="-1" autocomplete="off" />
 
-      <!-- Honeypot -->
-      <input type="text" name="bot-field" style="position:absolute; left:-9999px;">
+        <fieldset>
+          <legend>Company Information</legend>
+          <label>Full Name <input name="name" required /></label>
+          <label>Email <input name="email" type="email" required /></label>
+          <label>Company / Agency <input name="company" /></label>
+          <label>Phone <input name="phone" type="tel" /></label>
+        </fieldset>
 
-      <fieldset>
-        <legend>Company Information</legend>
-        <label>Full Name <input name="name" required></label>
-        <label>Email <input type="email" name="email" required></label>
-        <label>Company / Agency <input name="company"></label>
-        <label>Phone <input name="phone"></label>
-      </fieldset>
+        <fieldset>
+          <legend>Requirement</legend>
+          <label>Service Area
+            <select name="service" required>
+              <option value="">Select…</option>
+              <option>IT Operations</option>
+              <option>Networks &amp; Cabling</option>
+              <option>Facilities Support</option>
+              <option>Compliance &amp; Quality</option>
+              <option>Other</option>
+            </select>
+          </label>
 
-      <fieldset>
-        <legend>Requirement</legend>
-        <label>Service Area
-          <select name="service" required>
-            <option value="">Select…</option>
-            <option>IT Operations</option>
-            <option>Networks & Cabling</option>
-            <option>Facilities Support</option>
-            <option>Compliance & Quality</option>
-            <option>Other</option>
-          </select>
-        </label>
+          <label>Timeline <input name="timeline" placeholder="ASAP, 30–60 days, etc." /></label>
+          <label>Location / Place of Performance <input name="location" /></label>
+          <label>Details / Scope <textarea name="details" rows="6" required></textarea></label>
 
-        <label>Timeline <input name="timeline"></label>
-        <label>Location / Place of Performance <input name="location"></label>
-        <label>Details / Scope <textarea name="details"></textarea></label>
-        <label>Attachment (optional)
-          <input type="file" name="attachment"
-                 accept=".pdf,.doc,.docx,.png,.jpg,.jpeg">
-        </label>
-      </fieldset>
+          <label>Attachment (optional)
+            <input name="attachment" type="file"
+                   accept=".pdf,.doc,.docx,.xls,.xlsx,.txt,.png,.jpg,.jpeg" />
+          </label>
+        </fieldset>
 
-      <button class="btn primary" type="submit">Send</button>
-    </form>
-  </div>
-</main>
+        <button class="btn primary" type="submit">Send Request</button>
+      </form>
+    </div>
+  </main>
 
-<footer class="site-footer">
-  <div class="container footer-inner">
-    <div>© <span id="y"></span> Reeds Solutions, LLC</div>
-    <div class="tiny"><a href="./privacy.html">Privacy Policy</a></div>
-  </div>
-</footer>
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>© <span id="y"></span> Reeds Solutions, LLC</div>
+      <div class="tiny"><a href="./privacy.html">Privacy Policy</a></div>
+    </div>
+  </footer>
 
-<script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
