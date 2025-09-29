@@ -1,80 +1,77 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Contact — Reeds Solutions, LLC</title>
-  <meta name="description" content="Contact Reeds Solutions, LLC. Submit an RFQ or request info." />
-  <link rel="icon" href="./favicon 2.svg" type="image/svg+xml" />
-  <link rel="stylesheet" href="./styles.css" />
-</head>
-<body>
-  <header class="site-header">
-    <div class="container nav">
-      <a class="brand" href="./">Reeds Solutions, LLC</a>
-      <nav aria-label="Primary">
-        <a href="./index.html">Home</a>
-        <a href="./about.html">About</a>
-        <a href="./capabilities.html">Capabilities</a>
-        <a href="./contracting.html">Contracting Info</a>
-        <a href="./contact.html" aria-current="page">Contact</a>
-      </nav>
-    </div>
-  </header>
+import sgMail from "@sendgrid/mail";
+import Busboy from "busboy";
 
-  <main class="section">
-    <div class="container">
-      <h1>Request Info / RFQ</h1>
-      <p>Tell us about your requirement. We’ll reply quickly with next steps.</p>
+sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
-      <form name="rfq" method="POST"
-            action="/.netlify/functions/send-email"
-            enctype="multipart/form-data">
+export const handler = async (event) => {
+  if (event.httpMethod !== "POST") {
+    return { statusCode: 405, body: "Method Not Allowed" };
+  }
 
-        <!-- Honeypot -->
-        <input type="text" name="bot-field" tabindex="-1" autocomplete="off"
-               style="position:absolute;left:-9999px;opacity:0;height:0;width:0;border:0;padding:0;margin:0;" />
+  try {
+    const fields = {};
+    const attachments = [];
 
-        <fieldset>
-          <legend>Company Information</legend>
-          <label>Full Name <input name="name" required></label>
-          <label>Email <input name="email" type="email" required></label>
-          <label>Company / Agency <input name="company"></label>
-          <label>Phone <input name="phone" type="tel"></label>
-        </fieldset>
+    await new Promise((resolve, reject) => {
+      const busboy = Busboy({ headers: event.headers });
 
-        <fieldset>
-          <legend>Requirement</legend>
-          <label>Service Area
-            <select name="service" required>
-              <option value="">Select…</option>
-              <option>IT Operations</option>
-              <option>Networks & Cabling</option>
-              <option>Facilities Support</option>
-              <option>Compliance & Quality</option>
-              <option>Other</option>
-            </select>
-          </label>
-          <label>Timeline <input name="timeline" placeholder="ASAP, 30–60 days, etc."></label>
-          <label>Location / Place of Performance <input name="location"></label>
-          <label>Details / Scope <textarea name="details" rows="6" required></textarea></label>
-          <label>Attachment (optional)
-            <input name="attachment" type="file"
-              accept=".pdf,.doc,.docx,.xls,.xlsx,.txt,.png,.jpg,.jpeg">
-          </label>
-        </fieldset>
+      busboy.on("field", (name, value) => {
+        fields[name] = value;
+      });
 
-        <button class="btn primary" type="submit">Send Request</button>
-      </form>
-    </div>
-  </main>
+      busboy.on("file", (name, file, info) => {
+        let buffer = [];
+        file.on("data", (data) => buffer.push(data));
+        file.on("end", () => {
+          attachments.push({
+            content: Buffer.concat(buffer).toString("base64"),
+            filename: info.filename,
+            type: info.mimeType,
+            disposition: "attachment",
+          });
+        });
+      });
 
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <div>© <span id="y"></span> Reeds Solutions, LLC. All rights reserved.</div>
-      <div class="tiny"><a href="./privacy.html">Privacy</a> • <a href="./terms.html">Terms</a></div>
-    </div>
-  </footer>
-  <script>document.getElementById('y').textContent=new Date().getFullYear();</script>
-</body>
-</html>
+      busboy.on("finish", resolve);
+      busboy.on("error", reject);
+
+      busboy.end(Buffer.from(event.body, "base64"));
+    });
+
+    // Build the email body
+    const emailContent = `
+      📩 New Contact Form Submission
+
+      Full Name: ${fields.name || ""}
+      Email: ${fields.email || ""}
+      Company/Agency: ${fields.company || ""}
+      Phone: ${fields.phone || ""}
+      Service Area: ${fields.service || ""}
+      Timeline: ${fields.timeline || ""}
+      Location: ${fields.location || ""}
+      Details/Scope: ${fields.details || ""}
+    `;
+
+    const msg = {
+      to: process.env.TO_EMAIL,
+      from: process.env.FROM_EMAIL,
+      subject: "New RFQ Submission - Reed Solutions LLC",
+      text: emailContent,
+      attachments: attachments.length ? attachments : undefined,
+    };
+
+    await sgMail.send(msg);
+
+    return {
+      statusCode: 303,
+      headers: { Location: "/thanks.html" },
+      body: "",
+    };
+  } catch (err) {
+    console.error("SendGrid Error:", err);
+    return {
+      statusCode: 500,
+      body: JSON.stringify({ error: err.message }),
+    };
+  }
+};
