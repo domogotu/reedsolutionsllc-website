@@ -1,35 +1,75 @@
-<form name="rfq"
-      method="POST"
-      action="/.netlify/functions/send-email"
-      enctype="multipart/form-data">
-  <!-- Honeypot -->
-  <input type="text" name="bot-field" tabindex="-1" autocomplete="off"
-         style="position:absolute;left:-9999px;opacity:0;height:0;width:0;border:0;padding:0;margin:0;" />
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact — Reed Solutions, LLC</title>
+  <meta name="description" content="Contact Reed Solutions, LLC for federal IT & facilities contracting. Submit an RFQ or request info." />
+  <link rel="icon" href="./favicon 2.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+<header class="site-header">
+  <div class="container nav">
+    <a class="brand" href="./">Reed Solutions, LLC</a>
+    <nav aria-label="Primary">
+      <a href="./about.html">About</a>
+      <a href="./capabilities.html">Capabilities</a>
+      <a href="./contracting.html">Contracting</a>
+      <a href="./contact.html" aria-current="page">Contact</a>
+    </nav>
+  </div>
+</header>
 
-  <label>Full Name <input name="name" required></label>
-  <label>Email <input name="email" type="email" required></label>
-  <label>Company / Agency <input name="company"></label>
-  <label>Phone <input name="phone" type="tel"></label>
+<main class="section">
+  <div class="container">
+    <h1>Request Info / RFQ</h1>
+    <p>Tell us about your requirement. We’ll reply quickly with next steps.</p>
 
-  <label>Service Area
-    <select name="service" required>
-      <option value="">Select…</option>
-      <option>IT Operations</option>
-      <option>Networks & Cabling</option>
-      <option>Facilities Support</option>
-      <option>Compliance & Quality</option>
-      <option>Other</option>
-    </select>
-  </label>
+    <form name="rfq" method="POST"
+          action="/.netlify/functions/send-email"
+          enctype="multipart/form-data">
+      <!-- Honeypot field -->
+      <input type="text" name="bot-field" tabindex="-1" autocomplete="off"
+             style="position:absolute;left:-9999px;opacity:0;height:0;width:0;border:0;padding:0;margin:0;" />
 
-  <label>Timeline <input name="timeline" placeholder="ASAP, 30–60 days, etc."></label>
-  <label>Location / Place of Performance <input name="location"></label>
-  <label>Details / Scope <textarea name="details" rows="6" required></textarea></label>
+      <fieldset>
+        <legend>Company Information</legend>
+        <label>Full Name <input name="name" required></label>
+        <label>Email <input name="email" type="email" required></label>
+        <label>Company / Agency <input name="company"></label>
+        <label>Phone <input name="phone" type="tel"></label>
+      </fieldset>
 
-  <label>Attachment (optional)
-    <input name="attachment" type="file"
-           accept=".pdf,.doc,.docx,.xls,.xlsx,.txt,.png,.jpg,.jpeg" />
-  </label>
+      <fieldset>
+        <legend>Requirement</legend>
+        <label>Service Area
+          <select name="service" required>
+            <option value="">Select…</option>
+            <option>IT Operations</option>
+            <option>Networks & Cabling</option>
+            <option>Facilities Support</option>
+            <option>Compliance & Quality</option>
+            <option>Other</option>
+          </select>
+        </label>
+        <label>Timeline <input name="timeline"></label>
+        <label>Location <input name="location"></label>
+        <label>Details <textarea name="details" rows="6" required></textarea></label>
+        <label>Attachment <input name="attachment" type="file" accept=".pdf,.doc,.docx,.xls,.xlsx,.txt,.png,.jpg,.jpeg"></label>
+      </fieldset>
 
-  <button type="submit">Send Request</button>
-</form>
+      <button type="submit">Send Request</button>
+    </form>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div>© <span id="y"></span> Reed Solutions, LLC.</div>
+    <div class="tiny"><a href="./privacy.html">Privacy</a> • <a href="./terms.html">Terms</a></div>
+  </div>
+</footer>
+<script>document.getElementById('y').textContent=new Date().getFullYear();</script>
+</body>
+</html>
