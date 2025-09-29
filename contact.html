@@ -4,8 +4,8 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Contact — Reeds Solutions, LLC</title>
-  <meta name="description" content="Contact Reed Solutions, LLC for contracting opportunities in IT and facilities support services." />
-  <link rel="icon" href="./favicon 2.svg" />
+  <meta name="description" content="Contact Reeds Solutions, LLC. Submit an RFQ or request info." />
+  <link rel="icon" href="./favicon 2.svg" type="image/svg+xml" />
   <link rel="stylesheet" href="./styles.css" />
 </head>
 <body>
@@ -25,53 +25,111 @@
   <main class="section">
     <div class="container">
       <h1>Request Info / RFQ</h1>
-      <p>Tell us about your requirements and we’ll get back to you promptly.</p>
+      <p>Tell us about your requirement. We’ll reply quickly with next steps.</p>
 
-      <!-- ✅ Corrected form -->
-      <form name="rfq" method="POST" action="/.netlify/functions/send-email">
-        
-        <!-- Honeypot (spam trap) -->
-        <input type="text" name="bot-field" style="display:none" />
+      <!-- We submit via JS so the data is JSON for the function -->
+      <form id="rfqForm" novalidate>
+        <!-- Honeypot -->
+        <input type="text" name="bot-field" tabindex="-1" autocomplete="off"
+               style="position:absolute;left:-9999px;opacity:0;height:0;width:0;border:0;padding:0;margin:0;" />
 
         <fieldset>
           <legend>Company Information</legend>
-          <label>Full Name <input name="name" type="text" required /></label>
-          <label>Email <input name="email" type="email" required /></label>
-          <label>Company / Agency <input name="company" type="text" /></label>
-          <label>Phone <input name="phone" type="tel" /></label>
+          <label>Full Name <input name="name" required></label>
+          <label>Email <input name="email" type="email" required></label>
+          <label>Company / Agency <input name="company"></label>
+          <label>Phone <input name="phone" type="tel"></label>
         </fieldset>
 
         <fieldset>
           <legend>Requirement</legend>
           <label>Service Area
             <select name="service" required>
-              <option value="">Select...</option>
+              <option value="">Select…</option>
               <option>IT Operations</option>
-              <option>Networks & Cabling</option>
+              <option>Networks &amp; Cabling</option>
               <option>Facilities Support</option>
-              <option>Compliance & Quality</option>
+              <option>Compliance &amp; Quality</option>
               <option>Other</option>
             </select>
           </label>
-          <label>Timeline <input name="timeline" type="text" /></label>
-          <label>Location / Place of Performance <input name="location" type="text" /></label>
-          <label>Details / Scope <textarea name="details" required></textarea></label>
+          <label>Timeline <input name="timeline" placeholder="ASAP, 30–60 days, etc."></label>
+          <label>Location / Place of Performance <input name="location"></label>
+          <label>Details / Scope <textarea name="details" rows="6" required></textarea></label>
+
+          <!-- Shown for now, not sent yet -->
+          <label>Attachment (optional)
+            <input name="attachment" type="file"
+              accept=".pdf,.doc,.docx,.xls,.xlsx,.txt,.png,.jpg,.jpeg">
+          </label>
         </fieldset>
 
-        <button class="btn primary" type="submit">Send</button>
+        <button class="btn primary" type="submit">Send Request</button>
+        <p id="status" class="tiny" role="status" aria-live="polite" style="margin-top:.75rem;"></p>
       </form>
     </div>
   </main>
 
   <footer class="site-footer">
     <div class="container footer-inner">
-      <div>© <span id="y"></span> Reeds Solutions, LLC</div>
-      <div class="tiny"><a href="./privacy.html">Privacy Policy</a></div>
+      <div>© <span id="y"></span> Reeds Solutions, LLC. All rights reserved.</div>
+      <div class="tiny"><a href="./privacy.html">Privacy</a> • <a href="./terms.html">Terms</a></div>
     </div>
   </footer>
 
   <script>
     document.getElementById('y').textContent = new Date().getFullYear();
+
+    const form = document.getElementById('rfqForm');
+    const statusEl = document.getElementById('status');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      // basic spam trap
+      const hp = form.querySelector('[name="bot-field"]');
+      if (hp && hp.value) {
+        statusEl.textContent = 'Submission blocked.';
+        return;
+      }
+
+      // gather fields
+      const fd = new FormData(form);
+      const data = Object.fromEntries(fd.entries());
+
+      // we are NOT sending the file field yet
+      delete data.attachment;
+
+      statusEl.textContent = 'Sending…';
+
+      try {
+        const resp = await fetch('/.netlify/functions/send-email', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(data)
+        });
+
+        if (resp.status === 302 || resp.status === 303) {
+          // Netlify function is redirecting us to thanks.html
+          const loc = resp.headers.get('Location') || '/thanks.html';
+          window.location.href = loc;
+          return;
+        }
+
+        if (resp.ok) {
+          // some hosts rewrite redirects; fallback to manual redirect
+          window.location.href = '/thanks.html';
+          return;
+        }
+
+        const text = await resp.text();
+        statusEl.textContent = 'There was an error sending your request. Please try again.';
+        console.error('Function error:', resp.status, text);
+      } catch (err) {
+        statusEl.textContent = 'Network error. Please try again.';
+        console.error(err);
+      }
+    });
   </script>
 </body>
 </html>
