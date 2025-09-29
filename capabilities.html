@@ -3,70 +3,51 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Capabilities — Reeds Solutions, LLC</title>
-  <link rel="canonical" href="https://reedssolutionsllc.org/capabilities.html" />
-  <link rel="stylesheet" href="styles.css" />
+  <title>Capabilities — Reed Solutions, LLC</title>
+  <meta name="description" content="IT operations, networks & cabling, facilities support, and compliance/quality for federal missions." />
+  <link rel="icon" href="./favicon 2.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="./styles.css" />
 </head>
 <body>
-  <header class="site-header">
-    <div class="container nav">
-      <a class="brand" href="index.html">Reeds Solutions, LLC</a>
-      <nav>
-        <a href="about.html">About</a>
-        <a href="capabilities.html">Capabilities</a>
-        <a href="contracting.html">Contracting</a>
-        <a href="contact.html">Contact</a>
-      </nav>
-    </div>
-  </header>
+<header class="site-header">
+  <div class="container nav">
+    <a class="brand" href="./">Reed Solutions, LLC</a>
+    <nav aria-label="Primary">
+      <a href="./about.html">About</a>
+      <a href="./capabilities.html" aria-current="page">Capabilities</a>
+      <a href="./contracting.html">Contracting</a>
+      <a href="./contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
 
-  <main>
-    <section class="hero">
-      <div class="container hero-inner">
-        <h1>What We Do</h1>
-        <p class="subtitle">Scalable support spanning IT operations and facilities services.</p>
-      </div>
-    </section>
+<main class="section">
+  <div class="container">
+    <h1>Capabilities</h1>
+    <h2>Core Services</h2>
+    <ul class="grid">
+      <li><strong>IT Operations:</strong> Service desk (T1–T2), endpoint lifecycle, patching, M365 administration, identity & access.</li>
+      <li><strong>Networks & Cabling:</strong> Switch/Wi-Fi support, VPN basics, Cat6/Cat6A/fiber runs, rack & stack, MAC moves.</li>
+      <li><strong>Facilities Support:</strong> Preventive maintenance coordination, work-order triage, vendor oversight, A/V setup.</li>
+      <li><strong>Compliance & Quality:</strong> Change control, risk tracking, asset management, SLA reporting, acceptance criteria.</li>
+    </ul>
+    <p><a class="btn" href="./capability-statement.pdf" target="_blank" rel="noopener">Download Capability Statement (PDF)</a></p>
 
-    <section class="section">
-      <div class="container">
-        <h2>Core Services</h2>
-        <ul class="grid">
-          <li>
-            <h3>IT Operations</h3>
-            <p>Tier 1–2 service desk, end-user computing, imaging, patching, and asset lifecycle.</p>
-          </li>
-          <li>
-            <h3>Networks &amp; Cabling</h3>
-            <p>Switch/Wi-Fi support, site surveys, low-voltage cabling, and cutover support.</p>
-          </li>
-          <li>
-            <h3>Facilities Support</h3>
-            <p>Preventive maintenance coordination, on-site escorting, vendor oversight.</p>
-          </li>
-          <li>
-            <h3>Compliance &amp; Quality</h3>
-            <p>Change control, risk tracking, SOPs/SOP updates, and audit preparation.</p>
-          </li>
-        </ul>
-        <p style="text-align:center;margin-top:1rem;">
-          <a class="btn" href="contracting.html">How to Work With Us</a>
-        </p>
-      </div>
-    </section>
-  </main>
+    <h2>Differentiators</h2>
+    <ul>
+      <li>Small-business agility with disciplined delivery.</li>
+      <li>Clear acceptance criteria and reporting tied to results.</li>
+      <li>Subcontractor oversight and FAR-aware workflows.</li>
+    </ul>
+  </div>
+</main>
 
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <div>&copy; 2025 Reeds Solutions, LLC</div>
-      <div class="social" aria-label="Social links">
-        <a href="https://www.facebook.com/" aria-label="Facebook"><img src="facebook.svg" alt="Facebook" /></a>
-        <a href="https://www.linkedin.com/" aria-label="LinkedIn"><img src="linkedin.svg" alt="LinkedIn" /></a>
-        <a href="https://x.com/" aria-label="X (Twitter)"><img src="x.svg" alt="X (Twitter)" /></a>
-        <a href="https://www.youtube.com/" aria-label="YouTube"><img src="youtube.svg" alt="YouTube" /></a>
-      </div>
-      <div class="tiny"><a href="privacy.html">Privacy</a></div>
-    </div>
-  </footer>
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div>© <span id="y"></span> Reed Solutions, LLC.</div>
+    <div class="tiny"><a href="./privacy.html">Privacy</a> • <a href="./terms.html">Terms</a></div>
+  </div>
+</footer>
+<script>document.getElementById('y').textContent=new Date().getFullYear();</script>
 </body>
 </html>
