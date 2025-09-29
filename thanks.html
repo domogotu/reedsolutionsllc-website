@@ -1,38 +1,37 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Thank You — Reed Solutions, LLC</title>
-  <meta name="description" content="Thank you for contacting Reed Solutions, LLC. We will respond shortly." />
-  <link rel="icon" href="./favicon 2.svg" type="image/svg+xml" />
-  <link rel="stylesheet" href="./styles.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Thank You - Reed Solutions, LLC</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <header class="site-header">
-    <div class="container nav">
-      <a class="brand" href="./" aria-label="Reed Solutions, LLC home">Reed Solutions, LLC</a>
-      <nav aria-label="Primary">
-        <a href="./about.html">About</a>
-        <a href="./capabilities.html">Capabilities</a>
-        <a href="./contracting.html">Contracting</a>
-        <a href="./contact.html">Contact</a>
-      </nav>
-    </div>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="capabilities.html">Capabilities</a></li>
+        <li><a href="contracting.html">Contracting</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
   </header>
 
-  <main class="section" style="text-align:center;max-width:720px;margin:3rem auto;">
-    <h1>Thank you!</h1>
-    <p>Your request has been submitted. We’ll reply shortly at the email you provided.</p>
-    <p><a class="btn" href="./">Back to Home</a></p>
+  <main>
+    <h1>Thank You!</h1>
+    <p>Your request has been sent successfully. We’ll get back to you shortly.</p>
+    <p><a href="index.html">Return to Home</a></p>
   </main>
 
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <div>© <span id="y"></span> Reed Solutions, LLC. All rights reserved.</div>
-      <div class="tiny"><a href="./privacy.html">Privacy</a> • <a href="./terms.html">Terms</a></div>
-    </div>
+  <footer>
+    <p>&copy; <span id="year"></span> Reed Solutions, LLC. All rights reserved.</p>
   </footer>
-  <script>document.getElementById('y').textContent=new Date().getFullYear();</script>
+
+  <script>
+    // Auto-update footer year
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
