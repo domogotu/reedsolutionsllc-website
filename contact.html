@@ -1,56 +1,78 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Contact — Reed Solutions, LLC</title>
-  <meta name="description" content="Contact Reed Solutions, LLC for federal IT & facilities contracting." />
-  <link rel="icon" href="./favicon 2.svg" type="image/svg+xml" />
-  <link rel="stylesheet" href="./styles.css" />
-</head>
-<body>
-<header class="site-header">
-  <div class="container nav">
-    <a class="brand" href="./">Reed Solutions, LLC</a>
-    <nav aria-label="Primary">
-      <a href="./about.html">About</a>
-      <a href="./capabilities.html">Capabilities</a>
-      <a href="./contracting.html">Contracting</a>
-      <a href="./contact.html" aria-current="page">Contact</a>
-    </nav>
-  </div>
-</header>
+<h1>Request Info / RFQ</h1>
+<p>Tell us about your requirement. We’ll reply quickly with next steps.</p>
 
-<main class="section">
-  <div class="container">
-    <h1>Contact Us</h1>
+<form name="rfq"
+      method="POST"
+      data-netlify="true"
+      netlify-honeypot="bot-field"
+      action="https://reedssolutionsllc.org/thanks.html"
+      enctype="multipart/form-data">
 
-    <form name="contact" method="POST" data-netlify="true" action="./thanks.html">
-      <input type="hidden" name="form-name" value="contact" />
-      <div class="field">
-        <label for="name">Name</label>
-        <input id="name" name="name" required />
-      </div>
-      <div class="field">
-        <label for="email">Email</label>
-        <input id="email" name="email" type="email" required />
-      </div>
-      <div class="field">
-        <label for="message">Message</label>
-        <textarea id="message" name="message" rows="5" required></textarea>
-      </div>
-      <button class="btn primary" type="submit">Send</button>
-      <a class="btn" href="mailto:Reedssolutionsllcorg@gmail.com">Email Us Directly</a>
-    </form>
-  </div>
-</main>
+  <!-- Required: lets Netlify register this form -->
+  <input type="hidden" name="form-name" value="rfq" />
+  <!-- Optional: nicer email subject in notifications -->
+  <input type="hidden" name="subject" value="New RFQ from reedssolutionsllc.org" />
 
-<footer class="site-footer">
-  <div class="container footer-inner">
-    <div>© <span id="y"></span> Reed Solutions, LLC.</div>
-    <div class="tiny"><a href="./privacy.html">Privacy</a> • <a href="./terms.html">Terms</a></div>
+  <!-- Honeypot: truly hidden (yours is visible right now) -->
+  <input type="text" name="bot-field" tabindex="-1" autocomplete="off"
+         style="position:absolute;left:-9999px;opacity:0;height:0;width:0;border:0;padding:0;margin:0;" />
+
+  <fieldset>
+    <legend>Company Information</legend>
+    <div class="field">
+      <label for="name">Full Name</label>
+      <input id="name" name="name" required />
+    </div>
+    <div class="field">
+      <label for="email">Email</label>
+      <input id="email" name="email" type="email" required />
+    </div>
+    <div class="field">
+      <label for="company">Company / Agency</label>
+      <input id="company" name="company" />
+    </div>
+    <div class="field">
+      <label for="phone">Phone</label>
+      <input id="phone" name="phone" type="tel" />
+    </div>
+  </fieldset>
+
+  <fieldset>
+    <legend>Requirement</legend>
+    <div class="field">
+      <label for="service">Service Area</label>
+      <select id="service" name="service" required>
+        <option value="">Select…</option>
+        <option>IT Operations</option>
+        <option>Networks & Cabling</option>
+        <option>Facilities Support</option>
+        <option>Compliance & Quality</option>
+        <option>Other</option>
+      </select>
+    </div>
+    <div class="field">
+      <label for="timeline">Timeline</label>
+      <input id="timeline" name="timeline" placeholder="ASAP, 30–60 days, etc." />
+    </div>
+    <div class="field">
+      <label for="location">Location / Place of Performance</label>
+      <input id="location" name="location" />
+    </div>
+    <div class="field">
+      <label for="details">Details / Scope</label>
+      <textarea id="details" name="details" rows="6" required
+        placeholder="Describe what you need, endpoints/sites, SLAs, etc."></textarea>
+    </div>
+
+    <!-- Optional: remove if not needed -->
+    <div class="field">
+      <label for="attachment">Attachment (SOW/RFQ/PWS – optional)</label>
+      <input id="attachment" name="attachment" type="file" />
+    </div>
+  </fieldset>
+
+  <div class="cta-row">
+    <button class="btn primary" type="submit">Send Request</button>
+    <a class="btn" href="mailto:Reedssolutionsllcorg@gmail.com">Email Us Directly</a>
   </div>
-</footer>
-<script>document.getElementById('y').textContent=new Date().getFullYear();</script>
-</body>
-</html>
+</form>
