@@ -3,65 +3,54 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Contact — Reeds Solutions, LLC</title>
-  <link rel="canonical" href="https://reedssolutionsllc.org/contact.html" />
-  <link rel="stylesheet" href="styles.css" />
+  <title>Contact — Reed Solutions, LLC</title>
+  <meta name="description" content="Contact Reed Solutions, LLC for federal IT & facilities contracting." />
+  <link rel="icon" href="./favicon 2.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="./styles.css" />
 </head>
 <body>
-  <header class="site-header">
-    <div class="container nav">
-      <a class="brand" href="index.html">Reeds Solutions, LLC</a>
-      <nav>
-        <a href="about.html">About</a>
-        <a href="capabilities.html">Capabilities</a>
-        <a href="contracting.html">Contracting</a>
-        <a href="contact.html">Contact</a>
-      </nav>
-    </div>
-  </header>
+<header class="site-header">
+  <div class="container nav">
+    <a class="brand" href="./">Reed Solutions, LLC</a>
+    <nav aria-label="Primary">
+      <a href="./about.html">About</a>
+      <a href="./capabilities.html">Capabilities</a>
+      <a href="./contracting.html">Contracting</a>
+      <a href="./contact.html" aria-current="page">Contact</a>
+    </nav>
+  </div>
+</header>
 
-  <main>
-    <section class="hero">
-      <div class="container hero-inner">
-        <h1>Contact Us</h1>
-        <p class="subtitle">We respond quickly and keep communications clear.</p>
-      </div>
-    </section>
+<main class="section">
+  <div class="container">
+    <h1>Contact Us</h1>
 
-    <section class="section">
-      <div class="container">
-        <h2>Email</h2>
-        <p><strong>General:</strong> <a href="mailto:reedssolutionsllcorg@gmail.com">reedssolutionsllcorg@gmail.com</a></p>
+    <form name="contact" method="POST" data-netlify="true" action="./thanks.html">
+      <input type="hidden" name="form-name" value="contact" />
+      <div class="field">
+        <label for="name">Name</label>
+        <input id="name" name="name" required />
       </div>
-    </section>
+      <div class="field">
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" required />
+      </div>
+      <div class="field">
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
+      </div>
+      <button class="btn primary" type="submit">Send</button>
+      <a class="btn" href="mailto:Reedssolutionsllcorg@gmail.com">Email Us Directly</a>
+    </form>
+  </div>
+</main>
 
-    <section class="section">
-      <div class="container">
-        <h2>Send a Message</h2>
-        <!-- If you use Netlify, this works out of the box -->
-        <form name="contact" method="POST" data-netlify="true">
-          <input type="hidden" name="form-name" value="contact" />
-          <p><label>Full Name<br/><input type="text" name="name" required /></label></p>
-          <p><label>Email<br/><input type="email" name="email" required /></label></p>
-          <p><label>Company / Agency<br/><input type="text" name="company" /></label></p>
-          <p><label>Message<br/><textarea name="message" rows="6" required></textarea></label></p>
-          <p><button class="btn primary" type="submit">Send</button></p>
-        </form>
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <div>&copy; 2025 Reeds Solutions, LLC</div>
-      <div class="social" aria-label="Social links">
-        <a href="https://www.facebook.com/" aria-label="Facebook"><img src="facebook.svg" alt="Facebook" /></a>
-        <a href="https://www.linkedin.com/" aria-label="LinkedIn"><img src="linkedin.svg" alt="LinkedIn" /></a>
-        <a href="https://x.com/" aria-label="X (Twitter)"><img src="x.svg" alt="X (Twitter)" /></a>
-        <a href="https://www.youtube.com/" aria-label="YouTube"><img src="youtube.svg" alt="YouTube" /></a>
-      </div>
-      <div class="tiny"><a href="privacy.html">Privacy</a></div>
-    </div>
-  </footer>
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div>© <span id="y"></span> Reed Solutions, LLC.</div>
+    <div class="tiny"><a href="./privacy.html">Privacy</a> • <a href="./terms.html">Terms</a></div>
+  </div>
+</footer>
+<script>document.getElementById('y').textContent=new Date().getFullYear();</script>
 </body>
 </html>
