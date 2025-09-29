@@ -1,11 +1,18 @@
 # Force HTTP → HTTPS
-http://*  https://:splat  301!
+http://*                                 https://:splat                          301!
 
-# Canonical: www → apex
-https://www.reedssolutionsllc.org/*  https://reedssolutionsllc.org/:splat  301!
+# Canonicalize domains → ALWAYS use reedssolutionsllc.org
+https://www.reedssolutionsllc.org/*      https://reedssolutionsllc.org/:splat    301!
+https://reedsolutions.org/*               https://reedssolutionsllc.org/:splat    301!
+https://www.reedsolutions.org/*           https://reedssolutionsllc.org/:splat    301!
 
-# Ensure functions are served
-/.netlify/functions/*  /.netlify/functions/:splat  200
+# Ensure Netlify functions are served (don’t rewrite to 404)
+/.netlify/functions/*                     /.netlify/functions/:splat              200
 
-# Final catch-all (leave LAST)
- /*  /404.html  404
+# Nice short paths + typo guard
+/contact                                  /contact.html                           301
+/contacts                                 /contact.html                           301
+/thanks                                   /thanks.html                            301
+
+# Final catch-all (KEEP LAST)
+/*                                         /404.html                               404
