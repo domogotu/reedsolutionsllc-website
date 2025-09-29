@@ -3,43 +3,45 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Reeds Solutions, LLC — Federal IT & Facilities Support</title>
-  <meta name="description" content="Reeds Solutions, LLC delivers dependable Federal IT and Facilities support—secure, compliant, and on time." />
+  <title>Reed Solutions, LLC — Federal IT & Facilities Support</title>
+  <meta name="description" content="Reed Solutions, LLC delivers dependable federal IT and facilities support—secure, compliant, and on time." />
   <link rel="canonical" href="https://reedssolutionsllc.org/" />
 
-  <!-- Favicon -->
-  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
-  <link rel="alternate icon" href="favicon.svg" />
+  <!-- Favicon (matches repo file name with space) -->
+  <link rel="icon" href="./favicon 2.svg" type="image/svg+xml" />
+  <link rel="alternate icon" href="./favicon 2.svg" />
 
   <!-- Open Graph -->
-  <meta property="og:site_name" content="Reeds Solutions, LLC" />
-  <meta property="og:title" content="Reeds Solutions, LLC — Federal IT & Facilities Support" />
+  <meta property="og:site_name" content="Reed Solutions, LLC" />
+  <meta property="og:title" content="Reed Solutions, LLC — Federal IT & Facilities Support" />
   <meta property="og:description" content="Small-business contractor delivering secure, compliant IT & Facilities solutions for federal agencies." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://reedssolutionsllc.org/" />
-  <!-- If you uploaded og-image.png to the repo root, these will render nicely on shares -->
   <meta property="og:image" content="https://reedssolutionsllc.org/og-image.png" />
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Reeds Solutions, LLC — Federal IT & Facilities Support" />
+  <meta name="twitter:title" content="Reed Solutions, LLC — Federal IT & Facilities Support" />
   <meta name="twitter:description" content="Small-business contractor delivering secure, compliant IT & Facilities solutions for federal agencies." />
   <meta name="twitter:image" content="https://reedssolutionsllc.org/og-image.png" />
 
   <!-- Styles -->
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="preload" href="./styles.css" as="style" />
+  <link rel="stylesheet" href="./styles.css" />
 </head>
 <body>
 
   <!-- Header / Nav -->
   <header class="site-header">
     <div class="container nav">
-      <a class="brand" href="index.html" aria-label="Reeds Solutions, LLC home">Reeds Solutions, LLC</a>
+      <!-- If you want a logo instead of text, uncomment the next line and ensure the file exists -->
+      <!-- <a class="brand" href="./" aria-label="Reed Solutions, LLC home"><img src="./logo-RS-machinery-detailed.svg" alt="Reed Solutions, LLC" width="180" height="40" /></a> -->
+      <a class="brand" href="./" aria-label="Reed Solutions, LLC home">Reed Solutions, LLC</a>
       <nav aria-label="Primary">
-        <a href="about.html">About</a>
-        <a href="capabilities.html">Capabilities</a>
-        <a href="contracting.html">Contracting</a>
-        <a href="contact.html">Contact</a>
+        <a href="./about.html">About</a>
+        <a href="./capabilities.html">Capabilities</a>
+        <a href="./contracting.html">Contracting</a>
+        <a href="./contact.html">Contact</a>
       </nav>
     </div>
   </header>
@@ -48,14 +50,14 @@
     <!-- Hero -->
     <section class="hero">
       <div class="container hero-inner">
-        <h1>Modern IT & Facilities Support for Federal Missions</h1>
+        <h1>Modern IT &amp; Facilities Support for Federal Missions</h1>
         <p class="subtitle">
           Small-business agility. Enterprise discipline. Secure, compliant, and reliable delivery.
         </p>
         <div class="cta-row">
-          <a class="btn primary" href="capabilities.html">View Capabilities</a>
-          <a class="btn" href="contracting.html">Contracting Info</a>
-          <a class="btn ghost" href="contact.html">Contact Us</a>
+          <a class="btn primary" href="./capabilities.html">View Capabilities</a>
+          <a class="btn" href="./contracting.html">Contracting Info</a>
+          <a class="btn ghost" href="./contact.html">Contact Us</a>
         </div>
       </div>
     </section>
@@ -82,8 +84,10 @@
             <p>Change control, risk tracking, asset management, clear reporting, and acceptance criteria tied to results.</p>
           </li>
         </ul>
-        <!-- If you have a PDF to link, drop it in the repo root and rename below -->
-        <!-- <p style="text-align:center;margin-top:1rem;"><a class="btn" href="capability-statement.pdf" target="_blank" rel="noopener">Download Capability Statement (PDF)</a></p> -->
+
+        <p style="text-align:center;margin-top:1rem;">
+          <a class="btn" href="./capability-statement.pdf" target="_blank" rel="noopener">Download Capability Statement (PDF)</a>
+        </p>
       </div>
     </section>
 
@@ -105,7 +109,7 @@
       <div class="container">
         <h2>Ready to talk?</h2>
         <p>We respond quickly and keep the process simple.</p>
-        <a class="btn primary" href="contact.html">Start the Conversation</a>
+        <a class="btn primary" href="./contact.html">Start the Conversation</a>
       </div>
     </section>
   </main>
@@ -113,26 +117,31 @@
   <!-- Footer -->
   <footer class="site-footer">
     <div class="container footer-inner">
-      <div>&copy; 2025 Reeds Solutions, LLC. All rights reserved.</div>
+      <div>© <span id="y"></span> Reed Solutions, LLC. All rights reserved.</div>
       <div class="social" aria-label="Social links">
-        <a href="https://www.facebook.com/" aria-label="Facebook">
-          <img src="facebook.svg" alt="Facebook" />
+        <a href="https://www.facebook.com/" aria-label="Facebook" rel="noopener">
+          <img src="./facebook.svg" alt="Facebook" width="20" height="20" />
         </a>
-        <a href="https://www.linkedin.com/" aria-label="LinkedIn">
-          <img src="linkedin.svg" alt="LinkedIn" />
+        <a href="https://www.linkedin.com/" aria-label="LinkedIn" rel="noopener">
+          <img src="./linkedin.svg" alt="LinkedIn" width="20" height="20" />
         </a>
-        <a href="https://x.com/" aria-label="X (Twitter)">
-          <img src="x.svg" alt="X (Twitter)" />
+        <a href="https://x.com/" aria-label="X (Twitter)" rel="noopener">
+          <img src="./x.svg" alt="X (Twitter)" width="20" height="20" />
         </a>
-        <a href="https://www.youtube.com/" aria-label="YouTube">
-          <img src="youtube.svg" alt="YouTube" />
+        <a href="https://www.youtube.com/" aria-label="YouTube" rel="noopener">
+          <img src="./youtube.svg" alt="YouTube" width="20" height="20" />
         </a>
       </div>
       <div class="tiny">
-        <a href="privacy.html">Privacy</a>
+        <a href="./privacy.html">Privacy</a>
+        <span aria-hidden="true"> • </span>
+        <a href="./terms.html">Terms</a>
       </div>
     </div>
   </footer>
 
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
