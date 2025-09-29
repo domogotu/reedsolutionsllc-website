@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Security & Compliance — Reeds Solutions, LLC</title>
+  <meta name="description" content="Reeds Solutions, LLC — our approach to security, privacy, compliance, and responsible handling of government information." />
+  <link rel="icon" href="./favicon 2.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="./styles.css" />
+  <style>
+    .badge{display:inline-block;padding:.25rem .5rem;border:1px solid #d0d7de;border-radius:.5rem;font-size:.85rem;margin:.15rem 0}
+    .kvs{display:grid;gap:.75rem}
+    @media(min-width:800px){.kvs{grid-template-columns:repeat(2,1fr)}}
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="./">Reeds Solutions, LLC</a>
+      <nav aria-label="Primary">
+        <a href="./index.html">Home</a>
+        <a href="./about.html">About</a>
+        <a href="./capabilities.html">Capabilities</a>
+        <a href="./contracting.html">Contracting Info</a>
+        <a href="./teaming.html">Teaming</a>
+        <a href="./past-performance.html">Past Performance</a>
+        <a href="./news.html">News</a>
+        <a href="./careers.html">Careers</a>
+        <a class="btn-outline" href="./contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main -->
+  <main class="section">
+    <div class="container">
+      <h1>Security &amp; Compliance</h1>
+      <p class="tiny">Effective date: September 29, 2025</p>
+      <p class="lead">
+        Reeds Solutions, LLC operates with a compliance-first mindset. We implement practical controls, clear documentation,
+        and disciplined oversight to protect information and deliver audit-ready outcomes for federal partners.
+      </p>
+
+      <section class="section">
+        <h2>Compliance Alignment</h2>
+        <div class="kvs">
+          <div class="card">
+            <h3>Federal Contracting Frameworks</h3>
+            <ul>
+              <li><span class="badge">FAR</span> Federal Acquisition Regulation alignment in processes and documentation</li>
+              <li><span class="badge">DFARS</span> Awareness of safeguarding clauses for CUI when applicable</li>
+              <li><span class="badge">CUI</span> Handling per NARA guidance when present in the contract</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Security Standards</h3>
+            <ul>
+              <li><span class="badge">NIST SP 800-53 (foundational)</span> Control families used as reference for internal policies</li>
+              <li><span class="badge">NIST SP 800-171</span> Control alignment roadmap for contracts involving CUI</li>
+              <li><span class="badge">CMMC</span> Preparedness roadmap toward meeting required maturity level as specified by solicitations</li>
+            </ul>
+          </div>
+        </div>
+        <p class="tiny">
+          Note: The above reflects our alignment and roadmap. Formal certifications or assessments are pursued as required by specific solicitations and contracts.
+        </p>
+      </section>
+
+      <section class="section">
+        <h2>Information Handling &amp; Privacy</h2>
+        <div class="card">
+          <ul>
+            <li><strong>Data minimization:</strong> We collect only what is necessary to perform the work.</li>
+            <li><strong>Classification &amp; labeling:</strong> Contract data is labeled by sensitivity (e.g., Public, Internal, CUI when applicable).</li>
+            <li><strong>Access control:</strong> Least-privilege with role-based access; access is granted by need and reviewed periodically.</li>
+            <li><strong>Encryption:</strong> In transit via TLS; at rest via provider encryption where supported.</li>
+            <li><strong>Email submissions:</strong> Public website forms route through an email delivery service (e.g., SendGrid) to business inboxes; documents should not include SSNs or highly sensitive data.</li>
+            <li><strong>Retention:</strong> Records retained only as long as needed for business and compliance, then securely deleted.</li>
+          </ul>
+          <p class="tiny">For consumer privacy details, see our <a href="./privacy.html">Privacy Policy</a>.</p>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>Technical &amp; Administrative Controls</h2>
+        <div class="kvs">
+          <div class="card">
+            <h3>Identity &amp; Access</h3>
+            <ul>
+              <li>Unique accounts; MFA enforced for privileged access</li>
+              <li>Principle of least privilege; periodic access reviews</li>
+              <li>Timely offboarding and credential revocation</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Endpoint &amp; Cloud Hygiene</h3>
+            <ul>
+              <li>OS patching, disk encryption, and host protections</li>
+              <li>Configuration baselines and change control</li>
+              <li>Backups for critical repositories and artifacts</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Application Security</h3>
+            <ul>
+              <li>Dependency management and vulnerability scanning</li>
+              <li>Secure secrets handling (environment variables)</li>
+              <li>Input validation and minimal data collection on forms</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Vendor &amp; Subcontractor Oversight</h3>
+            <ul>
+              <li>Contractual security expectations and flow-downs</li>
+              <li>Use of reputable cloud/email providers with TLS</li>
+              <li>Periodic review of vendor security attestations</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>Incident Response</h2>
+        <div class="card">
+          <ol>
+            <li><strong>Identify &amp; contain:</strong> Segregate affected systems, preserve evidence, assess scope/severity.</li>
+            <li><strong>Notify:</strong> Inform appropriate stakeholders and the contracting officer as required by contract terms.</li>
+            <li><strong>Eradicate &amp; recover:</strong> Patch, rotate credentials, restore from clean backups.</li>
+            <li><strong>Post-incident review:</strong> Document root cause, corrective actions, and control improvements.</li>
+          </ol>
+          <p class="tiny">We maintain contact paths for urgent escalations and coordinate with partners if shared systems are impacted.</p>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>Business Continuity</h2>
+        <div class="card">
+          <ul>
+            <li>Redundant cloud hosting for public web content</li>
+            <li>Repository backups and version control for rapid restore</li>
+            <li>Continuity procedures for staffing and subcontractor coverage</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>Responsible Disclosure</h2>
+        <div class="card">
+          <p>
+            We welcome good-faith reports of security issues. Please email a description of the issue and steps to reproduce to
+            <a href="mailto:Reedssolutionsllcorg@gmail.com">Reedssolutionsllcorg@gmail.com</a>. Do not include sensitive data in reports.
+            We will acknowledge receipt and work to address validated issues.
+          </p>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>Contact &amp; Governance</h2>
+        <div class="kvs">
+          <div class="card">
+            <h3>Primary Contact</h3>
+            <p>
+              Reeds Solutions, LLC<br />
+              Email: <a href="mailto:Reedssolutionsllcorg@gmail.com">Reedssolutionsllcorg@gmail.com</a><br />
+              Website: <a href="https://reedssolutionsllc.org/">reedssolutionsllc.org</a>
+            </p>
+          </div>
+          <div class="card">
+            <h3>Policy Management</h3>
+            <p>
+              Policies are reviewed at least annually or upon material changes in systems, regulations, or contractual requirements.
+              This page reflects our current practices and may be updated as we evolve.
+            </p>
+          </div>
+        </div>
+        <p class="tiny">This page is informational and does not constitute legal advice.</p>
+      </section>
+
+      <section class="section">
+        <p><a class="btn" href="./contact.html">Contact Us</a> <a class="btn-outline" href="./privacy.html">Privacy Policy</a></p>
+      </section>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>© <span id="y"></span> Reeds Solutions, LLC • UEI: L5W1JWUUDMW3 • CAGE: 157R9</div>
+      <div class="tiny">
+        <a href="./privacy.html">Privacy</a> •
+        <a href="./terms.html">Terms</a> •
+        <a href="./accessibility.html">Accessibility</a> •
+        <a href="./security-compliance.html" aria-current="page">Security &amp; Compliance</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+</body>
+</html>
