@@ -1,8 +1,11 @@
-# Force HTTP → HTTPS (keep same host)
-http://*   https://:splat   301!
+# Force HTTP → HTTPS
+http://*  https://:splat  301!
 
 # Canonical: www → apex
-https://www.reedssolutionsllc.org/*   https://reedssolutionsllc.org/:splat   301!
+https://www.reedssolutionsllc.org/*  https://reedssolutionsllc.org/:splat  301!
 
-# Serve 404 for missing routes (NO SPA fallback)
- /*   /404.html   404
+# Ensure functions are served
+/.netlify/functions/*  /.netlify/functions/:splat  200
+
+# Final catch-all (leave LAST)
+ /*  /404.html  404
