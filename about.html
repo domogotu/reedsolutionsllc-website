@@ -3,63 +3,45 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>About — Reeds Solutions, LLC</title>
-  <link rel="canonical" href="https://reedssolutionsllc.org/about.html" />
-  <link rel="stylesheet" href="styles.css" />
+  <title>About — Reed Solutions, LLC</title>
+  <meta name="description" content="About Reed Solutions, LLC — federal IT & facilities contracting focused on compliant, on-time delivery." />
+  <link rel="icon" href="./favicon 2.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="./styles.css" />
 </head>
 <body>
-  <header class="site-header">
-    <div class="container nav">
-      <a class="brand" href="index.html">Reeds Solutions, LLC</a>
-      <nav>
-        <a href="about.html">About</a>
-        <a href="capabilities.html">Capabilities</a>
-        <a href="contracting.html">Contracting</a>
-        <a href="contact.html">Contact</a>
-      </nav>
-    </div>
-  </header>
+<header class="site-header">
+  <div class="container nav">
+    <a class="brand" href="./">Reed Solutions, LLC</a>
+    <nav aria-label="Primary">
+      <a href="./about.html" aria-current="page">About</a>
+      <a href="./capabilities.html">Capabilities</a>
+      <a href="./contracting.html">Contracting</a>
+      <a href="./contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
 
-  <main>
-    <section class="hero">
-      <div class="container hero-inner">
-        <h1>Who We Are</h1>
-        <p class="subtitle">Modern IT & Facilities support for federal and public-sector missions.</p>
-      </div>
-    </section>
+<main class="section">
+  <div class="container">
+    <h1>About Us</h1>
+    <p>Reed Solutions, LLC is a small business providing federal <strong>IT operations</strong> and <strong>facilities support</strong>. We emphasize security, compliance, and measurable performance.</p>
+    <ul class="grid">
+      <li><strong>UEI:</strong> L5W1JWUUDMW3</li>
+      <li><strong>CAGE:</strong> 157R9</li>
+      <li><strong>Primary NAICS:</strong> 541513 (Computer Facilities Management Services)</li>
+      <li><strong>Related NAICS:</strong> 541512, 541519</li>
+      <li><strong>Location:</strong> California, USA</li>
+      <li><strong>Email:</strong> <a href="mailto:Reedssolutionsllcorg@gmail.com">Reedssolutionsllcorg@gmail.com</a></li>
+    </ul>
+  </div>
+</main>
 
-    <section class="section">
-      <div class="container">
-        <h2>Our Mission</h2>
-        <p>Reeds Solutions, LLC delivers reliable, compliant, and secure services that keep agencies operating at their best. We combine disciplined project delivery with hands-on technical expertise.</p>
-        <p>We support CONUS customers with responsive teams, clear communication, and measurable outcomes.</p>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container">
-        <h2>Company Identifiers</h2>
-        <ul class="grid">
-          <li><strong>UEI:</strong> L5W1JWUUDMW3</li>
-          <li><strong>CAGE:</strong> 157R9</li>
-          <li><strong>Location:</strong> California, USA</li>
-          <li><strong>Email:</strong> <a href="mailto:reedssolutionsllcorg@gmail.com">reedssolutionsllcorg@gmail.com</a></li>
-        </ul>
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <div>&copy; 2025 Reeds Solutions, LLC</div>
-      <div class="social" aria-label="Social links">
-        <a href="https://www.facebook.com/" aria-label="Facebook"><img src="facebook.svg" alt="Facebook" /></a>
-        <a href="https://www.linkedin.com/" aria-label="LinkedIn"><img src="linkedin.svg" alt="LinkedIn" /></a>
-        <a href="https://x.com/" aria-label="X (Twitter)"><img src="x.svg" alt="X (Twitter)" /></a>
-        <a href="https://www.youtube.com/" aria-label="YouTube"><img src="youtube.svg" alt="YouTube" /></a>
-      </div>
-      <div class="tiny"><a href="privacy.html">Privacy</a></div>
-    </div>
-  </footer>
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div>© <span id="y"></span> Reed Solutions, LLC. All rights reserved.</div>
+    <div class="tiny"><a href="./privacy.html">Privacy</a> • <a href="./terms.html">Terms</a></div>
+  </div>
+</footer>
+<script>document.getElementById('y').textContent=new Date().getFullYear();</script>
 </body>
 </html>
