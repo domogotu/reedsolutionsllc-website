@@ -1,9 +1,12 @@
-# Force HTTP → HTTPS
-http://* https://reedsolutionsllc.org/:splat 301!
+# 1) Force HTTP → HTTPS (keeps the same host)
+http://*   https://:splat   301!
 
-# Force www → non-www
-https://www.reedsolutionsllc.org/* https://reedsolutionsllc.org/:splat 301!
+# 2) Canonicalize www → apex (PRIMARY = reedssolutionsllc.org)
+https://www.reedssolutionsllc.org/*   https://reedssolutionsllc.org/:splat   301!
 
-# (Optional) SPA fallback — OK to keep for static sites too
-/*   /index.html   200# Force www → apex (edit if you prefer www primary)
-https://www.reedssolutionsllc.org/*  https://reedssolutionsllc.org/:splat  301!
+# (Optional) If the *other* domain variant exists in DNS, also collapse its www:
+https://www.reedsolutionsllc.org/*    https://reedsolutionsllc.org/:splat    301!
+
+# 3) Proper 404 handling for missing routes (DO NOT use SPA fallback for a multi-page site)
+#    This SERVES 404.html without redirecting back to /, which avoids loops.
+ /*   /404.html   404
