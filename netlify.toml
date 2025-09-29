@@ -1,9 +1,5 @@
-[build]
-  publish = "."
-  functions = "netlify/functions"
-
+# netlify.toml – tell Netlify where functions live and how to bundle
 [functions]
-  node_bundler = "esbuild"
-
-[build.environment]
-  NODE_VERSION = "18"
+directory = "netlify/functions"
+node_bundler = "esbuild"
+external_node_modules = ["busboy", "@sendgrid/mail"]
