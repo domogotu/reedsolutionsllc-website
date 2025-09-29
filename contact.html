@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Contact — Reeds Solutions, LLC</title>
-  <meta name="description" content="Contact Reeds Solutions, LLC for federal contracting, IT services, and facilities support." />
+  <meta name="description" content="Contact Reed Solutions, LLC for contracting opportunities in IT and facilities support services." />
   <link rel="icon" href="./favicon 2.svg" />
   <link rel="stylesheet" href="./styles.css" />
 </head>
@@ -25,21 +25,19 @@
   <main class="section">
     <div class="container">
       <h1>Request Info / RFQ</h1>
-      <p>Tell us about your requirements and we will respond promptly.</p>
+      <p>Tell us about your requirements and we’ll get back to you promptly.</p>
 
-      <form name="rfq"
-            method="POST"
-            action="/.netlify/functions/send-email"
-            enctype="multipart/form-data">
-
-        <!-- Spam trap (honeypot) -->
-        <input type="text" name="bot-field" style="position:absolute;left:-9999px" tabindex="-1" autocomplete="off" />
+      <!-- ✅ Corrected form -->
+      <form name="rfq" method="POST" action="/.netlify/functions/send-email">
+        
+        <!-- Honeypot (spam trap) -->
+        <input type="text" name="bot-field" style="display:none" />
 
         <fieldset>
           <legend>Company Information</legend>
-          <label>Full Name <input name="name" required /></label>
+          <label>Full Name <input name="name" type="text" required /></label>
           <label>Email <input name="email" type="email" required /></label>
-          <label>Company / Agency <input name="company" /></label>
+          <label>Company / Agency <input name="company" type="text" /></label>
           <label>Phone <input name="phone" type="tel" /></label>
         </fieldset>
 
@@ -47,26 +45,20 @@
           <legend>Requirement</legend>
           <label>Service Area
             <select name="service" required>
-              <option value="">Select…</option>
+              <option value="">Select...</option>
               <option>IT Operations</option>
-              <option>Networks &amp; Cabling</option>
+              <option>Networks & Cabling</option>
               <option>Facilities Support</option>
-              <option>Compliance &amp; Quality</option>
+              <option>Compliance & Quality</option>
               <option>Other</option>
             </select>
           </label>
-
-          <label>Timeline <input name="timeline" placeholder="ASAP, 30–60 days, etc." /></label>
-          <label>Location / Place of Performance <input name="location" /></label>
-          <label>Details / Scope <textarea name="details" rows="6" required></textarea></label>
-
-          <label>Attachment (optional)
-            <input name="attachment" type="file"
-                   accept=".pdf,.doc,.docx,.xls,.xlsx,.txt,.png,.jpg,.jpeg" />
-          </label>
+          <label>Timeline <input name="timeline" type="text" /></label>
+          <label>Location / Place of Performance <input name="location" type="text" /></label>
+          <label>Details / Scope <textarea name="details" required></textarea></label>
         </fieldset>
 
-        <button class="btn primary" type="submit">Send Request</button>
+        <button class="btn primary" type="submit">Send</button>
       </form>
     </div>
   </main>
