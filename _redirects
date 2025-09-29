@@ -4,5 +4,5 @@ http://*   https://:splat   301!
 # Canonical: www → apex
 https://www.reedssolutionsllc.org/*   https://reedssolutionsllc.org/:splat   301!
 
-# Serve 404 for missing routes (do NOT use SPA fallback)
+# Serve 404 for missing routes (NO SPA fallback)
  /*   /404.html   404
