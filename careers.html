@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Careers — Reeds Solutions, LLC</title>
+  <meta name="description" content="Apply to work with Reeds Solutions, LLC. Upload your résumé and required documents securely." />
+  <link rel="icon" href="./favicon 2.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="./">Reeds Solutions, LLC</a>
+      <nav aria-label="Primary">
+        <a href="./index.html">Home</a>
+        <a href="./about.html">About</a>
+        <a href="./capabilities.html">Capabilities</a>
+        <a href="./contracting.html">Contracting Info</a>
+        <a href="./teaming.html">Teaming</a>
+        <a href="./past-performance.html">Past Performance</a>
+        <a href="./news.html">News</a>
+        <a href="./careers.html" aria-current="page">Careers</a>
+        <a class="btn-outline" href="./contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="section">
+    <div class="container">
+      <h1>Careers at Reeds Solutions, LLC</h1>
+      <p class="lead">We’re building a compliance-first team that delivers results for federal missions. Submit your application below.</p>
+
+      <section class="section">
+        <h2>What to Submit Now</h2>
+        <div class="grid">
+          <div class="card">
+            <h3>Required</h3>
+            <ul>
+              <li>Résumé (PDF)</li>
+              <li>Basic contact information</li>
+              <li>Clearance level (if any)</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Optional (Helps Us Match You Faster)</h3>
+            <ul>
+              <li>Cover letter (PDF)</li>
+              <li>Relevant certifications (Security+, PMP, OSHA, etc.)</li>
+              <li>References (PDF)</li>
+            </ul>
+          </div>
+        </div>
+        <p class="tiny"><strong>Note:</strong> I-9, W-4, direct deposit, and any public trust/clearance questionnaires (e.g., SF-85/SF-86) are collected <em>after a conditional offer</em> and are not requested on this website.</p>
+      </section>
+
+      <section class="section">
+        <h2>Submit Your Application</h2>
+        <form class="card" action="/.netlify/functions/apply" method="POST" enctype="multipart/form-data" novalidate>
+          <input type="text" name="bot-field" autocomplete="off" tabindex="-1" style="position:absolute;left:-9999px;" />
+
+          <div class="grid">
+            <label>Full Name
+              <input type="text" name="name" required autocomplete="name" />
+            </label>
+            <label>Email
+              <input type="email" name="email" required autocomplete="email" />
+            </label>
+            <label>Phone
+              <input type="tel" name="phone" autocomplete="tel" />
+            </label>
+            <label>City / State
+              <input type="text" name="location" autocomplete="address-level2" />
+            </label>
+          </div>
+
+          <div class="grid">
+            <label>Position or Interest Area
+              <input type="text" name="position" placeholder="e.g., Facilities Tech, Help Desk, Project Coordinator" />
+            </label>
+            <label>Current Clearance (if any)
+              <select name="clearance">
+                <option value="">None</option>
+                <option>Public Trust</option>
+                <option>Secret</option>
+                <option>Top Secret</option>
+              </select>
+            </label>
+          </div>
+
+          <label>Brief Summary
+            <textarea name="summary" rows="5" placeholder="Tell us about your experience and availability."></textarea>
+          </label>
+
+          <div class="grid">
+            <label>Résumé (PDF) — Required
+              <input type="file" name="resume" accept=".pdf" required />
+            </label>
+            <label>Cover Letter (PDF)
+              <input type="file" name="cover" accept=".pdf" />
+            </label>
+          </div>
+
+          <label>Certifications / References (PDFs; you may select multiple)
+            <input type="file" name="attachments" accept=".pdf" multiple />
+          </label>
+
+          <label class="tiny">
+            <input type="checkbox" name="consent" required />
+            I consent to the processing of my application and confirm that my documents do not contain SSNs or other highly sensitive data.
+          </label>
+
+          <div><button class="btn primary" type="submit">Submit Application</button></div>
+          <p class="tiny">Having trouble? Email your résumé to <a href="mailto:Reedssolutionsllcorg@gmail.com">Reedssolutionsllcorg@gmail.com</a>.</p>
+        </form>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>© <span id="y"></span> Reeds Solutions, LLC • UEI: L5W1JWUUDMW3 • CAGE: 157R9</div>
+      <div class="tiny">Equal Opportunity Employer • FAR/DFARS-aligned • <a href="./privacy.html">Privacy</a> • <a href="./terms.html">Terms</a></div>
+    </div>
+  </footer>
+
+  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+</body>
+</html>
