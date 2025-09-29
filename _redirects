@@ -16,3 +16,5 @@ https://www.reedsolutions.org/*           https://reedssolutionsllc.org/:splat  
 
 # Final catch-all (KEEP LAST)
 /*                                         /404.html                               404
+/thanks    /thanks.html   301
+/contact   /contact.html  301
