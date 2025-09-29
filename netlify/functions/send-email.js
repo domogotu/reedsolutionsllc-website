@@ -1,114 +1,132 @@
 // netlify/functions/send-email.js
-// Forwards form submissions (with optional attachment) to your email via SendGrid.
-// No storage on Netlify. On success, redirects to /thanks.html.
-
 import Busboy from 'busboy';
 import sgMail from '@sendgrid/mail';
 
 sgMail.setApiKey(process.env.SENDGRID_API_KEY);
+
+const MAX_ATTACHMENT_BYTES = 10 * 1024 * 1024; // 10 MB
+
+function parseMultipart(event) {
+  return new Promise((resolve, reject) => {
+    const fields = {};
+    const files = [];
+
+    // Netlify provides body as base64 when multipart/form-data
+    const bb = Busboy({
+      headers: {
+        'content-type': event.headers['content-type'] || event.headers['Content-Type']
+      }
+    });
+
+    let totalBytes = 0;
+
+    bb.on('file', (name, file, info) => {
+      const { filename, mimeType } = info;
+      const chunks = [];
+      file.on('data', (d) => {
+        totalBytes += d.length;
+        if (totalBytes > MAX_ATTACHMENT_BYTES) {
+          file.unpipe();
+          bb.emit('error', new Error('Attachment too large'));
+          return;
+        }
+        chunks.push(d);
+      });
+      file.on('end', () => {
+        if (filename) {
+          files.push({
+            field: name,
+            filename,
+            type: mimeType,
+            content: Buffer.concat(chunks)
+          });
+        }
+      });
+    });
+
+    bb.on('field', (name, val) => {
+      fields[name] = val;
+    });
+
+    bb.on('error', reject);
+    bb.on('finish', () => resolve({ fields, files }));
+
+    const body = Buffer.from(event.body || '', 'base64');
+    bb.end(body);
+  });
+}
 
 export const handler = async (event) => {
   if (event.httpMethod !== 'POST') {
     return { statusCode: 405, body: 'Method Not Allowed' };
   }
 
-  const contentType = event.headers['content-type'] || event.headers['Content-Type'] || '';
-  const isMultipart = contentType.includes('multipart/form-data');
-
-  // We only accept multipart/form-data for file uploads
-  if (!isMultipart) {
-    return { statusCode: 400, body: 'Bad Request: expected multipart/form-data' };
-  }
-
-  const fields = {};
-  const files = [];
-
   try {
-    // Parse multipart body with Busboy
-    await new Promise((resolve, reject) => {
-      const bb = new Busboy({ headers: event.headers });
-      const bodyBuf = event.isBase64Encoded
-        ? Buffer.from(event.body, 'base64')
-        : Buffer.from(event.body || '', 'utf8');
+    const { fields, files } = await parseMultipart(event);
 
-      bb.on('field', (name, value) => {
-        if (name === 'bot-field' && value) {
-          fields._bot = true;
-        } else {
-          fields[name] = value;
-        }
-      });
-
-      bb.on('file', (name, file, info) => {
-        const { filename, mimeType } = info || {};
-        if (!filename) {
-          // No file selected
-          file.resume();
-          return;
-        }
-        const chunks = [];
-        file.on('data', (d) => chunks.push(d));
-        file.on('end', () => {
-          const buffer = Buffer.concat(chunks);
-          // limit to 10MB per file
-          if (buffer.length <= 10 * 1024 * 1024) {
-            files.push({
-              filename,
-              type: mimeType || 'application/octet-stream',
-              content: buffer.toString('base64'),
-              disposition: 'attachment'
-            });
-          }
-        });
-      });
-
-      bb.on('error', reject);
-      bb.on('close', resolve);
-
-      bb.end(bodyBuf);
-    });
-
-    // Honeypot: discard bots silently
-    if (fields._bot) {
-      return { statusCode: 200, body: 'OK' };
+    // Honeypot: if filled, silently succeed
+    if (fields['bot-field']) {
+      return {
+        statusCode: 303,
+        headers: { Location: '/thanks.html', 'Cache-Control': 'no-store' },
+        body: ''
+      };
     }
 
-    // Build email
-    const toEmail = process.env.TO_EMAIL;                  // REQUIRED (your inbox)
-    const fromEmail = process.env.FROM_EMAIL || toEmail;   // VERIFIED sender in SendGrid
+    const {
+      name = '(no name)',
+      email = '(no email)',
+      company = '(no company)',
+      phone = '(no phone)',
+      service = '(no selection)',
+      timeline = '(no timeline)',
+      location = '(no location)',
+      details = '(no details)'
+    } = fields;
 
-    const subject = `New RFQ from ${fields.name || 'Website Visitor'}`;
-    const textLines = [
-      `Name: ${fields.name || ''}`,
-      `Email: ${fields.email || ''}`,
-      `Company: ${fields.company || ''}`,
-      `Phone: ${fields.phone || ''}`,
-      `Service: ${fields.service || ''}`,
-      `Timeline: ${fields.timeline || ''}`,
-      `Location: ${fields.location || ''}`,
-      '',
-      'Details:',
-      (fields.details || '')
-    ];
+    const to = process.env.TO_EMAIL;
+    const from = process.env.FROM_EMAIL;
 
-    const msg = {
-      to: toEmail,
-      from: fromEmail,
-      subject,
-      text: textLines.join('\n'),
-      attachments: files.length ? files : undefined
-    };
+    const text = [
+      `New RFQ / Contact submission`,
+      ``,
+      `Name: ${name}`,
+      `Email: ${email}`,
+      `Company/Agency: ${company}`,
+      `Phone: ${phone}`,
+      `Service Area: ${service}`,
+      `Timeline: ${timeline}`,
+      `Location: ${location}`,
+      ``,
+      `Details:`,
+      `${details}`
+    ].join('\n');
 
-    await sgMail.send(msg);
+    const attachments = files.map(f => ({
+      content: f.content.toString('base64'),
+      filename: f.filename,
+      type: f.type,
+      disposition: 'attachment'
+    }));
 
-    // Redirect to thank-you page
+    await sgMail.send({
+      to,
+      from,
+      subject: `RFQ/Contact — ${name} (${company})`,
+      text,
+      attachments: attachments.length ? attachments : undefined
+    });
+
     return {
       statusCode: 303,
-      headers: { Location: '/thanks.html' },
+      headers: { Location: '/thanks.html', 'Cache-Control': 'no-store' },
       body: ''
     };
   } catch (err) {
     console.error('send-email error:', err);
-    return { statusCode: 500, body: 'Email failed. Please email us directly.' };
+    return {
+      statusCode: 500,
+      body: 'Unable to send message right now.'
+    };
   }
 };
