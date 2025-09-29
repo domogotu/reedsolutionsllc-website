@@ -1,64 +1,80 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contact Us - Reed Solutions, LLC</title>
-  <link rel="stylesheet" href="styles.css" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact — Reeds Solutions, LLC</title>
+  <meta name="description" content="Contact Reeds Solutions, LLC. Submit an RFQ or request info." />
+  <link rel="icon" href="./favicon 2.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="./styles.css" />
 </head>
 <body>
-  <header>
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="capabilities.html">Capabilities</a></li>
-        <li><a href="contracting.html">Contracting</a></li>
-        <li><a href="contact.html" class="active">Contact</a></li>
-      </ul>
-    </nav>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="./">Reeds Solutions, LLC</a>
+      <nav aria-label="Primary">
+        <a href="./index.html">Home</a>
+        <a href="./about.html">About</a>
+        <a href="./capabilities.html">Capabilities</a>
+        <a href="./contracting.html">Contracting Info</a>
+        <a href="./contact.html" aria-current="page">Contact</a>
+      </nav>
+    </div>
   </header>
 
-  <main>
-    <h1>Contact Reed Solutions, LLC</h1>
-    <p>Please fill out the form below and we’ll get back to you promptly.</p>
+  <main class="section">
+    <div class="container">
+      <h1>Request Info / RFQ</h1>
+      <p>Tell us about your requirement. We’ll reply quickly with next steps.</p>
 
-    <form name="rfq" method="POST"
-          action="/.netlify/functions/send-email"
-          enctype="multipart/form-data">
+      <form name="rfq" method="POST"
+            action="/.netlify/functions/send-email"
+            enctype="multipart/form-data">
 
-      <!-- Honeypot for bots -->
-      <input type="text" name="bot-field" style="display:none" />
+        <!-- Honeypot -->
+        <input type="text" name="bot-field" tabindex="-1" autocomplete="off"
+               style="position:absolute;left:-9999px;opacity:0;height:0;width:0;border:0;padding:0;margin:0;" />
 
-      <!-- Hidden form name -->
-      <input type="hidden" name="form-name" value="rfq" />
+        <fieldset>
+          <legend>Company Information</legend>
+          <label>Full Name <input name="name" required></label>
+          <label>Email <input name="email" type="email" required></label>
+          <label>Company / Agency <input name="company"></label>
+          <label>Phone <input name="phone" type="tel"></label>
+        </fieldset>
 
-      <label for="company">Company Name:</label>
-      <input type="text" id="company" name="company" required />
+        <fieldset>
+          <legend>Requirement</legend>
+          <label>Service Area
+            <select name="service" required>
+              <option value="">Select…</option>
+              <option>IT Operations</option>
+              <option>Networks & Cabling</option>
+              <option>Facilities Support</option>
+              <option>Compliance & Quality</option>
+              <option>Other</option>
+            </select>
+          </label>
+          <label>Timeline <input name="timeline" placeholder="ASAP, 30–60 days, etc."></label>
+          <label>Location / Place of Performance <input name="location"></label>
+          <label>Details / Scope <textarea name="details" rows="6" required></textarea></label>
+          <label>Attachment (optional)
+            <input name="attachment" type="file"
+              accept=".pdf,.doc,.docx,.xls,.xlsx,.txt,.png,.jpg,.jpeg">
+          </label>
+        </fieldset>
 
-      <label for="email">Your Email:</label>
-      <input type="email" id="email" name="email" required />
-
-      <label for="phone">Phone:</label>
-      <input type="tel" id="phone" name="phone" />
-
-      <label for="message">Message / Requirements:</label>
-      <textarea id="message" name="message" rows="6" required></textarea>
-
-      <label for="file">Attach a File (optional, max 10MB):</label>
-      <input type="file" id="file" name="file" />
-
-      <button type="submit">Send Request</button>
-    </form>
+        <button class="btn primary" type="submit">Send Request</button>
+      </form>
+    </div>
   </main>
 
-  <footer>
-    <p>&copy; <span id="year"></span> Reed Solutions, LLC. All rights reserved.</p>
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>© <span id="y"></span> Reeds Solutions, LLC. All rights reserved.</div>
+      <div class="tiny"><a href="./privacy.html">Privacy</a> • <a href="./terms.html">Terms</a></div>
+    </div>
   </footer>
-
-  <script>
-    // Auto-update footer year
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
+  <script>document.getElementById('y').textContent=new Date().getFullYear();</script>
 </body>
 </html>
