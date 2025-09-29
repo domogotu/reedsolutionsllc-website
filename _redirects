@@ -1,18 +1,18 @@
 # Force HTTP → HTTPS
-http://*   https://reedssolutionsllc.org/:splat 301!
+http://*                       https://reedsSolutionsllc.org/:splat 301
 
-# Canonicalize domains → ALWAYS use reedssolutionsllc.org
-https://www.reedssolutionsllc.org/*   https://reedssolutionsllc.org/:splat 301
-https://reedssolutions.org/*          https://reedssolutionsllc.org/:splat 301
-https://www.reedssolutions.org/*      https://reedssolutionsllc.org/:splat 301
+# Canonicalize domains → apex
+https://www.reedssolutionsllc.org/*  https://reedsSolutionsllc.org/:splat 301
+https://www.reedssolutions.org/*     https://reedsSolutionsllc.org/:splat 301
+https://www.reedssolutions.org/*     https://reedsSolutionsllc.org/:splat 301
 
-# Ensure Netlify functions are served
-/.netlify/functions/*   /.netlify/functions/:splat  200
+# Ensure Netlify Functions are served
+/.netlify/functions/*         /.netlify/functions/:splat 200
 
 # Nice short paths + typo guard
-/contact    /contact.html   301
-/contacts   /contact.html   301
-/thanks     /thanks.html    301
+/contact                      /contact.html              301
+/contacts                     /contact.html              301
+/thanks                       /thanks.html               301
 
-# Final catch-all (KEEP LAST)
-/*   /404.html   404
+# Final catch-all (keep last)
+*                             /404.html                  404
