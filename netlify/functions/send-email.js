@@ -10,49 +10,31 @@ function parseMultipart(event) {
   return new Promise((resolve, reject) => {
     const fields = {};
     const files = [];
-
-    // Netlify provides body as base64 when multipart/form-data
     const bb = Busboy({
-      headers: {
-        'content-type': event.headers['content-type'] || event.headers['Content-Type']
-      }
+      headers: { 'content-type': event.headers['content-type'] || event.headers['Content-Type'] }
     });
 
-    let totalBytes = 0;
-
+    let total = 0;
     bb.on('file', (name, file, info) => {
       const { filename, mimeType } = info;
       const chunks = [];
-      file.on('data', (d) => {
-        totalBytes += d.length;
-        if (totalBytes > MAX_ATTACHMENT_BYTES) {
-          file.unpipe();
+      file.on('data', d => {
+        total += d.length;
+        if (total > MAX_ATTACHMENT_BYTES) {
           bb.emit('error', new Error('Attachment too large'));
-          return;
+          file.unpipe();
+        } else {
+          chunks.push(d);
         }
-        chunks.push(d);
       });
       file.on('end', () => {
-        if (filename) {
-          files.push({
-            field: name,
-            filename,
-            type: mimeType,
-            content: Buffer.concat(chunks)
-          });
-        }
+        if (filename) files.push({ filename, type: mimeType, content: Buffer.concat(chunks) });
       });
     });
-
-    bb.on('field', (name, val) => {
-      fields[name] = val;
-    });
-
+    bb.on('field', (name, val) => (fields[name] = val));
     bb.on('error', reject);
     bb.on('finish', () => resolve({ fields, files }));
-
-    const body = Buffer.from(event.body || '', 'base64');
-    bb.end(body);
+    bb.end(Buffer.from(event.body || '', 'base64'));
   });
 }
 
@@ -60,46 +42,29 @@ export const handler = async (event) => {
   if (event.httpMethod !== 'POST') {
     return { statusCode: 405, body: 'Method Not Allowed' };
   }
-
   try {
     const { fields, files } = await parseMultipart(event);
 
-    // Honeypot: if filled, silently succeed
+    // Honeypot – if filled, pretend success
     if (fields['bot-field']) {
-      return {
-        statusCode: 303,
-        headers: { Location: '/thanks.html', 'Cache-Control': 'no-store' },
-        body: ''
-      };
+      return { statusCode: 303, headers: { Location: '/thanks.html', 'Cache-Control': 'no-store' } };
     }
-
-    const {
-      name = '(no name)',
-      email = '(no email)',
-      company = '(no company)',
-      phone = '(no phone)',
-      service = '(no selection)',
-      timeline = '(no timeline)',
-      location = '(no location)',
-      details = '(no details)'
-    } = fields;
 
     const to = process.env.TO_EMAIL;
     const from = process.env.FROM_EMAIL;
 
     const text = [
-      `New RFQ / Contact submission`,
-      ``,
-      `Name: ${name}`,
-      `Email: ${email}`,
-      `Company/Agency: ${company}`,
-      `Phone: ${phone}`,
-      `Service Area: ${service}`,
-      `Timeline: ${timeline}`,
-      `Location: ${location}`,
-      ``,
-      `Details:`,
-      `${details}`
+      'New contact submission',
+      `Name: ${fields.name || ''}`,
+      `Email: ${fields.email || ''}`,
+      `Company: ${fields.company || ''}`,
+      `Phone: ${fields.phone || ''}`,
+      `Service: ${fields.service || ''}`,
+      `Timeline: ${fields.timeline || ''}`,
+      `Location: ${fields.location || ''}`,
+      '',
+      'Message:',
+      fields.details || fields.message || ''
     ].join('\n');
 
     const attachments = files.map(f => ({
@@ -110,23 +75,15 @@ export const handler = async (event) => {
     }));
 
     await sgMail.send({
-      to,
-      from,
-      subject: `RFQ/Contact — ${name} (${company})`,
+      to, from,
+      subject: `Website Contact — ${fields.name || 'Unknown'}`,
       text,
       attachments: attachments.length ? attachments : undefined
     });
 
-    return {
-      statusCode: 303,
-      headers: { Location: '/thanks.html', 'Cache-Control': 'no-store' },
-      body: ''
-    };
+    return { statusCode: 303, headers: { Location: '/thanks.html', 'Cache-Control': 'no-store' } };
   } catch (err) {
     console.error('send-email error:', err);
-    return {
-      statusCode: 500,
-      body: 'Unable to send message right now.'
-    };
+    return { statusCode: 500, body: 'Unable to send message right now.' };
   }
 };
