@@ -1,14 +1,11 @@
-<form name="rfq" method="POST" data-netlify="true"
-      netlify-honeypot="bot-field"
-      action="/thanks.html" enctype="multipart/form-data">
-  <input type="hidden" name="form-name" value="rfq" />
-  <input type="hidden" name="subject" value="New RFQ from reedssolutionsllc.org" />
-
-  <!-- hidden honeypot -->
+<form name="rfq"
+      method="POST"
+      action="/.netlify/functions/send-email"
+      enctype="multipart/form-data">
+  <!-- Honeypot -->
   <input type="text" name="bot-field" tabindex="-1" autocomplete="off"
          style="position:absolute;left:-9999px;opacity:0;height:0;width:0;border:0;padding:0;margin:0;" />
 
-  <!-- visible fields (all MUST have name="...") -->
   <label>Full Name <input name="name" required></label>
   <label>Email <input name="email" type="email" required></label>
   <label>Company / Agency <input name="company"></label>
@@ -27,12 +24,12 @@
 
   <label>Timeline <input name="timeline" placeholder="ASAP, 30–60 days, etc."></label>
   <label>Location / Place of Performance <input name="location"></label>
-  <label>Details / Scope
-    <textarea name="details" rows="6" required></textarea>
+  <label>Details / Scope <textarea name="details" rows="6" required></textarea></label>
+
+  <label>Attachment (optional)
+    <input name="attachment" type="file"
+           accept=".pdf,.doc,.docx,.xls,.xlsx,.txt,.png,.jpg,.jpeg" />
   </label>
 
-  <label>Attachment (optional) <input name="attachment" type="file"></label>
-
   <button type="submit">Send Request</button>
-  <a class="btn" href="mailto:Reedssolutionsllcorg@gmail.com">Email Us Directly</a>
 </form>
