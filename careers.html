@@ -1,129 +1,128 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Careers — Reeds Solutions, LLC</title>
-  <meta name="description" content="Apply to work with Reeds Solutions, LLC. Upload your résumé and required documents securely." />
-  <link rel="icon" href="./favicon 2.svg" type="image/svg+xml" />
-  <link rel="stylesheet" href="./styles.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Join Reeds Solutions, LLC — explore federal contracting careers, apply online, and grow with a trusted government contractor." />
+  <meta name="keywords" content="Reeds Solutions, careers, government contracting jobs, federal contracting careers, apply online" />
+  <meta name="author" content="Reeds Solutions, LLC" />
+
+  <title>Careers | Reeds Solutions, LLC</title>
+
+  <link rel="icon" href="favicon 2.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- Open Graph / Social Sharing -->
+  <meta property="og:title" content="Careers | Reeds Solutions, LLC" />
+  <meta property="og:description" content="Explore federal contracting careers with Reeds Solutions, LLC and apply online." />
+  <meta property="og:image" content="https://reedssolutionsllc.org/assets/og-image-careers.png" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://reedssolutionsllc.org/careers" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Careers | Reeds Solutions, LLC" />
+  <meta name="twitter:description" content="Explore federal contracting careers with Reeds Solutions, LLC and apply online." />
+  <meta name="twitter:image" content="https://reedssolutionsllc.org/assets/og-image-careers.png" />
+
+  <!-- Security -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; img-src 'self' data: https:; style-src 'self' 'unsafe-inline' https:; script-src 'self' 'unsafe-inline' https:;" />
+
+  <!-- Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
 </head>
+
 <body>
-  <header class="site-header">
-    <div class="container nav">
-      <a class="brand" href="./">Reeds Solutions, LLC</a>
-      <nav aria-label="Primary">
-        <a href="./index.html">Home</a>
-        <a href="./about.html">About</a>
-        <a href="./capabilities.html">Capabilities</a>
-        <a href="./contracting.html">Contracting Info</a>
-        <a href="./teaming.html">Teaming</a>
-        <a href="./past-performance.html">Past Performance</a>
-        <a href="./news.html">News</a>
-        <a href="./careers.html" aria-current="page">Careers</a>
-        <a class="btn-outline" href="./contact.html">Contact</a>
-      </nav>
-    </div>
+  <header role="banner">
+    <nav class="navbar" role="navigation" aria-label="Main Navigation">
+      <div class="logo">
+        <a href="index.html"><img src="logo-RS-machinery-detailed.svg" alt="Reeds Solutions, LLC Logo" /></a>
+      </div>
+      <ul class="nav-links">
+        <li><a href="about.html" aria-current="false">About</a></li>
+        <li><a href="capabilities.html" aria-current="false">Capabilities</a></li>
+        <li><a href="careers.html" aria-current="page">Careers</a></li>
+        <li><a href="news.html" aria-current="false">News</a></li>
+        <li><a href="contact.html" class="btn" aria-current="false">Contact</a></li>
+      </ul>
+    </nav>
   </header>
 
-  <main class="section">
-    <div class="container">
-      <h1>Careers at Reeds Solutions, LLC</h1>
-      <p class="lead">We’re building a compliance-first team that delivers results for federal missions. Submit your application below.</p>
+  <main role="main">
+    <section class="hero">
+      <div class="hero-content">
+        <h1>Careers at Reeds Solutions, LLC</h1>
+        <p>Join a trusted government contractor and grow your career while delivering mission-critical solutions.</p>
+      </div>
+    </section>
 
-      <section class="section">
-        <h2>What to Submit Now</h2>
-        <div class="grid">
-          <div class="card">
-            <h3>Required</h3>
-            <ul>
-              <li>Résumé (PDF)</li>
-              <li>Basic contact information</li>
-              <li>Clearance level (if any)</li>
-            </ul>
+    <section class="career-opportunities section-light">
+      <div class="container">
+        <h2>Current Openings</h2>
+        <ul class="job-list">
+          <li><strong>Project Manager</strong> — <a href="#apply">Apply Now</a></li>
+          <li><strong>Government Compliance Analyst</strong> — <a href="#apply">Apply Now</a></li>
+          <li><strong>Technical Consultant</strong> — <a href="#apply">Apply Now</a></li>
+          <li><strong>Administrative Support Specialist</strong> — <a href="#apply">Apply Now</a></li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="apply" class="section-dark">
+      <div class="container">
+        <h2>Apply Now</h2>
+        <form action="/submit-application" method="POST" aria-label="Career Application Form" class="career-form">
+          <div class="form-group">
+            <label for="full-name">Full Name</label>
+            <input type="text" id="full-name" name="full-name" required placeholder="Your full name" />
           </div>
-          <div class="card">
-            <h3>Optional (Helps Us Match You Faster)</h3>
-            <ul>
-              <li>Cover letter (PDF)</li>
-              <li>Relevant certifications (Security+, PMP, OSHA, etc.)</li>
-              <li>References (PDF)</li>
-            </ul>
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" required placeholder="you@example.com" />
           </div>
-        </div>
-        <p class="tiny"><strong>Note:</strong> I-9, W-4, direct deposit, and any public trust/clearance questionnaires (e.g., SF-85/SF-86) are collected <em>after a conditional offer</em> and are not requested on this website.</p>
-      </section>
-
-      <section class="section">
-        <h2>Submit Your Application</h2>
-        <form class="card" action="/.netlify/functions/apply" method="POST" enctype="multipart/form-data" novalidate>
-          <input type="text" name="bot-field" autocomplete="off" tabindex="-1" style="position:absolute;left:-9999px;" />
-
-          <div class="grid">
-            <label>Full Name
-              <input type="text" name="name" required autocomplete="name" />
-            </label>
-            <label>Email
-              <input type="email" name="email" required autocomplete="email" />
-            </label>
-            <label>Phone
-              <input type="tel" name="phone" autocomplete="tel" />
-            </label>
-            <label>City / State
-              <input type="text" name="location" autocomplete="address-level2" />
-            </label>
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" required placeholder="(123) 456-7890" />
           </div>
-
-          <div class="grid">
-            <label>Position or Interest Area
-              <input type="text" name="position" placeholder="e.g., Facilities Tech, Help Desk, Project Coordinator" />
-            </label>
-            <label>Current Clearance (if any)
-              <select name="clearance">
-                <option value="">None</option>
-                <option>Public Trust</option>
-                <option>Secret</option>
-                <option>Top Secret</option>
-              </select>
-            </label>
+          <div class="form-group">
+            <label for="position">Position Applying For</label>
+            <select id="position" name="position" required>
+              <option value="">Select a position</option>
+              <option value="project-manager">Project Manager</option>
+              <option value="compliance-analyst">Government Compliance Analyst</option>
+              <option value="technical-consultant">Technical Consultant</option>
+              <option value="admin-specialist">Administrative Support Specialist</option>
+            </select>
           </div>
-
-          <label>Brief Summary
-            <textarea name="summary" rows="5" placeholder="Tell us about your experience and availability."></textarea>
-          </label>
-
-          <div class="grid">
-            <label>Résumé (PDF) — Required
-              <input type="file" name="resume" accept=".pdf" required />
-            </label>
-            <label>Cover Letter (PDF)
-              <input type="file" name="cover" accept=".pdf" />
-            </label>
+          <div class="form-group">
+            <label for="resume">Resume / CV</label>
+            <input type="file" id="resume" name="resume" accept=".pdf,.doc,.docx" required />
           </div>
-
-          <label>Certifications / References (PDFs; you may select multiple)
-            <input type="file" name="attachments" accept=".pdf" multiple />
-          </label>
-
-          <label class="tiny">
-            <input type="checkbox" name="consent" required />
-            I consent to the processing of my application and confirm that my documents do not contain SSNs or other highly sensitive data.
-          </label>
-
-          <div><button class="btn primary" type="submit">Submit Application</button></div>
-          <p class="tiny">Having trouble? Email your résumé to <a href="mailto:Reedssolutionsllcorg@gmail.com">Reedssolutionsllcorg@gmail.com</a>.</p>
+          <div class="form-group">
+            <label for="cover-letter">Cover Letter</label>
+            <textarea id="cover-letter" name="cover-letter" rows="5" placeholder="Optional cover letter"></textarea>
+          </div>
+          <button type="submit" class="btn-primary">Submit Application</button>
         </form>
-      </section>
-    </div>
+      </div>
+    </section>
   </main>
 
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <div>© <span id="y"></span> Reeds Solutions, LLC • UEI: L5W1JWUUDMW3 • CAGE: 157R9</div>
-      <div class="tiny">Equal Opportunity Employer • FAR/DFARS-aligned • <a href="./privacy.html">Privacy</a> • <a href="./terms.html">Terms</a></div>
+  <footer role="contentinfo">
+    <div class="footer-content">
+      <p>© 2025 Reeds Solutions, LLC. All rights reserved.</p>
+      <div class="socials">
+        <a href="https://www.linkedin.com/company/reedssolutionsllc" aria-label="LinkedIn"><img src="linkedin.svg" alt="LinkedIn" /></a>
+        <a href="https://www.facebook.com/reedssolutionsllc" aria-label="Facebook"><img src="facebook.svg" alt="Facebook" /></a>
+        <a href="https://www.youtube.com/@reedssolutionsllc" aria-label="YouTube"><img src="youtube.svg" alt="YouTube" /></a>
+      </div>
     </div>
   </footer>
-
-  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
 </body>
 </html>
