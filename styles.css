@@ -1,17 +1,22 @@
-/* ==========================================================
-   Reed Solutions, LLC — Global Stylesheet
-   Author: Reed Solutions Web Division
-   Version: 1.0.0
-   Updated: October 2025
-   ========================================================== */
+/* =========================
+   Reed Solutions, LLC Stylesheet
+   ========================= */
 
-/* ---------- CSS RESET ---------- */
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
+/* -------- Root Variables -------- */
+:root {
+  --navy: #001f3f;
+  --silver: #c0c0c0;
+  --green: #00a86b;
+  --white: #ffffff;
+  --black: #111111;
+  --font-primary: "Inter", "Segoe UI", Arial, sans-serif;
+}
+
+/* -------- Reset & Base Styles -------- */
+* {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 html {
@@ -19,265 +24,209 @@ html {
 }
 
 body {
-  font-family: "Inter", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  background-color: #f8f9fa;
-  color: #1b1b1b;
+  font-family: var(--font-primary);
+  color: var(--black);
+  background-color: var(--white);
   line-height: 1.6;
+  overflow-x: hidden;
 }
 
-/* ---------- COLOR VARIABLES ---------- */
-:root {
-  --navy: #002147;
-  --green: #2ecc71;
-  --silver: #dfe6e9;
-  --white: #ffffff;
-  --gray: #6c757d;
-  --light-gray: #f0f2f5;
-  --dark: #1b1b1b;
-  --shadow: rgba(0, 0, 0, 0.1);
-}
-
-/* ---------- GLOBAL ELEMENTS ---------- */
-a {
-  color: var(--green);
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-a:hover {
-  color: var(--navy);
-}
-
-h1, h2, h3, h4, h5, h6 {
-  font-weight: 700;
-  color: var(--navy);
-  margin-bottom: 0.5rem;
-}
-
-p {
-  margin-bottom: 1rem;
-  color: var(--dark);
-}
-
-button {
-  background: var(--green);
-  color: var(--white);
-  border: none;
-  border-radius: 8px;
-  padding: 0.6rem 1.2rem;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  font-weight: 600;
-}
-
-button:hover {
-  background: var(--navy);
-}
-
-/* ---------- NAVBAR ---------- */
+/* -------- Navbar -------- */
 header {
   background-color: var(--navy);
   color: var(--white);
-  padding: 0.8rem 2rem;
+  padding: 1rem 2rem;
   position: sticky;
   top: 0;
   z-index: 1000;
-  box-shadow: 0 2px 6px var(--shadow);
 }
 
-nav {
+.navbar {
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  flex-wrap: wrap;
-}
-
-.logo {
-  display: flex;
   align-items: center;
-  gap: 10px;
 }
 
 .logo img {
-  height: 45px;
+  height: 48px;
 }
 
-nav ul {
+.nav-links {
   list-style: none;
   display: flex;
-  flex-wrap: wrap;
   gap: 1.5rem;
 }
 
-nav ul li a {
+.nav-links a {
   color: var(--white);
+  text-decoration: none;
   font-weight: 600;
+  transition: color 0.3s;
 }
 
-nav ul li a:hover {
+.nav-links a:hover {
   color: var(--green);
 }
 
-/* ---------- HERO SECTION ---------- */
+/* -------- Hero Section -------- */
 .hero {
-  background: linear-gradient(rgba(0, 33, 71, 0.8), rgba(0, 33, 71, 0.8)),
-              url('../assets/images/og-image.png') center/cover no-repeat;
+  background: linear-gradient(to right, var(--navy), var(--green));
   color: var(--white);
   text-align: center;
-  padding: 6rem 1rem;
+  padding: 5rem 2rem;
 }
 
 .hero h1 {
-  font-size: 2.8rem;
+  font-size: 2.5rem;
   margin-bottom: 1rem;
 }
 
 .hero p {
-  font-size: 1.2rem;
+  font-size: 1.25rem;
   max-width: 700px;
-  margin: 0 auto;
-  color: var(--silver);
+  margin: 0 auto 2rem;
 }
 
-.hero button {
-  margin-top: 1.5rem;
+.cta-btn {
+  background-color: var(--green);
+  color: var(--white);
+  padding: 0.8rem 1.8rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
 }
 
-/* ---------- SECTIONS ---------- */
-section {
+.cta-btn:hover {
+  background-color: var(--silver);
+  color: var(--navy);
+}
+
+/* -------- Services Section -------- */
+.services {
   padding: 4rem 2rem;
-  background-color: var(--white);
-}
-
-section:nth-child(even) {
-  background-color: var(--light-gray);
-}
-
-.section-title {
   text-align: center;
+  background-color: #f9f9f9;
+}
+
+.services h2 {
+  color: var(--navy);
   margin-bottom: 2rem;
+  font-size: 2rem;
 }
 
-/* ---------- GRID LAYOUT ---------- */
-.grid {
+.service-grid {
   display: grid;
-  gap: 2rem;
-}
-
-.grid-2 {
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-}
-
-.grid-3 {
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  max-width: 1100px;
+  margin: 0 auto;
 }
 
-/* ---------- CARDS ---------- */
-.card {
+.service-grid article {
   background: var(--white);
+  border: 1px solid var(--silver);
   border-radius: 12px;
-  box-shadow: 0 3px 10px var(--shadow);
   padding: 2rem;
-  text-align: center;
-  transition: transform 0.3s ease;
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
-.card:hover {
+.service-grid article:hover {
   transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
 }
 
-/* ---------- FOOTER ---------- */
-footer {
+.service-grid h3 {
+  color: var(--green);
+  margin-bottom: 1rem;
+}
+
+/* -------- About CTA Section -------- */
+.about-cta {
+  text-align: center;
+  padding: 4rem 2rem;
   background: var(--navy);
   color: var(--white);
-  padding: 2rem;
-  text-align: center;
-  font-size: 0.9rem;
 }
 
-footer a {
+.about-cta h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.about-cta p {
+  max-width: 700px;
+  margin: 0 auto 2rem;
+}
+
+.secondary-btn {
+  background: var(--silver);
+  color: var(--navy);
+  padding: 0.7rem 1.6rem;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.secondary-btn:hover {
+  background: var(--green);
+  color: var(--white);
+}
+
+/* -------- Footer -------- */
+footer {
+  background-color: var(--navy);
+  color: var(--silver);
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.95rem;
+}
+
+.footer-links {
+  margin-top: 1rem;
+}
+
+.footer-links a {
+  color: var(--silver);
+  text-decoration: none;
+  margin: 0 0.5rem;
+  transition: color 0.3s;
+}
+
+.footer-links a:hover {
   color: var(--green);
 }
 
-footer a:hover {
-  color: var(--silver);
-}
-
-/* ---------- CONTACT FORM ---------- */
-form {
-  max-width: 600px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-
-input,
-textarea,
-select {
-  width: 100%;
-  padding: 0.75rem;
-  border-radius: 6px;
-  border: 1px solid var(--silver);
-  font-size: 1rem;
-}
-
-input:focus,
-textarea:focus,
-select:focus {
-  border-color: var(--green);
-  outline: none;
-  box-shadow: 0 0 0 2px rgba(46, 204, 113, 0.2);
-}
-
-/* ---------- RESPONSIVE ---------- */
-@media (max-width: 768px) {
-  nav ul {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .hero h1 {
-    font-size: 2.2rem;
-  }
-
-  .hero p {
-    font-size: 1rem;
-  }
-}
-
-/* ---------- ACCESSIBILITY ---------- */
-:focus-visible {
+/* -------- Accessibility -------- */
+a:focus,
+button:focus {
   outline: 3px solid var(--green);
   outline-offset: 3px;
 }
 
-[aria-hidden="true"] {
-  display: none !important;
-}
+/* -------- Responsive Adjustments -------- */
+@media (max-width: 768px) {
+  .nav-links {
+    flex-direction: column;
+    align-items: center;
+    background: var(--navy);
+    position: absolute;
+    top: 70px;
+    right: 0;
+    width: 100%;
+    display: none;
+  }
 
-/* ---------- UTILITIES ---------- */
-.text-center {
-  text-align: center;
-}
+  .nav-links.active {
+    display: flex;
+  }
 
-.text-white {
-  color: var(--white);
-}
+  .hero h1 {
+    font-size: 2rem;
+  }
 
-.text-green {
-  color: var(--green);
-}
-
-.bg-navy {
-  background-color: var(--navy);
-  color: var(--white);
-}
-
-.mt-2 {
-  margin-top: 2rem;
-}
-
-.mb-2 {
-  margin-bottom: 2rem;
+  .service-grid {
+    grid-template-columns: 1fr;
+  }
 }
