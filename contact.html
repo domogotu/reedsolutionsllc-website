@@ -1,144 +1,115 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Contact — Reeds Solutions, LLC</title>
-  <meta name="description" content="Contact Reeds Solutions, LLC for teaming, RFQs, or capability discussions." />
-  <link rel="icon" href="./favicon 2.svg" type="image/svg+xml" />
-  <link rel="stylesheet" href="./styles.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Contact Reeds Solutions, LLC for inquiries about federal contracting, business automation, or partnership opportunities." />
+  <meta name="keywords" content="Reeds Solutions, contact, government contracting, business inquiries" />
+  <meta name="author" content="Reeds Solutions, LLC" />
+
+  <title>Contact | Reeds Solutions, LLC</title>
+
+  <link rel="icon" href="favicon 2.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- Open Graph / Social Sharing -->
+  <meta property="og:title" content="Contact | Reeds Solutions, LLC" />
+  <meta property="og:description" content="Reach out to Reeds Solutions, LLC for federal contracting or business inquiries." />
+  <meta property="og:image" content="https://reedssolutionsllc.org/assets/og-image-contact.png" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://reedssolutionsllc.org/contact" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Contact | Reeds Solutions, LLC" />
+  <meta name="twitter:description" content="Reach out to Reeds Solutions, LLC for federal contracting or business inquiries." />
+  <meta name="twitter:image" content="https://reedssolutionsllc.org/assets/og-image-contact.png" />
+
+  <!-- Security -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; img-src 'self' data: https:; style-src 'self' 'unsafe-inline' https:; script-src 'self' 'unsafe-inline' https:;" />
+
+  <!-- Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
 </head>
+
 <body>
-  <header class="site-header">
-    <div class="container nav">
-      <a class="brand" href="./">Reeds Solutions, LLC</a>
-      <nav aria-label="Primary">
-        <a href="./index.html">Home</a>
-        <a href="./about.html">About</a>
-        <a href="./capabilities.html">Capabilities</a>
-        <a href="./contracting.html">Contracting Info</a>
-        <a href="./teaming.html">Teaming</a>
-        <a href="./past-performance.html">Past Performance</a>
-        <a href="./news.html">News</a>
-        <a href="./careers.html">Careers</a>
-        <a class="btn-outline" href="./contact.html" aria-current="page">Contact</a>
-      </nav>
-    </div>
+  <header role="banner">
+    <nav class="navbar" role="navigation" aria-label="Main Navigation">
+      <div class="logo">
+        <a href="index.html"><img src="logo-RS-machinery-detailed.svg" alt="Reeds Solutions, LLC Logo" /></a>
+      </div>
+      <ul class="nav-links">
+        <li><a href="about.html" aria-current="false">About</a></li>
+        <li><a href="capabilities.html" aria-current="false">Capabilities</a></li>
+        <li><a href="careers.html" aria-current="false">Careers</a></li>
+        <li><a href="news.html" aria-current="false">News</a></li>
+        <li><a href="contact.html" class="btn" aria-current="page">Contact</a></li>
+      </ul>
+    </nav>
   </header>
 
-  <main class="section">
-    <div class="container">
-      <h1>Contact Reeds Solutions, LLC</h1>
-      <p>Reach out for teaming, RFQs, or capability discussions. We typically respond within 1–2 business days.</p>
+  <main role="main">
+    <section class="hero">
+      <div class="hero-content">
+        <h1>Contact Reeds Solutions, LLC</h1>
+        <p>We’re here to help with federal contracting inquiries, business automation solutions, or partnership opportunities.</p>
+      </div>
+    </section>
 
-      <section class="card">
-        <p><strong>Email:</strong> <a href="mailto:Reedssolutionsllcorg@gmail.com">Reedssolutionsllcorg@gmail.com</a><br>
-           <strong>Website:</strong> <a href="https://reedssolutionsllc.org/">reedssolutionsllc.org</a></p>
-        <p class="tiny">We keep sensitive information private. No physical address or personal phone numbers are displayed on this site.</p>
-      </section>
-
-      <section class="section">
-        <form id="rfqForm" class="card" novalidate>
-          <!-- Honeypot -->
-          <input type="text" name="bot-field" autocomplete="off" tabindex="-1" style="position:absolute;left:-9999px;" />
-
-          <label>Full Name
-            <input name="name" type="text" required autocomplete="name" />
-          </label>
-
-          <label>Email
-            <input name="email" type="email" required autocomplete="email" />
-          </label>
-
-          <label>Company / Agency
-            <input name="company" type="text" autocomplete="organization" />
-          </label>
-
-          <label>Phone
-            <input name="phone" type="tel" autocomplete="tel" />
-          </label>
-
-          <label>Service Area
-            <select name="service" required>
-              <option value="">Select…</option>
-              <option>IT Operations</option>
-              <option>Networks & Cabling</option>
-              <option>Facilities Support</option>
-              <option>Compliance & Quality</option>
-              <option>Other</option>
-            </select>
-          </label>
-
-          <label>Timeline
-            <input name="timeline" type="text" placeholder="ASAP, 30–60 days, etc." />
-          </label>
-
-          <label>Location / Place of Performance
-            <input name="location" type="text" />
-          </label>
-
-          <label>Details / Scope
-            <textarea name="details" rows="6" required></textarea>
-          </label>
-
-          <div>
-            <button class="btn primary" type="submit">Send Request</button>
+    <section class="contact-form-section section-light">
+      <div class="container">
+        <h2>Send Us a Message</h2>
+        <form action="/submit-contact" method="POST" aria-label="Contact Form" class="contact-form">
+          <div class="form-group">
+            <label for="full-name">Full Name</label>
+            <input type="text" id="full-name" name="full-name" required placeholder="Your full name" />
           </div>
-          <p id="status" class="tiny" role="status" aria-live="polite" style="margin-top:.75rem;"></p>
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" required placeholder="you@example.com" />
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" placeholder="(Optional)" />
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" required placeholder="Type your message here"></textarea>
+          </div>
+          <button type="submit" class="btn-primary">Submit</button>
         </form>
-      </section>
-    </div>
+      </div>
+    </section>
+
+    <section class="contact-info section-dark">
+      <div class="container">
+        <h2>Our Office</h2>
+        <p>Reeds Solutions, LLC<br>
+        123 Business Rd.<br>
+        Compton, CA 90220<br>
+        Email: <a href="mailto:Reedssolutionsllcorg@gmail.com">Reedssolutionsllcorg@gmail.com</a><br>
+        Phone: (123) 456-7890</p>
+        <!-- Optional: Embed Google Map -->
+        <!-- <iframe src="GOOGLE_MAP_EMBED_URL" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe> -->
+      </div>
+    </section>
   </main>
 
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <div>© <span id="y"></span> Reeds Solutions, LLC • UEI: L5W1JWUUDMW3 • CAGE: 157R9</div>
-      <div class="tiny">FAR/DFARS-aligned • Audit-ready processes • CPARS support • <a href="./privacy.html">Privacy</a> • <a href="./terms.html">Terms</a></div>
+  <footer role="contentinfo">
+    <div class="footer-content">
+      <p>© 2025 Reeds Solutions, LLC. All rights reserved.</p>
+      <div class="socials">
+        <a href="https://www.linkedin.com/company/reedssolutionsllc" aria-label="LinkedIn"><img src="linkedin.svg" alt="LinkedIn" /></a>
+        <a href="https://www.facebook.com/reedssolutionsllc" aria-label="Facebook"><img src="facebook.svg" alt="Facebook" /></a>
+        <a href="https://www.youtube.com/@reedssolutionsllc" aria-label="YouTube"><img src="youtube.svg" alt="YouTube" /></a>
+      </div>
     </div>
   </footer>
-
-  <script>
-    document.getElementById('y').textContent = new Date().getFullYear();
-
-    // JSON submit so the function receives clean data
-    const form = document.getElementById('rfqForm');
-    const statusEl = document.getElementById('status');
-
-    form.addEventListener('submit', async (e) => {
-      e.preventDefault();
-      const hp = form.querySelector('[name="bot-field"]');
-      if (hp && hp.value) return;
-
-      const fd = new FormData(form);
-      const data = Object.fromEntries(fd.entries());
-
-      statusEl.textContent = 'Sending…';
-
-      try {
-        const resp = await fetch('/.netlify/functions/send-email', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(data)
-        });
-
-        if (resp.status === 302 || resp.status === 303) {
-          window.location.href = resp.headers.get('Location') || '/thanks.html';
-          return;
-        }
-
-        if (resp.ok) {
-          window.location.href = '/thanks.html';
-          return;
-        }
-
-        const text = await resp.text();
-        statusEl.textContent = 'There was an error sending your request. Please email us directly.';
-        console.error('Function error:', resp.status, text);
-      } catch (err) {
-        statusEl.textContent = 'Network error. Please try again.';
-        console.error(err);
-      }
-    });
-  </script>
 </body>
 </html>
