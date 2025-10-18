@@ -1,131 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- ✅ Meta and SEO -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Reed Solutions, LLC — simplifying government contracting, business development, and digital transformation through reliable, modern solutions." />
-  <meta name="keywords" content="Reed Solutions, LLC, government contracting, business consulting, automation, digital strategy" />
+  <meta name="description" content="Reed Solutions, LLC — Innovative contracting, federal pathways, and business automation solutions." />
+  <meta name="keywords" content="Reed Solutions, government contracting, business automation, IT consulting, federal contracting" />
   <meta name="author" content="Reed Solutions, LLC" />
 
-  <!-- ✅ Title and Favicon -->
-  <title>Reed Solutions, LLC | Federal & Digital Business Solutions</title>
-  <link rel="icon" href="assets/img/logo.png" type="image/png" />
+  <title>Reed Solutions, LLC | Innovative Contracting & Business Solutions</title>
 
-  <!-- ✅ CSS Links -->
-  <link rel="stylesheet" href="assets/css/style.css" />
-  <link rel="stylesheet" href="assets/css/responsive.css" />
-  <link rel="stylesheet" href="assets/css/animations.css" />
+  <link rel="icon" href="favicon 2.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="styles.css" />
 
-  <!-- ✅ Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
+  <!-- SEO & Sharing -->
+  <meta property="og:title" content="Reed Solutions, LLC" />
+  <meta property="og:description" content="Federal contracting, automation, and business growth powered by Reed Solutions, LLC." />
+  <meta property="og:image" content="og-image.png" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://reedssolutionsllc.org" />
 
-  <!-- ✅ Scripts -->
-  <script defer src="assets/js/main.js"></script>
-  <script defer src="assets/js/form-validation.js"></script>
+  <!-- Security -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; img-src 'self' data: https:; style-src 'self' 'unsafe-inline' https:; script-src 'self' 'unsafe-inline' https:;" />
+
+  <!-- Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
 </head>
 
 <body>
-  <!-- ✅ Navigation -->
-  <header class="header">
-    <div class="container">
-      <a href="index.html" class="logo">
-        <img src="assets/img/logo.png" alt="Reed Solutions LLC Logo" />
-        <span>Reed Solutions, LLC</span>
-      </a>
-      <nav class="navbar">
-        <ul>
-          <li><a href="#home" class="active">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
-    </div>
+  <header>
+    <nav class="navbar">
+      <div class="logo">
+        <a href="index.html"><img src="logo-RS-machinery-detailed.svg" alt="Reed Solutions Logo" /></a>
+      </div>
+      <ul class="nav-links">
+        <li><a href="about.html">About</a></li>
+        <li><a href="capabilities.html">Capabilities</a></li>
+        <li><a href="careers.html">Careers</a></li>
+        <li><a href="news.html">News</a></li>
+        <li><a href="contact.html" class="btn">Contact</a></li>
+      </ul>
+    </nav>
   </header>
 
-  <!-- ✅ Hero Section -->
-  <section id="home" class="hero">
+  <section class="hero">
     <div class="hero-content">
-      <h1>Building Reliable Pathways to Government Success</h1>
-      <p>Reed Solutions, LLC helps small businesses and entrepreneurs access federal contracting, business automation, and modern digital solutions.</p>
-      <a href="#contact" class="btn primary-btn">Get Started</a>
+      <h1>Empowering Growth Through Innovation</h1>
+      <p>Reed Solutions, LLC delivers business automation, federal contracting, and scalable solutions for the modern enterprise.</p>
+      <a href="capabilities.html" class="btn-primary">Explore Our Capabilities</a>
     </div>
   </section>
 
-  <!-- ✅ About Section -->
-  <section id="about" class="about section">
-    <div class="container">
-      <h2>About Us</h2>
-      <p>
-        Reed Solutions, LLC is a modern consulting firm focused on empowering organizations to succeed through technology, federal contracting education, and automation. 
-        We streamline complex systems into simple, sustainable processes that help you grow.
-      </p>
-      <ul class="highlights">
-        <li>✔ Federal Pathways Initiative</li>
-        <li>✔ Automation & Process Optimization</li>
-        <li>✔ Strategic Partnership Development</li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- ✅ Services Section -->
-  <section id="services" class="services section">
-    <div class="container">
-      <h2>Our Services</h2>
-      <div class="service-cards">
-        <div class="card">
-          <h3>Government Contracting Support</h3>
-          <p>Guidance and preparation to help your business qualify, bid, and perform in federal contracting opportunities.</p>
-        </div>
-        <div class="card">
-          <h3>Digital & Automation Consulting</h3>
-          <p>We help you streamline daily operations, reduce manual tasks, and improve efficiency through smart automation tools.</p>
-        </div>
-        <div class="card">
-          <h3>Training & Workforce Development</h3>
-          <p>Workshops and training programs to strengthen your understanding of compliance, funding, and government readiness.</p>
-        </div>
+  <section class="services">
+    <h2>Our Core Services</h2>
+    <div class="service-grid">
+      <div class="service">
+        <h3>Government Contracting</h3>
+        <p>Partnering with agencies to deliver compliant, efficient, and high-quality performance.</p>
+      </div>
+      <div class="service">
+        <h3>Business Automation</h3>
+        <p>Streamlining operations with smart systems, integration, and AI-driven workflows.</p>
+      </div>
+      <div class="service">
+        <h3>Training & Development</h3>
+        <p>Empowering entrepreneurs and small businesses to navigate federal opportunities.</p>
       </div>
     </div>
   </section>
 
-  <!-- ✅ Contact Section -->
-  <section id="contact" class="contact section">
-    <div class="container">
-      <h2>Contact Us</h2>
-      <p>Have a question or want to collaborate? We’d love to hear from you.</p>
-
-      <form id="contact-form" action="forms/contact-form-handler.php" method="POST">
-        <div class="form-group">
-          <input type="text" name="name" placeholder="Your Name" required />
-          <input type="email" name="email" placeholder="Your Email" required />
-        </div>
-        <textarea name="message" placeholder="Your Message" required></textarea>
-        <button type="submit" class="btn secondary-btn">Send Message</button>
-      </form>
-
-      <div class="contact-info">
-        <p><strong>Email:</strong> <a href="mailto:reedssolutionsllcorg@gmail.com">reedssolutionsllcorg@gmail.com</a></p>
-        <p><strong>Website:</strong> <a href="https://reedssolutionsllc.org">https://reedssolutionsllc.org</a></p>
-      </div>
-    </div>
-  </section>
-
-  <!-- ✅ Footer -->
-  <footer class="footer">
-    <div class="container">
-      <p>© <span id="year"></span> Reed Solutions, LLC. All Rights Reserved.</p>
-      <div class="social-links">
-        <a href="#" aria-label="LinkedIn"><img src="assets/img/icons/linkedin.svg" alt="LinkedIn" /></a>
-        <a href="#" aria-label="Instagram"><img src="assets/img/icons/instagram.svg" alt="Instagram" /></a>
+  <footer>
+    <div class="footer-content">
+      <p>© 2025 Reed Solutions, LLC. All rights reserved.</p>
+      <div class="socials">
+        <a href="#"><img src="linkedin.svg" alt="LinkedIn" /></a>
+        <a href="#"><img src="facebook.svg" alt="Facebook" /></a>
+        <a href="#"><img src="youtube.svg" alt="YouTube" /></a>
       </div>
     </div>
   </footer>
-
-  <!-- ✅ JavaScript Year Auto-update -->
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
 </body>
 </html>
