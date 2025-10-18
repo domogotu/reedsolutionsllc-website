@@ -1,18 +1,43 @@
-# Force HTTP → HTTPS
-http://*  https://reedssolutionsllc.org/:splat 301!
+# ===================================
+# Reed Solutions, LLC — Redirect Rules
+# ===================================
 
-# Nice short paths
-/contact    /contact.html    301
-/contacts   /contact.html    301
-/thanks     /thanks.html     301
-/teaming    /teaming.html    301
-/careers    /careers.html    301
-/past-performance  /past-performance.html 301
-/news       /news.html       301
-/capability-statement  /capability-statement.html 301
+# --- Core Pages ---
+/              /index.html                200
+/about         /about.html                200
+/contact       /contact.html              200
+/careers       /careers.html              200
+/privacy       /privacy.html              200
+/terms         /terms.html                200
+/accessibility /accessibility.html        200
+/news          /news.html                 200
+/past-performance /past-performance.html  200
+/capabilities  /capabilities.html         200
+/contracting   /contracting.html          200
+/security      /security-compliance.html  200
+/teaming       /teaming.html              200
 
-# Clean endpoint alias (optional)
-# /apply    /.netlify/functions/apply  307
+# --- Application Form ---
+/apply         /careers.html#apply        200
 
-# Final catch-all
-/*        /404.html 404
+# --- Capability Statement PDF ---
+/capability-statement /capability-statement.pdf 200
+
+# --- External Social Links ---
+/facebook  https://www.facebook.com/reedssolutionsllc  301
+/linkedin  https://www.linkedin.com/company/reedssolutionsllc  301
+/youtube   https://www.youtube.com/@reedssolutionsllc          301
+/x         https://twitter.com/reedssolutionsllc               301
+
+# --- Error Handling ---
+/404        /404.html                404
+/*          /404.html                404
+
+# --- Future Expansion (APIs, apps, etc.) ---
+/api/*      /netlify/functions/:splat  200
+
+# --- SEO Canonical Redirects ---
+http://reedssolutionsllc.org/*  https://reedssolutionsllc.org/:splat  301!
+http://www.reedssolutionsllc.org/*  https://reedssolutionsllc.org/:splat  301!
+https://www.reedssolutionsllc.org/*  https://reedssolutionsllc.org/:splat  301!
+
