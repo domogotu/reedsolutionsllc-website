@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Join Reeds Solutions, LLC — explore federal contracting careers, apply online, and grow with a trusted government contractor." />
-  <meta name="keywords" content="Reeds Solutions, careers, government contracting jobs, federal contracting careers, apply online" />
+  <meta name="description" content="Careers at Reeds Solutions, LLC — Join our team and contribute to innovative federal contracting and business solutions." />
+  <meta name="keywords" content="Reeds Solutions, careers, jobs, employment, federal contracting, business solutions" />
   <meta name="author" content="Reeds Solutions, LLC" />
 
   <title>Careers | Reeds Solutions, LLC</title>
@@ -14,7 +14,7 @@
 
   <!-- Open Graph / Social Sharing -->
   <meta property="og:title" content="Careers | Reeds Solutions, LLC" />
-  <meta property="og:description" content="Explore federal contracting careers with Reeds Solutions, LLC and apply online." />
+  <meta property="og:description" content="Explore job opportunities and join the team at Reeds Solutions, LLC." />
   <meta property="og:image" content="https://reedssolutionsllc.org/assets/og-image-careers.png" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://reedssolutionsllc.org/careers" />
@@ -22,7 +22,7 @@
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Careers | Reeds Solutions, LLC" />
-  <meta name="twitter:description" content="Explore federal contracting careers with Reeds Solutions, LLC and apply online." />
+  <meta name="twitter:description" content="Explore job opportunities and join the team at Reeds Solutions, LLC." />
   <meta name="twitter:image" content="https://reedssolutionsllc.org/assets/og-image-careers.png" />
 
   <!-- Security -->
@@ -47,7 +47,7 @@
       <ul class="nav-links">
         <li><a href="about.html" aria-current="false">About</a></li>
         <li><a href="capabilities.html" aria-current="false">Capabilities</a></li>
-        <li><a href="careers.html" aria-current="page">Careers</a></li>
+        <li><a href="careers.html" aria-current="true">Careers</a></li>
         <li><a href="news.html" aria-current="false">News</a></li>
         <li><a href="contact.html" class="btn" aria-current="false">Contact</a></li>
       </ul>
@@ -58,56 +58,41 @@
     <section class="hero">
       <div class="hero-content">
         <h1>Careers at Reeds Solutions, LLC</h1>
-        <p>Join a trusted government contractor and grow your career while delivering mission-critical solutions.</p>
+        <p>Join our team and contribute to innovative federal contracting and business solutions.</p>
+        <a href="#apply" class="btn-primary">Apply Now</a>
       </div>
     </section>
 
-    <section class="career-opportunities section-light">
+    <section class="careers-section section-light">
       <div class="container">
-        <h2>Current Openings</h2>
-        <ul class="job-list">
-          <li><strong>Project Manager</strong> — <a href="#apply">Apply Now</a></li>
-          <li><strong>Government Compliance Analyst</strong> — <a href="#apply">Apply Now</a></li>
-          <li><strong>Technical Consultant</strong> — <a href="#apply">Apply Now</a></li>
-          <li><strong>Administrative Support Specialist</strong> — <a href="#apply">Apply Now</a></li>
+        <h2>Why Work With Us?</h2>
+        <ul>
+          <li>Collaborate with industry experts on federal contracting projects</li>
+          <li>Opportunities for professional growth and leadership</li>
+          <li>Work on innovative business automation and consulting solutions</li>
+          <li>Inclusive and accessible work environment</li>
         </ul>
-      </div>
-    </section>
 
-    <section id="apply" class="section-dark">
-      <div class="container">
-        <h2>Apply Now</h2>
-        <form action="/submit-application" method="POST" aria-label="Career Application Form" class="career-form">
-          <div class="form-group">
-            <label for="full-name">Full Name</label>
-            <input type="text" id="full-name" name="full-name" required placeholder="Your full name" />
-          </div>
-          <div class="form-group">
-            <label for="email">Email Address</label>
-            <input type="email" id="email" name="email" required placeholder="you@example.com" />
-          </div>
-          <div class="form-group">
-            <label for="phone">Phone Number</label>
-            <input type="tel" id="phone" name="phone" required placeholder="(123) 456-7890" />
-          </div>
-          <div class="form-group">
-            <label for="position">Position Applying For</label>
-            <select id="position" name="position" required>
-              <option value="">Select a position</option>
-              <option value="project-manager">Project Manager</option>
-              <option value="compliance-analyst">Government Compliance Analyst</option>
-              <option value="technical-consultant">Technical Consultant</option>
-              <option value="admin-specialist">Administrative Support Specialist</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label for="resume">Resume / CV</label>
-            <input type="file" id="resume" name="resume" accept=".pdf,.doc,.docx" required />
-          </div>
-          <div class="form-group">
-            <label for="cover-letter">Cover Letter</label>
-            <textarea id="cover-letter" name="cover-letter" rows="5" placeholder="Optional cover letter"></textarea>
-          </div>
+        <h2 id="apply">Application Form</h2>
+        <form action="/apply" method="POST" class="careers-form" aria-label="Job Application Form">
+          <label for="fullName">Full Name *</label>
+          <input type="text" id="fullName" name="fullName" required />
+
+          <label for="email">Email Address *</label>
+          <input type="email" id="email" name="email" required />
+
+          <label for="phone">Phone Number *</label>
+          <input type="tel" id="phone" name="phone" required />
+
+          <label for="position">Position Applying For *</label>
+          <input type="text" id="position" name="position" required />
+
+          <label for="resume">Upload Resume *</label>
+          <input type="file" id="resume" name="resume" accept=".pdf,.doc,.docx" required />
+
+          <label for="coverLetter">Cover Letter</label>
+          <textarea id="coverLetter" name="coverLetter" rows="5"></textarea>
+
           <button type="submit" class="btn-primary">Submit Application</button>
         </form>
       </div>
