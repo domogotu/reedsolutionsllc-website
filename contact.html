@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Contact Reeds Solutions, LLC for inquiries about federal contracting, business automation, or partnership opportunities." />
-  <meta name="keywords" content="Reeds Solutions, contact, government contracting, business inquiries" />
+  <meta name="description" content="Contact Reeds Solutions, LLC — Reach out for inquiries, support, and federal contracting solutions." />
+  <meta name="keywords" content="Reeds Solutions, contact, inquiries, federal contracting, business solutions" />
   <meta name="author" content="Reeds Solutions, LLC" />
 
   <title>Contact | Reeds Solutions, LLC</title>
@@ -14,7 +14,7 @@
 
   <!-- Open Graph / Social Sharing -->
   <meta property="og:title" content="Contact | Reeds Solutions, LLC" />
-  <meta property="og:description" content="Reach out to Reeds Solutions, LLC for federal contracting or business inquiries." />
+  <meta property="og:description" content="Reach out to Reeds Solutions, LLC for inquiries, support, or federal contracting solutions." />
   <meta property="og:image" content="https://reedssolutionsllc.org/assets/og-image-contact.png" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://reedssolutionsllc.org/contact" />
@@ -22,7 +22,7 @@
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Contact | Reeds Solutions, LLC" />
-  <meta name="twitter:description" content="Reach out to Reeds Solutions, LLC for federal contracting or business inquiries." />
+  <meta name="twitter:description" content="Reach out to Reeds Solutions, LLC for inquiries, support, or federal contracting solutions." />
   <meta name="twitter:image" content="https://reedssolutionsllc.org/assets/og-image-contact.png" />
 
   <!-- Security -->
@@ -49,7 +49,7 @@
         <li><a href="capabilities.html" aria-current="false">Capabilities</a></li>
         <li><a href="careers.html" aria-current="false">Careers</a></li>
         <li><a href="news.html" aria-current="false">News</a></li>
-        <li><a href="contact.html" class="btn" aria-current="page">Contact</a></li>
+        <li><a href="contact.html" class="btn" aria-current="true">Contact</a></li>
       </ul>
     </nav>
   </header>
@@ -58,45 +58,36 @@
     <section class="hero">
       <div class="hero-content">
         <h1>Contact Reeds Solutions, LLC</h1>
-        <p>We’re here to help with federal contracting inquiries, business automation solutions, or partnership opportunities.</p>
+        <p>Have questions, need support, or want to explore federal contracting solutions? Get in touch with us today.</p>
       </div>
     </section>
 
-    <section class="contact-form-section section-light">
+    <section class="contact-section section-light">
       <div class="container">
-        <h2>Send Us a Message</h2>
-        <form action="/submit-contact" method="POST" aria-label="Contact Form" class="contact-form">
-          <div class="form-group">
-            <label for="full-name">Full Name</label>
-            <input type="text" id="full-name" name="full-name" required placeholder="Your full name" />
-          </div>
-          <div class="form-group">
-            <label for="email">Email Address</label>
-            <input type="email" id="email" name="email" required placeholder="you@example.com" />
-          </div>
-          <div class="form-group">
-            <label for="phone">Phone Number</label>
-            <input type="tel" id="phone" name="phone" placeholder="(Optional)" />
-          </div>
-          <div class="form-group">
-            <label for="message">Message</label>
-            <textarea id="message" name="message" rows="5" required placeholder="Type your message here"></textarea>
-          </div>
-          <button type="submit" class="btn-primary">Submit</button>
+        <h2>Contact Form</h2>
+        <form action="/contact-submit" method="POST" class="contact-form" aria-label="Contact Form">
+          <label for="fullName">Full Name *</label>
+          <input type="text" id="fullName" name="fullName" required />
+
+          <label for="email">Email Address *</label>
+          <input type="email" id="email" name="email" required />
+
+          <label for="phone">Phone Number</label>
+          <input type="tel" id="phone" name="phone" />
+
+          <label for="subject">Subject *</label>
+          <input type="text" id="subject" name="subject" required />
+
+          <label for="message">Message *</label>
+          <textarea id="message" name="message" rows="5" required></textarea>
+
+          <button type="submit" class="btn-primary">Send Message</button>
         </form>
-      </div>
-    </section>
 
-    <section class="contact-info section-dark">
-      <div class="container">
-        <h2>Our Office</h2>
-        <p>Reeds Solutions, LLC<br>
-        123 Business Rd.<br>
-        Compton, CA 90220<br>
-        Email: <a href="mailto:Reedssolutionsllcorg@gmail.com">Reedssolutionsllcorg@gmail.com</a><br>
-        Phone: (123) 456-7890</p>
-        <!-- Optional: Embed Google Map -->
-        <!-- <iframe src="GOOGLE_MAP_EMBED_URL" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe> -->
+        <h2>Contact Information</h2>
+        <p>Email: <a href="mailto:Reedssolutionsllcorg@gmail.com">Reedssolutionsllcorg@gmail.com</a></p>
+        <p>Phone: (555) 555-5555</p>
+        <p>Address: 123 Business Rd, Compton, CA 90220</p>
       </div>
     </section>
   </main>
