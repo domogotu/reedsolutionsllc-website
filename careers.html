@@ -3,27 +3,26 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Careers at Reeds Solutions, LLC — Join our team and contribute to innovative federal contracting and business solutions." />
-  <meta name="keywords" content="Reeds Solutions, careers, jobs, employment, federal contracting, business solutions" />
-  <meta name="author" content="Reeds Solutions, LLC" />
-
-  <title>Careers | Reeds Solutions, LLC</title>
+  <title>Careers | Reed Solutions, LLC</title>
+  <meta name="description" content="Careers at Reed Solutions, LLC — Join our team and contribute to innovative federal contracting and business solutions." />
+  <meta name="keywords" content="Reed Solutions, careers, jobs, employment, federal contracting, business solutions" />
+  <meta name="author" content="Reed Solutions, LLC" />
 
   <link rel="icon" href="favicon 2.svg" type="image/svg+xml" />
   <link rel="stylesheet" href="styles.css" />
 
   <!-- Open Graph / Social Sharing -->
-  <meta property="og:title" content="Careers | Reeds Solutions, LLC" />
-  <meta property="og:description" content="Explore job opportunities and join the team at Reeds Solutions, LLC." />
-  <meta property="og:image" content="https://reedssolutionsllc.org/assets/og-image-careers.png" />
+  <meta property="og:title" content="Careers | Reed Solutions, LLC" />
+  <meta property="og:description" content="Explore job opportunities and join the team at Reed Solutions, LLC." />
+  <meta property="og:image" content="og-image-careers.png" />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://reedssolutionsllc.org/careers" />
+  <meta property="og:url" content="https://reedssolutionsllc.org/careers.html" />
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Careers | Reeds Solutions, LLC" />
-  <meta name="twitter:description" content="Explore job opportunities and join the team at Reeds Solutions, LLC." />
-  <meta name="twitter:image" content="https://reedssolutionsllc.org/assets/og-image-careers.png" />
+  <meta name="twitter:title" content="Careers | Reed Solutions, LLC" />
+  <meta name="twitter:description" content="Explore job opportunities and join the team at Reed Solutions, LLC." />
+  <meta name="twitter:image" content="og-image-careers.png" />
 
   <!-- Security -->
   <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; img-src 'self' data: https:; style-src 'self' 'unsafe-inline' https:; script-src 'self' 'unsafe-inline' https:;" />
@@ -39,40 +38,48 @@
 </head>
 
 <body>
+  <!-- Header -->
   <header role="banner">
     <nav class="navbar" role="navigation" aria-label="Main Navigation">
       <div class="logo">
-        <a href="index.html"><img src="logo-RS-machinery-detailed.svg" alt="Reeds Solutions, LLC Logo" /></a>
+        <a href="index.html"><img src="logo-RS-machinery-detailed.svg" alt="Reed Solutions Logo" loading="lazy" /></a>
       </div>
       <ul class="nav-links">
-        <li><a href="about.html" aria-current="false">About</a></li>
-        <li><a href="capabilities.html" aria-current="false">Capabilities</a></li>
-        <li><a href="careers.html" aria-current="true">Careers</a></li>
-        <li><a href="news.html" aria-current="false">News</a></li>
-        <li><a href="contact.html" class="btn" aria-current="false">Contact</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="capabilities.html">Capabilities</a></li>
+        <li><a href="careers.html" class="active">Careers</a></li>
+        <li><a href="news.html">News</a></li>
+        <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
   </header>
 
   <main role="main">
-    <section class="hero">
-      <div class="hero-content">
-        <h1>Careers at Reeds Solutions, LLC</h1>
+    <!-- Hero Section -->
+    <section class="hero" aria-label="Hero Section">
+      <div class="container">
+        <h1>Careers at Reed Solutions, LLC</h1>
         <p>Join our team and contribute to innovative federal contracting and business solutions.</p>
         <a href="#apply" class="btn-primary">Apply Now</a>
       </div>
     </section>
 
-    <section class="careers-section section-light">
+    <!-- Why Work With Us -->
+    <section class="services" aria-label="Why Work With Us">
       <div class="container">
         <h2>Why Work With Us?</h2>
-        <ul>
+        <ul class="career-benefits">
           <li>Collaborate with industry experts on federal contracting projects</li>
           <li>Opportunities for professional growth and leadership</li>
           <li>Work on innovative business automation and consulting solutions</li>
           <li>Inclusive and accessible work environment</li>
         </ul>
+      </div>
+    </section>
 
+    <!-- Application Form -->
+    <section class="careers-section section-light" aria-label="Job Application Form">
+      <div class="container">
         <h2 id="apply">Application Form</h2>
         <form action="/apply" method="POST" class="careers-form" aria-label="Job Application Form">
           <label for="fullName">Full Name *</label>
@@ -99,9 +106,16 @@
     </section>
   </main>
 
+  <!-- Footer -->
   <footer role="contentinfo">
-    <div class="footer-content">
-      <p>© 2025 Reeds Solutions, LLC. All rights reserved.</p>
+    <div class="footer-content container">
+      <p>&copy; <span id="year"></span> Reed Solutions, LLC. All rights reserved.</p>
+      <div class="footer-links">
+        <a href="privacy.html">Privacy Policy</a> |
+        <a href="terms.html">Terms of Use</a> |
+        <a href="accessibility.html">Accessibility</a> |
+        <a href="security-compliance.html">Security & Compliance</a>
+      </div>
       <div class="socials">
         <a href="https://www.linkedin.com/company/reedssolutionsllc" aria-label="LinkedIn"><img src="linkedin.svg" alt="LinkedIn" /></a>
         <a href="https://www.facebook.com/reedssolutionsllc" aria-label="Facebook"><img src="facebook.svg" alt="Facebook" /></a>
@@ -109,5 +123,9 @@
       </div>
     </div>
   </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
