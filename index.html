@@ -3,24 +3,30 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Reed Solutions, LLC — Innovative contracting, federal pathways, and business automation solutions." />
-  <meta name="keywords" content="Reed Solutions, government contracting, business automation, IT consulting, federal contracting" />
+  <meta name="description" content="Reed Solutions, LLC provides federal contracting, business automation, and scalable solutions for modern enterprises." />
+  <meta name="keywords" content="Reed Solutions, government contracting, business automation, IT consulting, federal services" />
   <meta name="author" content="Reed Solutions, LLC" />
 
-  <title>Reed Solutions, LLC | Innovative Contracting & Business Solutions</title>
+  <title>Reed Solutions, LLC | Federal Contracting & Business Automation</title>
 
   <link rel="icon" href="favicon 2.svg" type="image/svg+xml" />
   <link rel="stylesheet" href="styles.css" />
 
-  <!-- SEO & Sharing -->
-  <meta property="og:title" content="Reed Solutions, LLC" />
-  <meta property="og:description" content="Federal contracting, automation, and business growth powered by Reed Solutions, LLC." />
+  <!-- Open Graph / Social Sharing -->
+  <meta property="og:title" content="Reed Solutions, LLC | Federal Contracting & Business Automation" />
+  <meta property="og:description" content="Delivering business automation, federal contracting, and scalable solutions for modern enterprises." />
   <meta property="og:image" content="og-image.png" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://reedssolutionsllc.org" />
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Reed Solutions, LLC | Federal Contracting & Business Automation" />
+  <meta name="twitter:description" content="Delivering business automation, federal contracting, and scalable solutions for modern enterprises." />
+  <meta name="twitter:image" content="og-image.png" />
 
   <!-- Security -->
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; img-src 'self' data: https:; style-src 'self' 'unsafe-inline' https:; script-src 'self' 'unsafe-inline' https:;" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; img-src 'self' data: https:; style-src 'self' 'unsafe-inline' https:; script-src 'self' https://www.googletagmanager.com;" />
 
   <!-- Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
@@ -31,12 +37,11 @@
     gtag('config', 'G-XXXXXXXXXX');
   </script>
 </head>
-
 <body>
   <header>
-    <nav class="navbar">
+    <nav class="navbar" aria-label="Main Navigation">
       <div class="logo">
-        <a href="index.html"><img src="logo-RS-machinery-detailed.svg" alt="Reed Solutions Logo" /></a>
+        <a href="index.html"><img src="logo-RS-machinery-detailed.svg" alt="Reed Solutions Logo" loading="lazy" /></a>
       </div>
       <ul class="nav-links">
         <li><a href="about.html">About</a></li>
@@ -48,41 +53,47 @@
     </nav>
   </header>
 
-  <section class="hero">
-    <div class="hero-content">
-      <h1>Empowering Growth Through Innovation</h1>
-      <p>Reed Solutions, LLC delivers business automation, federal contracting, and scalable solutions for the modern enterprise.</p>
-      <a href="capabilities.html" class="btn-primary">Explore Our Capabilities</a>
-    </div>
-  </section>
+  <main>
+    <section class="hero" aria-label="Hero Section">
+      <div class="container hero-content">
+        <h1>Empowering Growth Through Innovation</h1>
+        <p>Reed Solutions, LLC delivers business automation, federal contracting, and scalable solutions for modern enterprises.</p>
+        <a href="capabilities.html" class="btn-primary">Explore Our Capabilities</a>
+      </div>
+    </section>
 
-  <section class="services">
-    <h2>Our Core Services</h2>
-    <div class="service-grid">
-      <div class="service">
-        <h3>Government Contracting</h3>
-        <p>Partnering with agencies to deliver compliant, efficient, and high-quality performance.</p>
+    <section class="services" aria-label="Our Core Services">
+      <div class="container">
+        <h2>Our Core Services</h2>
+        <div class="service-grid">
+          <div class="service">
+            <h3>Government Contracting</h3>
+            <p>Partnering with agencies to deliver compliant, efficient, and high-quality performance.</p>
+          </div>
+          <div class="service">
+            <h3>Business Automation</h3>
+            <p>Streamlining operations with smart systems, integration, and AI-driven workflows.</p>
+          </div>
+          <div class="service">
+            <h3>Training & Development</h3>
+            <p>Empowering entrepreneurs and small businesses to navigate federal opportunities.</p>
+          </div>
+        </div>
       </div>
-      <div class="service">
-        <h3>Business Automation</h3>
-        <p>Streamlining operations with smart systems, integration, and AI-driven workflows.</p>
-      </div>
-      <div class="service">
-        <h3>Training & Development</h3>
-        <p>Empowering entrepreneurs and small businesses to navigate federal opportunities.</p>
-      </div>
-    </div>
-  </section>
+    </section>
+  </main>
 
   <footer>
-    <div class="footer-content">
+    <div class="footer-content container">
       <p>© 2025 Reed Solutions, LLC. All rights reserved.</p>
       <div class="socials">
-        <a href="#"><img src="linkedin.svg" alt="LinkedIn" /></a>
-        <a href="#"><img src="facebook.svg" alt="Facebook" /></a>
-        <a href="#"><img src="youtube.svg" alt="YouTube" /></a>
+        <a href="#"><img src="linkedin.svg" alt="LinkedIn" loading="lazy" /></a>
+        <a href="#"><img src="facebook.svg" alt="Facebook" loading="lazy" /></a>
+        <a href="#"><img src="youtube.svg" alt="YouTube" loading="lazy" /></a>
       </div>
     </div>
   </footer>
+
+  <script src="main.js"></script>
 </body>
 </html>
