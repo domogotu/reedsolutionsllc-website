@@ -3,36 +3,25 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Reeds Solutions LLC — Innovative contracting, federal pathways, and business automation solutions." />
-  <meta name="keywords" content="Reeds Solutions, government contracting, business automation, IT consulting, federal contracting" />
+  <meta name="description" content="Reeds Solutions LLC — Innovative federal contracting, business automation, and operational solutions for modern enterprises." />
+  <meta name="keywords" content="Reeds Solutions LLC, government contracting, business automation, IT consulting, federal contracting" />
   <meta name="author" content="Reeds Solutions LLC" />
-
+  
   <title>Reeds Solutions LLC | Innovative Contracting & Business Solutions</title>
 
   <link rel="icon" href="favicon 2.svg" type="image/svg+xml" />
   <link rel="stylesheet" href="styles.css" />
 
-  <!-- SEO & Sharing -->
+  <!-- Open Graph / Social Sharing -->
   <meta property="og:title" content="Reeds Solutions LLC" />
   <meta property="og:description" content="Federal contracting, automation, and business growth powered by Reeds Solutions LLC." />
   <meta property="og:image" content="og-image.png" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://reedssolutionsllc.org" />
-
-  <!-- Security -->
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; img-src 'self' data: https:; style-src 'self' 'unsafe-inline' https:; script-src 'self' 'unsafe-inline' https:;" />
-
-  <!-- Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-XXXXXXXXXX');
-  </script>
 </head>
 
 <body>
+  <!-- Header / Navigation -->
   <header>
     <nav class="navbar">
       <div class="logo">
@@ -48,41 +37,55 @@
     </nav>
   </header>
 
+  <!-- Hero Section -->
   <section class="hero">
     <div class="hero-content">
       <h1>Empowering Growth Through Innovation</h1>
-      <p>Reeds Solutions LLC delivers business automation, federal contracting, and scalable solutions for the modern enterprise.</p>
+      <p>Reeds Solutions LLC delivers business automation, federal contracting, and scalable solutions for modern enterprises.</p>
       <a href="capabilities.html" class="btn-primary">Explore Our Capabilities</a>
     </div>
   </section>
 
+  <!-- Core Services -->
   <section class="services">
     <h2>Our Core Services</h2>
     <div class="service-grid">
-      <div class="service">
+      <article>
         <h3>Government Contracting</h3>
         <p>Partnering with agencies to deliver compliant, efficient, and high-quality performance.</p>
-      </div>
-      <div class="service">
+      </article>
+      <article>
         <h3>Business Automation</h3>
         <p>Streamlining operations with smart systems, integration, and AI-driven workflows.</p>
-      </div>
-      <div class="service">
+      </article>
+      <article>
         <h3>Training & Development</h3>
         <p>Empowering entrepreneurs and small businesses to navigate federal opportunities.</p>
-      </div>
+      </article>
     </div>
   </section>
 
+  <!-- Call to Action -->
+  <section class="about-cta">
+    <h2>Partner With Us</h2>
+    <p>Reeds Solutions LLC is ready to support complex projects and operational success for government and private-sector partners.</p>
+    <a href="contact.html" class="secondary-btn">Get in Touch</a>
+  </section>
+
+  <!-- Footer -->
   <footer>
     <div class="footer-content">
-      <p>© 2025 Reeds Solutions LLC. All rights reserved.</p>
+      <p>© <span id="year"></span> Reeds Solutions LLC. All rights reserved.</p>
       <div class="socials">
-        <a href="#"><img src="linkedin.svg" alt="LinkedIn" /></a>
-        <a href="#"><img src="facebook.svg" alt="Facebook" /></a>
-        <a href="#"><img src="youtube.svg" alt="YouTube" /></a>
+        <a href="https://www.linkedin.com/company/reedssolutionsllc"><img src="linkedin.svg" alt="LinkedIn" /></a>
+        <a href="https://www.facebook.com/reedssolutionsllc"><img src="facebook.svg" alt="Facebook" /></a>
+        <a href="https://www.youtube.com/@reedssolutionsllc"><img src="youtube.svg" alt="YouTube" /></a>
       </div>
     </div>
   </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
