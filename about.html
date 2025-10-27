@@ -5,17 +5,32 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>About Us | Reed Solutions, LLC</title>
   <meta name="description" content="Learn more about Reed Solutions, LLC — a trusted federal contracting and digital solutions provider specializing in innovation, compliance, and reliability." />
-  <link rel="stylesheet" href="styles.css" />
+  <meta name="keywords" content="Reed Solutions, About, federal contracting, business automation, IT consulting" />
+  <meta name="author" content="Reed Solutions, LLC" />
+
   <link rel="icon" href="favicon 2.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- Open Graph / Social Sharing -->
+  <meta property="og:title" content="About Us | Reed Solutions, LLC" />
+  <meta property="og:description" content="Discover Reed Solutions, LLC — leaders in federal contracting, business automation, and innovative solutions." />
+  <meta property="og:image" content="og-image.png" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://reedssolutionsllc.org/about.html" />
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="About Us | Reed Solutions, LLC" />
+  <meta name="twitter:description" content="Discover Reed Solutions, LLC — leaders in federal contracting, business automation, and innovative solutions." />
+  <meta name="twitter:image" content="og-image.png" />
 </head>
 <body>
-
   <!-- Header -->
   <header>
-    <div class="navbar">
+    <nav class="navbar" aria-label="Main Navigation">
       <div class="logo">
         <a href="index.html">
-          <img src="logo-RS-machinery-detailed.svg" alt="Reed Solutions Logo" />
+          <img src="logo-RS-machinery-detailed.svg" alt="Reed Solutions Logo" loading="lazy" />
         </a>
       </div>
       <ul class="nav-links">
@@ -26,77 +41,89 @@
         <li><a href="careers.html">Careers</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
-    </div>
+    </nav>
   </header>
 
-  <!-- Hero Section -->
-  <section class="hero">
-    <h1>About Reed Solutions, LLC</h1>
-    <p>Building reliable partnerships through innovation, precision, and purpose.</p>
-  </section>
+  <main>
+    <!-- Hero Section -->
+    <section class="hero" aria-label="Hero Section">
+      <div class="container">
+        <h1>About Reed Solutions, LLC</h1>
+        <p>Building reliable partnerships through innovation, precision, and purpose.</p>
+      </div>
+    </section>
 
-  <!-- Mission & Vision Section -->
-  <section class="services">
-    <h2>Our Mission & Vision</h2>
-    <div class="service-grid">
-      <article>
-        <h3>Our Mission</h3>
+    <!-- Mission & Vision Section -->
+    <section class="services" aria-label="Mission and Vision">
+      <div class="container">
+        <h2>Our Mission & Vision</h2>
+        <div class="service-grid">
+          <article>
+            <h3>Our Mission</h3>
+            <p>
+              At Reed Solutions, LLC, our mission is to deliver trusted, high-performance services 
+              that empower our partners and strengthen the future of government and private-sector operations. 
+              We believe in integrity, innovation, and measurable impact.
+            </p>
+          </article>
+          <article>
+            <h3>Our Vision</h3>
+            <p>
+              To be a nationally recognized leader in government contracting and technical solutions — 
+              known for reliability, agility, and results that advance communities and industries alike.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Core Values Section -->
+    <section class="about-cta" aria-label="Core Values">
+      <div class="container">
+        <h2>Our Core Values</h2>
+        <p>Every project we undertake reflects our commitment to excellence, service, and accountability.</p>
+        <ul class="core-values">
+          <li><strong>Integrity:</strong> We operate with transparency and honesty in every engagement.</li>
+          <li><strong>Innovation:</strong> We leverage technology and creativity to drive progress.</li>
+          <li><strong>Service:</strong> Our clients’ success is our highest priority.</li>
+          <li><strong>Reliability:</strong> We deliver quality, on time, every time.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Company Background Section -->
+    <section class="services" aria-label="Company Background">
+      <div class="container">
+        <h2>Our Background</h2>
         <p>
-          At Reed Solutions, LLC, our mission is to deliver trusted, high-performance services 
-          that empower our partners and strengthen the future of government and private-sector operations. 
-          We believe in integrity, innovation, and measurable impact.
+          Founded by Dominique Reed, <strong>Reed Solutions, LLC</strong> was established with a vision to bridge 
+          the gap between modern business innovation and government contracting efficiency. 
+          Based in California, we focus on delivering technology, operational, and compliance solutions 
+          that align with federal standards and community needs.
         </p>
-      </article>
-      <article>
-        <h3>Our Vision</h3>
-        <p>
-          To be a nationally recognized leader in government contracting and technical solutions — 
-          known for reliability, agility, and results that advance communities and industries alike.
-        </p>
-      </article>
-    </div>
-  </section>
+      </div>
+    </section>
 
-  <!-- Core Values Section -->
-  <section class="about-cta">
-    <h2>Our Core Values</h2>
-    <p>
-      Every project we undertake reflects our commitment to excellence, service, and accountability.
-    </p>
-    <ul style="text-align: left; max-width: 600px; margin: 2rem auto; line-height: 1.8;">
-      <li><strong>Integrity:</strong> We operate with transparency and honesty in every engagement.</li>
-      <li><strong>Innovation:</strong> We leverage technology and creativity to drive progress.</li>
-      <li><strong>Service:</strong> Our clients’ success is our highest priority.</li>
-      <li><strong>Reliability:</strong> We deliver quality, on time, every time.</li>
-    </ul>
-  </section>
-
-  <!-- History / About Company -->
-  <section class="services">
-    <h2>Our Background</h2>
-    <p style="max-width: 800px; margin: 0 auto;">
-      Founded by Dominique Reed, <strong>Reed Solutions, LLC</strong> was established with a vision to bridge 
-      the gap between modern business innovation and government contracting efficiency. 
-      Based in California, we focus on delivering technology, operational, and compliance solutions 
-      that align with federal standards and community needs.
-    </p>
-  </section>
-
-  <!-- Call to Action -->
-  <section class="about-cta">
-    <h2>Join Our Mission</h2>
-    <p>We’re always looking to partner with organizations and individuals who share our vision of progress and impact.</p>
-    <a href="contact.html" class="secondary-btn">Contact Us</a>
-  </section>
+    <!-- Call to Action Section -->
+    <section class="about-cta" aria-label="Join Our Mission">
+      <div class="container">
+        <h2>Join Our Mission</h2>
+        <p>We’re always looking to partner with organizations and individuals who share our vision of progress and impact.</p>
+        <a href="contact.html" class="secondary-btn">Contact Us</a>
+      </div>
+    </section>
+  </main>
 
   <!-- Footer -->
   <footer>
-    <p>&copy; <span id="year"></span> Reed Solutions, LLC. All Rights Reserved.</p>
-    <div class="footer-links">
-      <a href="privacy.html">Privacy Policy</a> |
-      <a href="terms.html">Terms of Use</a> |
-      <a href="accessibility.html">Accessibility</a> |
-      <a href="security-compliance.html">Security & Compliance</a>
+    <div class="footer-content container">
+      <p>&copy; <span id="year"></span> Reed Solutions, LLC. All Rights Reserved.</p>
+      <div class="footer-links">
+        <a href="privacy.html">Privacy Policy</a> |
+        <a href="terms.html">Terms of Use</a> |
+        <a href="accessibility.html">Accessibility</a> |
+        <a href="security-compliance.html">Security & Compliance</a>
+      </div>
     </div>
   </footer>
 
