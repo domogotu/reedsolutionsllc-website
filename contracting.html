@@ -11,11 +11,35 @@
 
   <link rel="icon" href="favicon 2.svg" type="image/svg+xml" />
   <link rel="stylesheet" href="styles.css" />
+
+  <!-- Open Graph / Social Sharing -->
+  <meta property="og:title" content="Contracting | Reeds Solutions LLC" />
+  <meta property="og:description" content="Explore Reeds Solutions LLC's federal contracting expertise and services for government agencies." />
+  <meta property="og:image" content="og-image.png" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://reedssolutionsllc.org/contracting" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Contracting | Reeds Solutions LLC" />
+  <meta name="twitter:description" content="Explore Reeds Solutions LLC's federal contracting expertise and services for government agencies." />
+  <meta name="twitter:image" content="og-image.png" />
+
+  <!-- Security -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; img-src 'self' data: https:; style-src 'self' 'unsafe-inline' https:; script-src 'self' 'unsafe-inline' https:;" />
+
+  <!-- Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
 </head>
 <body>
-
-  <header>
-    <nav class="navbar">
+  <header role="banner">
+    <nav class="navbar" role="navigation" aria-label="Main Navigation">
       <div class="logo">
         <a href="index.html"><img src="logo-RS-machinery-detailed.svg" alt="Reeds Solutions LLC Logo" /></a>
       </div>
@@ -29,7 +53,7 @@
     </nav>
   </header>
 
-  <main>
+  <main role="main">
     <section class="hero">
       <div class="hero-content">
         <h1>Contracting Services</h1>
@@ -55,8 +79,19 @@
     </section>
   </main>
 
-  <footer>
-    <p>© 2025 Reeds Solutions LLC. All rights reserved.</p>
+  <footer role="contentinfo">
+    <div class="footer-content">
+      <p>© <span id="year"></span> Reeds Solutions LLC. All rights reserved.</p>
+      <div class="socials">
+        <a href="https://www.linkedin.com/company/reedssolutionsllc" aria-label="LinkedIn"><img src="linkedin.svg" alt="LinkedIn" /></a>
+        <a href="https://www.facebook.com/reedssolutionsllc" aria-label="Facebook"><img src="facebook.svg" alt="Facebook" /></a>
+        <a href="https://www.youtube.com/@reedssolutionsllc" aria-label="YouTube"><img src="youtube.svg" alt="YouTube" /></a>
+      </div>
+    </div>
   </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
