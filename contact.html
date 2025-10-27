@@ -3,69 +3,41 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Contact Reeds Solutions, LLC — Reach out for inquiries, support, and federal contracting solutions." />
-  <meta name="keywords" content="Reeds Solutions, contact, inquiries, federal contracting, business solutions" />
-  <meta name="author" content="Reeds Solutions, LLC" />
-
-  <title>Contact | Reeds Solutions, LLC</title>
-
-  <link rel="icon" href="favicon 2.svg" type="image/svg+xml" />
+  <meta name="description" content="Contact Reeds Solutions LLC — Get in touch with our team for federal contracting, business solutions, and partnership inquiries." />
+  <title>Contact | Reeds Solutions LLC</title>
   <link rel="stylesheet" href="styles.css" />
-
-  <!-- Open Graph / Social Sharing -->
-  <meta property="og:title" content="Contact | Reeds Solutions, LLC" />
-  <meta property="og:description" content="Reach out to Reeds Solutions, LLC for inquiries, support, or federal contracting solutions." />
-  <meta property="og:image" content="https://reedssolutionsllc.org/assets/og-image-contact.png" />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://reedssolutionsllc.org/contact" />
-
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Contact | Reeds Solutions, LLC" />
-  <meta name="twitter:description" content="Reach out to Reeds Solutions, LLC for inquiries, support, or federal contracting solutions." />
-  <meta name="twitter:image" content="https://reedssolutionsllc.org/assets/og-image-contact.png" />
-
-  <!-- Security -->
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; img-src 'self' data: https:; style-src 'self' 'unsafe-inline' https:; script-src 'self' 'unsafe-inline' https:;" />
-
-  <!-- Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-XXXXXXXXXX');
-  </script>
+  <link rel="icon" href="favicon 2.svg" type="image/svg+xml" />
 </head>
-
 <body>
-  <header role="banner">
-    <nav class="navbar" role="navigation" aria-label="Main Navigation">
+  <header>
+    <nav class="navbar">
       <div class="logo">
-        <a href="index.html"><img src="logo-RS-machinery-detailed.svg" alt="Reeds Solutions, LLC Logo" /></a>
+        <a href="index.html"><img src="logo-RS-machinery-detailed.svg" alt="Reeds Solutions LLC Logo" /></a>
       </div>
       <ul class="nav-links">
-        <li><a href="about.html" aria-current="false">About</a></li>
-        <li><a href="capabilities.html" aria-current="false">Capabilities</a></li>
-        <li><a href="careers.html" aria-current="false">Careers</a></li>
-        <li><a href="news.html" aria-current="false">News</a></li>
-        <li><a href="contact.html" class="btn" aria-current="true">Contact</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="capabilities.html">Capabilities</a></li>
+        <li><a href="careers.html">Careers</a></li>
+        <li><a href="news.html">News</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
       </ul>
     </nav>
   </header>
 
-  <main role="main">
+  <main>
     <section class="hero">
       <div class="hero-content">
-        <h1>Contact Reeds Solutions, LLC</h1>
-        <p>Have questions, need support, or want to explore federal contracting solutions? Get in touch with us today.</p>
+        <h1>Contact Reeds Solutions LLC</h1>
+        <p>We’re here to answer questions, provide contracting information, and discuss partnership opportunities.</p>
       </div>
     </section>
 
     <section class="contact-section section-light">
       <div class="container">
-        <h2>Contact Form</h2>
-        <form action="/contact-submit" method="POST" class="contact-form" aria-label="Contact Form">
+        <h2>Get in Touch</h2>
+        <p>Please fill out the form below or use our contact information to reach our team.</p>
+
+        <form action="/submit-contact" method="POST" class="contact-form">
           <label for="fullName">Full Name *</label>
           <input type="text" id="fullName" name="fullName" required />
 
@@ -79,28 +51,23 @@
           <input type="text" id="subject" name="subject" required />
 
           <label for="message">Message *</label>
-          <textarea id="message" name="message" rows="5" required></textarea>
+          <textarea id="message" name="message" rows="6" required></textarea>
 
           <button type="submit" class="btn-primary">Send Message</button>
         </form>
 
-        <h2>Contact Information</h2>
-        <p>Email: <a href="mailto:Reedssolutionsllcorg@gmail.com">Reedssolutionsllcorg@gmail.com</a></p>
-        <p>Phone: (555) 555-5555</p>
-        <p>Address: 123 Business Rd, Compton, CA 90220</p>
+        <div class="contact-info" style="margin-top:2rem;">
+          <h3>Our Contact Information</h3>
+          <p><strong>Email:</strong> <a href="mailto:ReedsSolutionsLLCOrg@gmail.com">ReedsSolutionsLLCOrg@gmail.com</a></p>
+          <p><strong>Phone:</strong> (123) 456-7890</p>
+          <p><strong>Address:</strong> 123 Main Street, Suite 100, California, USA</p>
+        </div>
       </div>
     </section>
   </main>
 
-  <footer role="contentinfo">
-    <div class="footer-content">
-      <p>© 2025 Reeds Solutions, LLC. All rights reserved.</p>
-      <div class="socials">
-        <a href="https://www.linkedin.com/company/reedssolutionsllc" aria-label="LinkedIn"><img src="linkedin.svg" alt="LinkedIn" /></a>
-        <a href="https://www.facebook.com/reedssolutionsllc" aria-label="Facebook"><img src="facebook.svg" alt="Facebook" /></a>
-        <a href="https://www.youtube.com/@reedssolutionsllc" aria-label="YouTube"><img src="youtube.svg" alt="YouTube" /></a>
-      </div>
-    </div>
+  <footer>
+    <p>© 2025 Reeds Solutions LLC. All rights reserved.</p>
   </footer>
 </body>
 </html>
