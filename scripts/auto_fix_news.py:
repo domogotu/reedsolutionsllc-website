@@ -1,0 +1,35 @@
+# scripts/auto_fix_news.py
+import os
+
+# Path to your news.html (relative to repo root)
+file_path = os.path.join(os.getcwd(), "news.html")
+
+# Replacement content
+new_content = """
+<section id="automation-showcase">
+  <h2>Latest Updates</h2>
+  <p style="text-align:center; font-style:italic; color:#555;">
+    No news yet — updates coming soon!
+  </p>
+</section>
+"""
+
+# Read file
+with open(file_path, "r", encoding="utf-8") as f:
+    html = f.read()
+
+# Find the news section
+start_tag = '<section id="automation-showcase">'
+end_tag = '</section>'
+
+start_index = html.find(start_tag)
+end_index = html.find(end_tag, start_index)
+
+if start_index != -1 and end_index != -1:
+    end_index += len(end_tag)
+    html = html[:start_index] + new_content + html[end_index:]
+    with open(file_path, "w", encoding="utf-8") as f:
+        f.write(html)
+    print("✅ News section cleaned successfully!")
+else:
+    print("⚠️ News section not found. Nothing changed.")
