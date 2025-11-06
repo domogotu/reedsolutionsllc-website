@@ -7,7 +7,135 @@
   <title>Contact | Reeds Solutions LLC</title>
   <link rel="stylesheet" href="styles.css" />
   <link rel="icon" href="favicon 2.svg" type="image/svg+xml" />
+  <style>
+    body {
+      font-family: "Segoe UI", Arial, sans-serif;
+      margin: 0;
+      background-color: #f9fafc;
+      color: #222;
+      line-height: 1.6;
+    }
+
+    header {
+      background: #0b2242;
+      padding: 1rem 0;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 90%;
+      margin: 0 auto;
+    }
+
+    .navbar img {
+      height: 50px;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover,
+    .nav-links .active {
+      color: #3dc47e;
+    }
+
+    .hero {
+      background: linear-gradient(to right, #0b2242, #15345a);
+      color: white;
+      padding: 4rem 1rem;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 2.2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .contact-section {
+      padding: 3rem 1rem;
+      text-align: center;
+      background: #ffffff;
+    }
+
+    .container {
+      max-width: 700px;
+      margin: 0 auto;
+      background: #f2f5f9;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      text-align: left;
+    }
+
+    label {
+      font-weight: 600;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 0.8rem;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 1rem;
+    }
+
+    input:focus, textarea:focus {
+      border-color: #0b2242;
+      outline: none;
+    }
+
+    .btn-primary {
+      background: #0b2242;
+      color: white;
+      border: none;
+      padding: 0.9rem;
+      border-radius: 6px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .btn-primary:hover {
+      background: #163968;
+    }
+
+    .contact-info {
+      margin-top: 2rem;
+      background: #fff;
+      padding: 1.5rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+
+    footer {
+      text-align: center;
+      padding: 1.5rem;
+      background: #0b2242;
+      color: #fff;
+      margin-top: 3rem;
+      font-size: 0.9rem;
+    }
+  </style>
 </head>
+
 <body>
   <header>
     <nav class="navbar">
@@ -32,35 +160,40 @@
       </div>
     </section>
 
-    <section class="contact-section section-light">
+    <section class="contact-section">
       <div class="container">
         <h2>Get in Touch</h2>
-        <p>Please fill out the form below or use our contact information to reach our team.</p>
+        <p>Please fill out the form below or use our contact information to reach our team directly.</p>
 
-        <form action="/submit-contact" method="POST" class="contact-form">
+        <!-- ✅ Direct Email Form -->
+        <form action="https://formsubmit.co/ReedsSolutionsLLCOrg@gmail.com" method="POST" class="contact-form">
+          <input type="hidden" name="_subject" value="New Contact Form Submission - Reeds Solutions LLC">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_next" value="https://reedssolutionsllc.org/thank-you.html">
+
           <label for="fullName">Full Name *</label>
-          <input type="text" id="fullName" name="fullName" required />
+          <input type="text" id="fullName" name="Full Name" required />
 
           <label for="email">Email Address *</label>
-          <input type="email" id="email" name="email" required />
+          <input type="email" id="email" name="Email" required />
 
           <label for="phone">Phone Number</label>
-          <input type="tel" id="phone" name="phone" />
+          <input type="tel" id="phone" name="Phone" />
 
           <label for="subject">Subject *</label>
-          <input type="text" id="subject" name="subject" required />
+          <input type="text" id="subject" name="Subject" required />
 
           <label for="message">Message *</label>
-          <textarea id="message" name="message" rows="6" required></textarea>
+          <textarea id="message" name="Message" rows="6" required></textarea>
 
           <button type="submit" class="btn-primary">Send Message</button>
         </form>
 
-        <div class="contact-info" style="margin-top:2rem;">
+        <div class="contact-info">
           <h3>Our Contact Information</h3>
           <p><strong>Email:</strong> <a href="mailto:ReedsSolutionsLLCOrg@gmail.com">ReedsSolutionsLLCOrg@gmail.com</a></p>
           <p><strong>Phone:</strong> (310) 848-0628</p>
-          <p><strong>Address:</strong> 426 s taper ave , Compton , California, USA</p>
+          <p><strong>Address:</strong> 426 S Taper Ave, Compton, California, USA</p>
         </div>
       </div>
     </section>
