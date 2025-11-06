@@ -1,45 +1,97 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Thank You — Reeds Solutions, LLC</title>
-  <meta name="description" content="Thanks, we received your request." />
-  <link rel="icon" href="./favicon 2.svg" type="image/svg+xml" />
-  <link rel="stylesheet" href="./styles.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Thank you for contacting Reeds Solutions LLC — We’ve received your message and will respond shortly." />
+  <title>Thank You | Reeds Solutions LLC</title>
+  <link rel="icon" href="favicon 2.svg" type="image/svg+xml" />
+  <style>
+    body {
+      font-family: "Segoe UI", Arial, sans-serif;
+      margin: 0;
+      background-color: #f9fafc;
+      color: #222;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    header {
+      background: #0b2242;
+      padding: 1rem 0;
+      text-align: center;
+    }
+
+    header img {
+      height: 50px;
+    }
+
+    main {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 2rem;
+      background: #ffffff;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+
+    h1 {
+      color: #0b2242;
+      margin-bottom: 0.5rem;
+    }
+
+    p {
+      font-size: 1.1rem;
+      color: #444;
+    }
+
+    .btn-home {
+      display: inline-block;
+      margin-top: 1.5rem;
+      background: #0b2242;
+      color: white;
+      text-decoration: none;
+      padding: 0.9rem 1.5rem;
+      border-radius: 6px;
+      font-weight: 600;
+      transition: background 0.3s;
+    }
+
+    .btn-home:hover {
+      background: #163968;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background: #0b2242;
+      color: #fff;
+      position: fixed;
+      width: 100%;
+      bottom: 0;
+      font-size: 0.9rem;
+    }
+  </style>
 </head>
 <body>
-  <header class="site-header">
-    <div class="container nav">
-      <a class="brand" href="./">Reeds Solutions, LLC</a>
-      <nav aria-label="Primary">
-        <a href="./index.html">Home</a>
-        <a href="./about.html">About</a>
-        <a href="./capabilities.html">Capabilities</a>
-        <a href="./contracting.html">Contracting Info</a>
-        <a href="./teaming.html">Teaming</a>
-        <a href="./past-performance.html">Past Performance</a>
-        <a href="./news.html">News</a>
-        <a href="./careers.html">Careers</a>
-        <a href="./contact.html">Contact</a>
-      </nav>
-    </div>
+  <header>
+    <a href="index.html">
+      <img src="logo-RS-machinery-detailed.svg" alt="Reeds Solutions LLC Logo" />
+    </a>
   </header>
 
-  <main class="section">
-    <div class="container">
-      <h1>Thank You</h1>
-      <p>Your submission has been received. Our team will respond shortly.</p>
-      <p><a class="btn primary" href="./index.html">Back to Home</a></p>
-    </div>
+  <main>
+    <h1>Thank You!</h1>
+    <p>Your message has been successfully sent to <strong>Reeds Solutions LLC</strong>.</p>
+    <p>Our team will review your inquiry and get back to you as soon as possible.</p>
+    <a href="index.html" class="btn-home">Return to Home</a>
   </main>
 
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <div>© <span id="y"></span> Reeds Solutions, LLC • UEI: L5W1JWUUDMW3 • CAGE: 157R9</div>
-      <div class="tiny"><a href="./privacy.html">Privacy</a> • <a href="./terms.html">Terms</a></div>
-    </div>
+  <footer>
+    <p>© 2025 Reeds Solutions LLC. All rights reserved.</p>
   </footer>
-  <script>document.getElementById('y').textContent=new Date().getFullYear();</script>
 </body>
 </html>
