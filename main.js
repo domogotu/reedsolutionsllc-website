@@ -1,6 +1,6 @@
 /* =========================================================
-   Reed Solutions, LLC - Global JavaScript
-   Author: Reed Solutions Web Team
+   Reeds Solutions, LLC - Global JavaScript
+   Author: Reeds Solutions Web Team
    Last Updated: 2025-10-17
    ========================================================= */
 
