@@ -227,3 +227,470 @@ input:focus {
   outline: 2px solid var(--color-green);
   outline-offset: 3px;
 }
+
+/* --------- CLIENT PORTAL NAV BUTTON --------- */
+.nav-links .btn-portal {
+  background: var(--color-green);
+  color: var(--color-white) !important;
+  padding: 0.5rem 1.2rem;
+  border-radius: 8px;
+  font-weight: 700;
+  transition: background var(--transition-speed);
+  border: 2px solid var(--color-green);
+}
+
+.nav-links .btn-portal:hover {
+  background: #019875;
+  border-color: #019875;
+}
+
+/* --------- ABOUT / SERVICES SECTIONS --------- */
+.about-cta {
+  background: var(--color-silver);
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.about-cta h2 {
+  font-size: 1.8rem;
+  color: var(--color-navy);
+  margin-bottom: 1rem;
+}
+
+.about-cta p {
+  max-width: 700px;
+  margin: 0 auto 1.5rem;
+}
+
+.secondary-btn {
+  display: inline-block;
+  background: var(--color-navy);
+  color: var(--color-white);
+  padding: 0.8rem 2rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background var(--transition-speed);
+}
+
+.secondary-btn:hover {
+  background: #003366;
+}
+
+/* --------- SERVICE GRID ARTICLES --------- */
+.service-grid article {
+  background: var(--color-silver);
+  padding: 2rem;
+  border-radius: 12px;
+  text-align: left;
+  transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+}
+
+.service-grid article:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px rgba(0, 31, 63, 0.12);
+}
+
+.service-grid article h3 {
+  color: var(--color-navy);
+  margin-bottom: 0.75rem;
+  font-size: 1.1rem;
+}
+
+/* --------- FOOTER LINKS --------- */
+.footer-links {
+  margin-top: 1rem;
+  font-size: 0.85rem;
+}
+
+.footer-links a {
+  color: rgba(255,255,255,0.7);
+  text-decoration: none;
+  transition: color var(--transition-speed);
+}
+
+.footer-links a:hover {
+  color: var(--color-green);
+}
+
+/* --------- CONTRACTING / CONTENT SECTIONS --------- */
+.contracting-section,
+.section-light {
+  padding: 4rem 2rem;
+  background: var(--color-white);
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.contracting-section h2,
+.section-light h2 {
+  font-size: 1.8rem;
+  color: var(--color-navy);
+  margin-bottom: 1.5rem;
+}
+
+.contracting-section ul,
+.section-light ul {
+  list-style: disc;
+  padding-left: 1.5rem;
+  margin-bottom: 2rem;
+  line-height: 1.9;
+}
+
+/* --------- NEWS SECTION --------- */
+.news-section {
+  padding: 4rem 2rem;
+}
+
+.news-item {
+  background: var(--color-silver);
+  border-radius: 12px;
+  padding: 2rem;
+  margin-bottom: 1.5rem;
+  text-align: left;
+}
+
+.news-item h3 {
+  color: var(--color-navy);
+  font-size: 1.2rem;
+  margin-bottom: 0.4rem;
+}
+
+.news-item .date {
+  color: var(--color-green);
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+.btn-secondary {
+  display: inline-block;
+  background: var(--color-navy);
+  color: var(--color-white);
+  padding: 0.5rem 1.2rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-top: 1rem;
+  transition: background var(--transition-speed);
+}
+
+.btn-secondary:hover {
+  background: #003366;
+}
+
+/* --------- CONTACT FORM --------- */
+.contact-section {
+  padding: 4rem 2rem;
+}
+
+.contact-form {
+  max-width: 600px;
+  margin: 0 auto 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.contact-form label {
+  font-weight: 600;
+  color: var(--color-navy);
+  font-size: 0.95rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 0.75rem 1rem;
+  border: 1px solid #ccd0d8;
+  border-radius: 8px;
+  font-family: var(--font-main);
+  font-size: 0.95rem;
+  transition: border-color var(--transition-speed);
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: var(--color-green);
+  outline: none;
+}
+
+.contact-info {
+  max-width: 600px;
+  margin: 0 auto;
+  background: var(--color-silver);
+  border-radius: 12px;
+  padding: 2rem;
+}
+
+.contact-info h3 {
+  color: var(--color-navy);
+  margin-bottom: 1rem;
+}
+
+.contact-info a {
+  color: var(--color-green);
+  text-decoration: none;
+}
+
+/* --------- CAREERS SECTION --------- */
+.careers-section {
+  padding: 4rem 2rem;
+}
+
+.job-card {
+  background: var(--color-silver);
+  border-radius: 12px;
+  padding: 2rem;
+  margin-bottom: 1.5rem;
+  text-align: left;
+}
+
+.job-card h3 {
+  color: var(--color-navy);
+  font-size: 1.15rem;
+  margin-bottom: 0.4rem;
+}
+
+.job-card .job-meta {
+  color: var(--color-green);
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+/* --------- PLATFORM HERO (index) --------- */
+.platform-hero {
+  background: linear-gradient(135deg, #001f3f 0%, #003366 60%, #004080 100%);
+  color: #fff;
+  padding: 5rem 2rem;
+  text-align: center;
+}
+
+.platform-hero .badge {
+  display: inline-block;
+  background: rgba(0, 184, 148, 0.2);
+  border: 1px solid #00b894;
+  color: #00b894;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.3rem 0.9rem;
+  border-radius: 20px;
+  margin-bottom: 1.5rem;
+}
+
+.platform-hero h1 {
+  font-size: 2.8rem;
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 1.2rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.platform-hero h1 span {
+  color: #00b894;
+}
+
+.platform-hero p {
+  font-size: 1.2rem;
+  opacity: 0.85;
+  max-width: 640px;
+  margin: 0 auto 2.5rem;
+}
+
+.hero-cta-group {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn-portal-hero {
+  background: #00b894;
+  color: #fff;
+  padding: 0.85rem 2rem;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: background 0.3s;
+  display: inline-block;
+}
+
+.btn-portal-hero:hover { background: #019875; }
+
+.btn-outline-white {
+  background: transparent;
+  color: #fff;
+  border: 2px solid rgba(255,255,255,0.5);
+  padding: 0.85rem 2rem;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: border-color 0.3s, background 0.3s;
+  display: inline-block;
+}
+
+.btn-outline-white:hover {
+  border-color: #fff;
+  background: rgba(255,255,255,0.1);
+}
+
+/* --------- FEATURES GRID (index) --------- */
+.features-section {
+  padding: 5rem 2rem;
+  background: #f8f9fa;
+}
+
+.features-section h2 {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #001f3f;
+  margin-bottom: 0.75rem;
+}
+
+.features-section .section-subtitle {
+  text-align: center;
+  color: #555;
+  max-width: 600px;
+  margin: 0 auto 3rem;
+  font-size: 1.05rem;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.feature-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 1.75rem;
+  border: 1px solid #e8ecf0;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  transition: box-shadow 0.3s, transform 0.3s;
+}
+
+.feature-card:hover {
+  box-shadow: 0 6px 20px rgba(0,31,63,0.1);
+  transform: translateY(-2px);
+}
+
+.feature-icon {
+  width: 44px;
+  height: 44px;
+  background: rgba(0, 184, 148, 0.12);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+  font-size: 1.4rem;
+}
+
+.feature-card h3 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #001f3f;
+  margin-bottom: 0.5rem;
+}
+
+.feature-card p {
+  font-size: 0.92rem;
+  color: #555;
+  line-height: 1.6;
+}
+
+.platform-cta {
+  background: #001f3f;
+  color: #fff;
+  text-align: center;
+  padding: 5rem 2rem;
+}
+
+.platform-cta h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.platform-cta p {
+  opacity: 0.8;
+  max-width: 560px;
+  margin: 0 auto 2.5rem;
+  font-size: 1.05rem;
+}
+
+/* --------- LIFECYCLE STEPS (index) --------- */
+.lifecycle-section {
+  padding: 5rem 2rem;
+  background: #fff;
+}
+
+.lifecycle-section h2 {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #001f3f;
+  margin-bottom: 0.75rem;
+}
+
+.lifecycle-section .section-subtitle {
+  text-align: center;
+  color: #555;
+  max-width: 600px;
+  margin: 0 auto 3rem;
+}
+
+.lifecycle-steps {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.lifecycle-step {
+  flex: 1;
+  min-width: 140px;
+  text-align: center;
+  padding: 1.5rem 1rem;
+}
+
+.step-number {
+  width: 48px;
+  height: 48px;
+  background: #001f3f;
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1.1rem;
+  margin: 0 auto 0.75rem;
+}
+
+.lifecycle-step h4 {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #001f3f;
+  margin-bottom: 0.3rem;
+}
+
+.lifecycle-step p {
+  font-size: 0.8rem;
+  color: #666;
+}

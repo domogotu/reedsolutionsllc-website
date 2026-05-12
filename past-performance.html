@@ -3,53 +3,48 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Past Performance of Reeds Solutions, LLC — Highlights of completed projects and federal contracting experience." />
-  <meta name="keywords" content="Reeds Solutions, past performance, federal contracting, projects, case studies" />
-  <meta name="author" content="Reeds Solutions, LLC" />
+  <meta name="description" content="Past Performance of Reed's Solutions LLC — Highlights of completed projects and federal contracting experience." />
+  <meta name="keywords" content="Reed's Solutions LLC, past performance, federal contracting, projects, case studies" />
+  <meta name="author" content="Reed's Solutions LLC" />
 
-  <title>Past Performance | Reeds Solutions, LLC</title>
+  <title>Past Performance | Reed's Solutions LLC</title>
 
   <link rel="icon" href="favicon 2.svg" type="image/svg+xml" />
   <link rel="stylesheet" href="styles.css" />
 
   <!-- Open Graph / Social Sharing -->
-  <meta property="og:title" content="Past Performance | Reeds Solutions, LLC" />
-  <meta property="og:description" content="View Reeds Solutions, LLC's completed projects and federal contracting experience." />
+  <meta property="og:title" content="Past Performance | Reed's Solutions LLC" />
+  <meta property="og:description" content="View Reed's Solutions LLC's completed projects and federal contracting experience." />
   <meta property="og:image" content="https://reedssolutionsllc.org/assets/og-image-past-performance.png" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://reedssolutionsllc.org/past-performance" />
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Past Performance | Reeds Solutions, LLC" />
-  <meta name="twitter:description" content="View Reeds Solutions, LLC's completed projects and federal contracting experience." />
+  <meta name="twitter:title" content="Past Performance | Reed's Solutions LLC" />
+  <meta name="twitter:description" content="View Reed's Solutions LLC's completed projects and federal contracting experience." />
   <meta name="twitter:image" content="https://reedssolutionsllc.org/assets/og-image-past-performance.png" />
 
   <!-- Security -->
   <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; img-src 'self' data: https:; style-src 'self' 'unsafe-inline' https:; script-src 'self' 'unsafe-inline' https:;" />
 
-  <!-- Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-XXXXXXXXXX');
-  </script>
+
 </head>
 
 <body>
   <header role="banner">
     <nav class="navbar" role="navigation" aria-label="Main Navigation">
       <div class="logo">
-        <a href="index.html"><img src="logo-RS-machinery-detailed.svg" alt="Reeds Solutions, LLC Logo" /></a>
+        <a href="index.html"><img src="logo-RS-machinery-detailed.svg" alt="Reed's Solutions LLC Logo" /></a>
       </div>
       <ul class="nav-links">
-        <li><a href="about.html" aria-current="false">About</a></li>
-        <li><a href="capabilities.html" aria-current="false">Capabilities</a></li>
-        <li><a href="careers.html" aria-current="false">Careers</a></li>
-        <li><a href="news.html" aria-current="false">News</a></li>
-        <li><a href="contact.html" class="btn" aria-current="false">Contact</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="capabilities.html">Capabilities</a></li>
+        <li><a href="contracting.html">Contracting</a></li>
+        <li><a href="careers.html">Careers</a></li>
+        <li><a href="news.html">News</a></li>
+        <li><a href="contact.html" class="btn">Contact</a></li>
+        <li><a href="https://primecontractor-bk79t4ta.manus.space" target="_blank" rel="noopener" class="btn-portal">Client Portal</a></li>
       </ul>
     </nav>
   </header>
@@ -58,7 +53,7 @@
     <section class="hero">
       <div class="hero-content">
         <h1>Past Performance</h1>
-        <p>Reeds Solutions, LLC has a proven track record of delivering high-quality solutions in federal contracting and business automation.</p>
+        <p>Reed's Solutions LLC has a proven track record of delivering high-quality solutions in federal contracting and business automation.</p>
       </div>
     </section>
 
@@ -97,13 +92,15 @@
 
   <footer role="contentinfo">
     <div class="footer-content">
-      <p>© 2025 Reeds Solutions, LLC. All rights reserved.</p>
-      <div class="socials">
-        <a href="https://www.linkedin.com/company/reedssolutionsllc" aria-label="LinkedIn"><img src="linkedin.svg" alt="LinkedIn" /></a>
-        <a href="https://www.facebook.com/reedssolutionsllc" aria-label="Facebook"><img src="facebook.svg" alt="Facebook" /></a>
-        <a href="https://www.youtube.com/@reedssolutionsllc" aria-label="YouTube"><img src="youtube.svg" alt="YouTube" /></a>
+      <p>&copy; <span id="year"></span> Reed's Solutions LLC. All rights reserved. &bull; UEI: L5W1JWUUDMW3 &bull; CAGE: 157R9</p>
+      <div class="footer-links">
+        <a href="privacy.html">Privacy Policy</a> |
+        <a href="terms.html">Terms of Use</a> |
+        <a href="accessibility.html">Accessibility</a> |
+        <a href="security-compliance.html">Security &amp; Compliance</a>
       </div>
     </div>
   </footer>
+  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
 </body>
 </html>

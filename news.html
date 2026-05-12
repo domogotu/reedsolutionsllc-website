@@ -3,22 +3,25 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="News and updates from Reeds Solutions LLC — Federal contracting insights, company announcements, and business solutions." />
-  <title>News | Reeds Solutions LLC</title>
+  <meta name="description" content="News and updates from Reed's Solutions LLC — Federal contracting insights, company announcements, and business solutions." />
+  <title>News | Reed's Solutions LLC</title>
+  <link rel="icon" href="favicon 2.svg" type="image/svg+xml" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <header>
     <nav class="navbar">
       <div class="logo">
-        <a href="index.html"><img src="logo-RS-machinery-detailed.svg" alt="Reeds Solutions LLC Logo" /></a>
+        <a href="index.html"><img src="logo-RS-machinery-detailed.svg" alt="Reed's Solutions LLC Logo" /></a>
       </div>
       <ul class="nav-links">
         <li><a href="about.html">About</a></li>
         <li><a href="capabilities.html">Capabilities</a></li>
+        <li><a href="contracting.html">Contracting</a></li>
         <li><a href="careers.html">Careers</a></li>
         <li><a href="news.html" class="active">News</a></li>
         <li><a href="contact.html" class="btn">Contact</a></li>
+        <li><a href="https://primecontractor-bk79t4ta.manus.space" target="_blank" rel="noopener" class="btn-portal">Client Portal</a></li>
       </ul>
     </nav>
   </header>
@@ -26,7 +29,7 @@
   <main>
     <section class="hero">
       <div class="hero-content">
-        <h1>Reeds Solutions LLC News</h1>
+        <h1>Reed's Solutions LLC News</h1>
         <p>Stay up-to-date with company announcements, federal contracting insights, and our latest projects.</p>
       </div>
     </section>
@@ -36,24 +39,31 @@
         <h2>Latest Updates</h2>
 
         <article class="news-item">
-          <h3>Reeds Solutions LLC Launches Federal Pathways Initiative</h3>
-          <p class="date">October 2025</p>
-          <p>We officially launched the Federal Pathways Initiative, providing structured educational workshops for entrepreneurs and small businesses to successfully navigate federal contracting opportunities.</p>
-          <a href="#launch-details" class="btn-secondary">Read More</a>
+          <h3>PrimeContractorOS Now Available to Government Contractors</h3>
+          <p class="date">May 2025</p>
+          <p>Reed's Solutions LLC is proud to announce the launch of <strong>PrimeContractorOS</strong> — a purpose-built operating system for government contractors. PrimeContractorOS guides contractors through the full lifecycle, from opportunity identification to contract closeout, with built-in FAR compliance tools, AI-powered guidance, and integrated financial tracking. Available now at Starter, Growth, and Advanced plans.</p>
+          <a href="https://primecontractor-bk79t4ta.manus.space" target="_blank" rel="noopener" class="btn-secondary">Access PrimeContractorOS</a>
         </article>
 
         <article class="news-item">
-          <h3>Awarded New IT Systems Contract</h3>
-          <p class="date">September 2025</p>
-          <p>Reeds Solutions LLC has been awarded a multi-year federal IT systems contract, enabling us to modernize operations and improve security for government clients.</p>
-          <a href="#it-contract" class="btn-secondary">Read More</a>
+          <h3>Reed's Solutions LLC Launches Federal Pathways Initiative</h3>
+          <p class="date">October 2024</p>
+          <p>We launched the Federal Pathways Initiative, providing structured educational workshops for entrepreneurs and small businesses to successfully navigate federal contracting opportunities. The initiative covers SAM.gov registration, NAICS code selection, proposal writing, and teaming strategies.</p>
+          <a href="contact.html" class="btn-secondary">Learn More</a>
         </article>
 
         <article class="news-item">
           <h3>Business Automation Solutions Showcase</h3>
-          <p class="date">August 2025</p>
-          <p>We demonstrated our AI-driven business automation solutions at the Federal Contractor Summit, showcasing workflows that streamline operations for small businesses.</p>
-          <a href="#automation-showcase" class="btn-secondary">Read More</a>
+          <p class="date">August 2024</p>
+          <p>We demonstrated our AI-driven business automation solutions at the Federal Contractor Summit, showcasing workflows that streamline operations for small businesses and reduce administrative overhead in federal contracting environments.</p>
+          <a href="contact.html" class="btn-secondary">Contact Us</a>
+        </article>
+
+        <article class="news-item">
+          <h3>Reed's Solutions LLC Registered in SAM.gov</h3>
+          <p class="date">2023</p>
+          <p>Reed's Solutions LLC completed SAM.gov registration and is now fully registered as a federal contractor. UEI: L5W1JWUUDMW3, CAGE Code: 157R9. We are actively pursuing opportunities across our registered NAICS codes and welcome teaming inquiries from prime contractors.</p>
+          <a href="contact.html" class="btn-secondary">Teaming Inquiries</a>
         </article>
 
       </div>
@@ -61,7 +71,16 @@
   </main>
 
   <footer>
-    <p>© 2025 Reeds Solutions LLC. All rights reserved.</p>
+    <div class="footer-content">
+      <p>&copy; <span id="year"></span> Reed's Solutions LLC. All rights reserved. &bull; UEI: L5W1JWUUDMW3 &bull; CAGE: 157R9</p>
+      <div class="footer-links" style="margin-top:0.75rem;">
+        <a href="privacy.html">Privacy Policy</a> |
+        <a href="terms.html">Terms of Use</a> |
+        <a href="accessibility.html">Accessibility</a> |
+        <a href="security-compliance.html">Security &amp; Compliance</a>
+      </div>
+    </div>
   </footer>
+  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
 </body>
 </html>

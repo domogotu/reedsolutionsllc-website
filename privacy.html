@@ -3,53 +3,48 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Privacy Policy of Reeds Solutions, LLC — How we collect, use, and protect your information." />
-  <meta name="keywords" content="Reeds Solutions, privacy policy, data protection, security, personal information" />
-  <meta name="author" content="Reeds Solutions, LLC" />
+  <meta name="description" content="Privacy Policy of Reed's Solutions LLC — How we collect, use, and protect your information." />
+  <meta name="keywords" content="Reed's Solutions LLC, privacy policy, data protection, security, personal information" />
+  <meta name="author" content="Reed's Solutions LLC" />
 
-  <title>Privacy Policy | Reeds Solutions, LLC</title>
+  <title>Privacy Policy | Reed's Solutions LLC</title>
 
   <link rel="icon" href="favicon 2.svg" type="image/svg+xml" />
   <link rel="stylesheet" href="styles.css" />
 
   <!-- Open Graph / Social Sharing -->
-  <meta property="og:title" content="Privacy Policy | Reeds Solutions, LLC" />
-  <meta property="og:description" content="Learn how Reeds Solutions, LLC collects, uses, and protects your personal information." />
+  <meta property="og:title" content="Privacy Policy | Reed's Solutions LLC" />
+  <meta property="og:description" content="Learn how Reed's Solutions LLC collects, uses, and protects your personal information." />
   <meta property="og:image" content="https://reedssolutionsllc.org/assets/og-image-privacy.png" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://reedssolutionsllc.org/privacy" />
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Privacy Policy | Reeds Solutions, LLC" />
-  <meta name="twitter:description" content="Learn how Reeds Solutions, LLC collects, uses, and protects your personal information." />
+  <meta name="twitter:title" content="Privacy Policy | Reed's Solutions LLC" />
+  <meta name="twitter:description" content="Learn how Reed's Solutions LLC collects, uses, and protects your personal information." />
   <meta name="twitter:image" content="https://reedssolutionsllc.org/assets/og-image-privacy.png" />
 
   <!-- Security -->
   <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; img-src 'self' data: https:; style-src 'self' 'unsafe-inline' https:; script-src 'self' 'unsafe-inline' https:;" />
 
-  <!-- Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-XXXXXXXXXX');
-  </script>
+
 </head>
 
 <body>
   <header role="banner">
     <nav class="navbar" role="navigation" aria-label="Main Navigation">
       <div class="logo">
-        <a href="index.html"><img src="logo-RS-machinery-detailed.svg" alt="Reeds Solutions, LLC Logo" /></a>
+        <a href="index.html"><img src="logo-RS-machinery-detailed.svg" alt="Reed's Solutions LLC Logo" /></a>
       </div>
       <ul class="nav-links">
-        <li><a href="about.html" aria-current="false">About</a></li>
-        <li><a href="capabilities.html" aria-current="false">Capabilities</a></li>
-        <li><a href="careers.html" aria-current="false">Careers</a></li>
-        <li><a href="news.html" aria-current="false">News</a></li>
-        <li><a href="contact.html" class="btn" aria-current="false">Contact</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="capabilities.html">Capabilities</a></li>
+        <li><a href="contracting.html">Contracting</a></li>
+        <li><a href="careers.html">Careers</a></li>
+        <li><a href="news.html">News</a></li>
+        <li><a href="contact.html" class="btn">Contact</a></li>
+        <li><a href="https://primecontractor-bk79t4ta.manus.space" target="_blank" rel="noopener" class="btn-portal">Client Portal</a></li>
       </ul>
     </nav>
   </header>
@@ -58,7 +53,7 @@
     <section class="hero">
       <div class="hero-content">
         <h1>Privacy Policy</h1>
-        <p>Your privacy is important to us. This page explains how Reeds Solutions, LLC collects, uses, and protects your information.</p>
+        <p>Your privacy is important to us. This page explains how Reed's Solutions LLC collects, uses, and protects your information.</p>
       </div>
     </section>
 
@@ -85,15 +80,17 @@
     </section>
   </main>
 
-  <footer role="contentinfo">
+  <footer>
     <div class="footer-content">
-      <p>© 2025 Reeds Solutions, LLC. All rights reserved.</p>
-      <div class="socials">
-        <a href="https://www.linkedin.com/company/reedssolutionsllc" aria-label="LinkedIn"><img src="linkedin.svg" alt="LinkedIn" /></a>
-        <a href="https://www.facebook.com/reedssolutionsllc" aria-label="Facebook"><img src="facebook.svg" alt="Facebook" /></a>
-        <a href="https://www.youtube.com/@reedssolutionsllc" aria-label="YouTube"><img src="youtube.svg" alt="YouTube" /></a>
+      <p>&copy; <span id="year"></span> Reed's Solutions LLC. All rights reserved.</p>
+      <div class="footer-links">
+        <a href="privacy.html">Privacy Policy</a> |
+        <a href="terms.html">Terms of Use</a> |
+        <a href="accessibility.html">Accessibility</a> |
+        <a href="security-compliance.html">Security &amp; Compliance</a>
       </div>
     </div>
   </footer>
+  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
 </body>
 </html>

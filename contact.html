@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Contact Reeds Solutions LLC — Get in touch with our team for federal contracting, business solutions, and partnership inquiries." />
-  <title>Contact | Reeds Solutions LLC</title>
+  <meta name="description" content="Contact Reed's Solutions LLC — Get in touch with our team for federal contracting, business solutions, and partnership inquiries." />
+  <title>Contact | Reed's Solutions LLC</title>
   <link rel="stylesheet" href="styles.css" />
   <link rel="icon" href="favicon 2.svg" type="image/svg+xml" />
   <style>
@@ -140,14 +140,16 @@
   <header>
     <nav class="navbar">
       <div class="logo">
-        <a href="index.html"><img src="logo-RS-machinery-detailed.svg" alt="Reeds Solutions LLC Logo" /></a>
+        <a href="index.html"><img src="logo-RS-machinery-detailed.svg" alt="Reed's Solutions LLC Logo" /></a>
       </div>
       <ul class="nav-links">
         <li><a href="about.html">About</a></li>
         <li><a href="capabilities.html">Capabilities</a></li>
+        <li><a href="contracting.html">Contracting</a></li>
         <li><a href="careers.html">Careers</a></li>
         <li><a href="news.html">News</a></li>
         <li><a href="contact.html" class="active">Contact</a></li>
+        <li><a href="https://primecontractor-bk79t4ta.manus.space" target="_blank" rel="noopener" class="btn-portal">Client Portal</a></li>
       </ul>
     </nav>
   </header>
@@ -155,7 +157,7 @@
   <main>
     <section class="hero">
       <div class="hero-content">
-        <h1>Contact Reeds Solutions LLC</h1>
+        <h1>Contact Reed's Solutions LLC</h1>
         <p>We’re here to answer questions, provide contracting information, and discuss partnership opportunities.</p>
       </div>
     </section>
@@ -167,9 +169,9 @@
 
         <!-- ✅ Direct Email Form -->
         <form action="https://formsubmit.co/ReedsSolutionsLLCOrg@gmail.com" method="POST" class="contact-form">
-          <input type="hidden" name="_subject" value="New Contact Form Submission - Reeds Solutions LLC">
+          <input type="hidden" name="_subject" value="New Contact Form Submission - Reed's Solutions LLC">
           <input type="hidden" name="_captcha" value="false">
-          <input type="hidden" name="_next" value="https://reedssolutionsllc.org/thank-you.html">
+          <input type="hidden" name="_next" value="https://reedssolutionsllc.org/contact.html">
 
           <label for="fullName">Full Name *</label>
           <input type="text" id="fullName" name="Full Name" required />
@@ -200,7 +202,16 @@
   </main>
 
   <footer>
-    <p>© 2025 Reeds Solutions LLC. All rights reserved.</p>
+    <div class="footer-content">
+      <p>&copy; <span id="year"></span> Reed's Solutions LLC. All rights reserved. &bull; UEI: L5W1JWUUDMW3 &bull; CAGE: 157R9</p>
+      <div class="footer-links">
+        <a href="privacy.html">Privacy Policy</a> |
+        <a href="terms.html">Terms of Use</a> |
+        <a href="accessibility.html">Accessibility</a> |
+        <a href="security-compliance.html">Security &amp; Compliance</a>
+      </div>
+    </div>
   </footer>
+  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
 </body>
 </html>

@@ -1,30 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Portal Login — Reeds Solutions</title>
-<link rel="stylesheet" href="/static/styles.css">
-<style>
-  body { background-color:#ffffff; color:#000000; font-family:Arial, sans-serif; }
-  .login-container { max-width:400px; margin:80px auto; padding:20px; border:1px solid #ccc; border-radius:8px; }
-  .login-container h2 { color:#001f3f; text-align:center; }
-  input, button { width:100%; padding:10px; margin:5px 0; }
-  button { background-color:#001f3f; color:#fff; border:none; cursor:pointer; }
-  .error { color:red; text-align:center; }
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="refresh" content="0; url=https://primecontractor-bk79t4ta.manus.space" />
+  <title>Client Portal | Reed's Solutions LLC</title>
+  <link rel="icon" href="favicon 2.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-<div class="login-container">
-  <h2>Reeds Solutions Portal</h2>
-  {% if error %}
-  <p class="error">{{ error }}</p>
-  {% endif %}
-  <form method="POST">
-    <input type="text" name="username" placeholder="Username" required>
-    <input type="password" name="password" placeholder="Password" required>
-    <button type="submit">Login</button>
-  </form>
-</div>
+  <header>
+    <nav class="navbar">
+      <div class="logo">
+        <a href="index.html"><img src="logo-RS-machinery-detailed.svg" alt="Reed's Solutions LLC Logo" /></a>
+      </div>
+      <ul class="nav-links">
+        <li><a href="about.html">About</a></li>
+        <li><a href="capabilities.html">Capabilities</a></li>
+        <li><a href="contracting.html">Contracting</a></li>
+        <li><a href="careers.html">Careers</a></li>
+        <li><a href="news.html">News</a></li>
+        <li><a href="contact.html" class="btn">Contact</a></li>
+        <li><a href="https://primecontractor-bk79t4ta.manus.space" target="_blank" rel="noopener" class="btn-portal">Client Portal</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main style="text-align:center;max-width:600px;margin:5rem auto;padding:2rem;">
+    <h1 style="color:#0b2242;">Redirecting to Client Portal...</h1>
+    <p style="color:#666;">You are being redirected to PrimeContractorOS. If you are not redirected automatically, <a href="https://primecontractor-bk79t4ta.manus.space" style="color:#1a6b3c;font-weight:600;">click here</a>.</p>
+    <a href="https://primecontractor-bk79t4ta.manus.space" class="btn-primary" style="margin-top:1.5rem;display:inline-block;">Go to Client Portal</a>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <p>&copy; <span id="year"></span> Reed's Solutions LLC. All rights reserved.</p>
+    </div>
+  </footer>
+  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
 </body>
 </html>
