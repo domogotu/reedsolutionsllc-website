@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Employee Onboarding Guide — Reed's Solutions LLC &amp; PrimeContractorOS" />
+  <meta name="keywords" content="Reed's Solutions LLC, onboarding, PrimeContractorOS, employee guide" />
+  <meta name="author" content="Reed's Solutions LLC" />
+  <title>Employee Onboarding | Reed's Solutions LLC</title>
+  <link rel="icon" href="favicon 2.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .onboarding-hero {
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+      color: #fff;
+      padding: 80px 20px 60px;
+      text-align: center;
+    }
+    .onboarding-hero h1 {
+      font-size: 2.6rem;
+      margin: 0 0 16px 0;
+      color: #fff;
+    }
+    .onboarding-hero p {
+      font-size: 1.15rem;
+      opacity: 0.88;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .toc-section {
+      background: #f4f6fb;
+      padding: 40px 20px;
+      border-bottom: 1px solid #e0e4ef;
+    }
+    .toc-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+      gap: 14px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .toc-grid a {
+      display: block;
+      padding: 14px 16px;
+      background: #fff;
+      border: 1px solid #dde2f0;
+      border-radius: 8px;
+      text-decoration: none;
+      color: #1a1a2e;
+      font-weight: 600;
+      font-size: 0.9rem;
+      text-align: center;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .toc-grid a:hover {
+      border-color: #667eea;
+      box-shadow: 0 2px 8px rgba(102,126,234,0.15);
+      color: #667eea;
+    }
+    .onboarding-content {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 50px 20px;
+    }
+    .ob-section {
+      margin-bottom: 56px;
+    }
+    .ob-section h2 {
+      color: #1a1a2e;
+      font-size: 1.7rem;
+      border-bottom: 3px solid #667eea;
+      padding-bottom: 10px;
+      margin-bottom: 24px;
+    }
+    .ob-section h3 {
+      color: #333;
+      font-size: 1.15rem;
+      margin: 28px 0 10px;
+    }
+    .ob-section p {
+      color: #555;
+      line-height: 1.75;
+      margin: 0 0 14px;
+    }
+    .ob-section ul {
+      color: #555;
+      line-height: 1.85;
+      padding-left: 22px;
+      margin: 0 0 14px;
+    }
+    .ob-section ul li {
+      margin-bottom: 4px;
+    }
+    .highlight-box {
+      background: #f0f4ff;
+      border-left: 4px solid #667eea;
+      padding: 18px 20px;
+      border-radius: 4px;
+      margin: 18px 0;
+    }
+    .highlight-box p {
+      margin: 0;
+      color: #1a1a2e;
+    }
+    .highlight-box a {
+      color: #667eea;
+      font-weight: 700;
+      text-decoration: none;
+    }
+    .highlight-box a:hover { text-decoration: underline; }
+    .step-row {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+      margin-bottom: 20px;
+    }
+    .step-num {
+      flex-shrink: 0;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: #667eea;
+      color: #fff;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      margin-top: 2px;
+    }
+    .step-body h3 {
+      margin: 0 0 6px;
+    }
+    .step-body p {
+      margin: 0;
+    }
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 14px 0;
+    }
+    .badge {
+      background: #e8ecff;
+      color: #3a4a9e;
+      border-radius: 20px;
+      padding: 5px 14px;
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="logo">
+        <a href="index.html"><img src="logo-RS-machinery-detailed.svg" alt="Reed's Solutions LLC Logo" /></a>
+      </div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="https://primecontractor-bk79t4ta.manus.space" target="_blank" rel="noopener" class="btn-portal">Client Portal</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="onboarding-hero">
+      <h1>Welcome to Reed's Solutions LLC</h1>
+      <p>Your complete guide to getting started with PrimeContractorOS and our team workflows</p>
+    </section>
+
+    <!-- Table of Contents -->
+    <section class="toc-section">
+      <h2 style="text-align:center;margin-bottom:24px;color:#1a1a2e;">Quick Navigation</h2>
+      <div class="toc-grid">
+        <a href="#getting-started">Getting Started</a>
+        <a href="#dashboard">Dashboard Overview</a>
+        <a href="#workflows">Key Workflows</a>
+        <a href="#ai-features">AI Features</a>
+        <a href="#file-management">File Management</a>
+        <a href="#collaboration">Contacts, Tasks &amp; Messaging</a>
+        <a href="#best-practices">Tips &amp; Best Practices</a>
+        <a href="#support">Getting Help</a>
+      </div>
+    </section>
+
+    <!-- Main Content -->
+    <div class="onboarding-content">
+
+      <!-- Getting Started -->
+      <section id="getting-started" class="ob-section">
+        <h2>Getting Started</h2>
+
+        <div class="step-row">
+          <div class="step-num">1</div>
+          <div class="step-body">
+            <h3>Log In to PrimeContractorOS</h3>
+            <p>Your account is ready. Visit the Client Portal to sign in:</p>
+            <div class="highlight-box">
+              <p><strong>Portal URL:</strong> <a href="https://primecontractor-bk79t4ta.manus.space" target="_blank" rel="noopener">https://primecontractor-bk79t4ta.manus.space</a></p>
+            </div>
+            <p>Click <strong>Sign In</strong> and authenticate with your email address. You will be guided through the secure OAuth login process. If you have not yet received your account invitation, contact the platform administrator.</p>
+          </div>
+        </div>
+
+        <div class="step-row">
+          <div class="step-num">2</div>
+          <div class="step-body">
+            <h3>Complete Your Workspace Profile</h3>
+            <p>After logging in, complete your workspace profile to enable AI guidance and compliance features. You will be asked for:</p>
+            <ul>
+              <li>Company name and UEI (Unique Entity Identifier)</li>
+              <li>Primary NAICS codes (your business classifications)</li>
+              <li>Contracting model — Prime, Subcontractor, or Both</li>
+              <li>Active certifications (8(a), HUBZone, WOSB, SDVOSB, etc.)</li>
+            </ul>
+            <p>You can update these details at any time under <strong>Settings → Workspace</strong>.</p>
+          </div>
+        </div>
+
+        <div class="step-row">
+          <div class="step-num">3</div>
+          <div class="step-body">
+            <h3>Explore the Sidebar Navigation</h3>
+            <p>All major features are accessible from the sidebar on the left. The sidebar is organized by the contracting lifecycle: Opportunities → Proposals → Contracts → Finance → Compliance → AI Tools.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Dashboard Overview -->
+      <section id="dashboard" class="ob-section">
+        <h2>Dashboard Overview</h2>
+        <p>Your dashboard is your command center. Each time you log in, it gives you an at-a-glance view of your workspace health and what needs attention.</p>
+        <ul>
+          <li><strong>Pipeline Summary:</strong> Active opportunities, proposals in progress, and live contracts</li>
+          <li><strong>Upcoming Deadlines:</strong> Proposal due dates, contract milestones, and compliance deadlines</li>
+          <li><strong>AI Guidance Panel:</strong> Personalized next-step recommendations generated by the AI engine</li>
+          <li><strong>Recent Activity:</strong> Latest updates across all records in your workspace</li>
+          <li><strong>Quick Actions:</strong> One-click buttons to create a new opportunity, proposal, or contract</li>
+        </ul>
+        <div class="highlight-box">
+          <p><strong>Tip:</strong> Check the AI Guidance panel daily — it surfaces compliance gaps, expiring deadlines, and pipeline recommendations tailored to your workspace.</p>
+        </div>
+      </section>
+
+      <!-- Key Workflows -->
+      <section id="workflows" class="ob-section">
+        <h2>Key Workflows</h2>
+
+        <h3>Opportunities</h3>
+        <p>Track federal opportunities from discovery through bid decision. For each opportunity you can record the agency, NAICS codes, solicitation number, and due date. Link opportunities to proposals once you decide to bid.</p>
+        <div class="badge-row">
+          <span class="badge">Tracking</span>
+          <span class="badge">Bid/No-Bid</span>
+          <span class="badge">Document Attachments</span>
+          <span class="badge">AI Compliance Check</span>
+        </div>
+
+        <h3>Proposals</h3>
+        <p>Manage your proposal pipeline from draft through award decision. Create proposals linked to opportunities, track status (Draft, Submitted, Won, Lost), store proposal documents, and monitor review cycles and due dates.</p>
+        <div class="badge-row">
+          <span class="badge">Status Tracking</span>
+          <span class="badge">Document Storage</span>
+          <span class="badge">AI Suggestions</span>
+          <span class="badge">Win/Loss Analysis</span>
+        </div>
+
+        <h3>Contracts</h3>
+        <p>Administer active contracts with built-in compliance guidance. Record contract value, period of performance, CLIN structure, and agency details. Track health metrics, manage modifications, and monitor FAR compliance requirements.</p>
+        <div class="badge-row">
+          <span class="badge">CLIN Management</span>
+          <span class="badge">Modifications</span>
+          <span class="badge">FAR Compliance</span>
+          <span class="badge">Closeout Checklist</span>
+        </div>
+
+        <h3>Finance &amp; Invoicing</h3>
+        <p>Track invoices, payments, and financial performance by contract. Set up invoice schedules, record payments, and monitor outstanding balances. Finance data feeds into your dashboard metrics.</p>
+
+        <h3>Compliance Matrix</h3>
+        <p>Maintain a compliance matrix for each contract. Track FAR clauses, reporting requirements, and certification renewals. The system will alert you when compliance items are due or overdue.</p>
+      </section>
+
+      <!-- AI Features -->
+      <section id="ai-features" class="ob-section">
+        <h2>Using AI Features</h2>
+        <p>PrimeContractorOS includes AI-powered tools to accelerate your work and surface risks before they become problems.</p>
+
+        <h3>AI Guidance (Dashboard)</h3>
+        <p>The AI engine continuously analyzes your workspace and generates personalized next-step recommendations. These appear on your dashboard and cover:</p>
+        <ul>
+          <li>Which opportunities to pursue based on your NAICS codes and past performance</li>
+          <li>Compliance gaps that need immediate attention</li>
+          <li>Proposal improvement opportunities</li>
+          <li>Contract risk alerts and expiring deadlines</li>
+        </ul>
+
+        <h3>AI Findings Workspace</h3>
+        <p>Navigate to <strong>AI Findings</strong> in the sidebar to run a workspace-wide AI analysis. Click the purple <strong>Run AI Analysis</strong> button to generate findings. Each finding is categorized as:</p>
+        <ul>
+          <li><strong>Compliance</strong> — regulatory or contractual requirements that need attention</li>
+          <li><strong>Risk</strong> — potential issues that could affect performance or award</li>
+          <li><strong>Missing Item</strong> — required documents or data that are absent</li>
+          <li><strong>Inconsistency</strong> — conflicting information across records</li>
+          <li><strong>Opportunity</strong> — areas where you can improve your competitive position</li>
+        </ul>
+        <p>Review each finding and either <strong>Approve</strong> (creates a task) or <strong>Reject</strong> (dismisses it). Approved findings automatically generate action items in your task list.</p>
+
+        <h3>Proposal AI Suggestions</h3>
+        <p>When creating or editing a proposal, use the AI suggestion feature to get recommendations for improving your proposal narrative, pricing strategy, and compliance language based on the solicitation requirements.</p>
+
+        <div class="highlight-box">
+          <p><strong>Best practice:</strong> Run AI Analysis at least once per week on active contracts and before submitting any proposal to catch issues early.</p>
+        </div>
+      </section>
+
+      <!-- File Management -->
+      <section id="file-management" class="ob-section">
+        <h2>File Management</h2>
+        <p>All your contracting documents live in one secure, searchable place. Files are automatically linked to the records they belong to.</p>
+        <ul>
+          <li><strong>Upload:</strong> Attach RFQs, proposals, contracts, amendments, compliance docs, and supporting materials directly to any record</li>
+          <li><strong>Organize:</strong> Files are tagged to their parent record (opportunity, proposal, contract) for easy retrieval</li>
+          <li><strong>Version tracking:</strong> Upload updated versions of documents and track revision history</li>
+          <li><strong>Search:</strong> Find any file by name, date, or associated record from the Files section</li>
+          <li><strong>Download:</strong> Export any file at any time — your data is always yours</li>
+        </ul>
+        <p>All files are securely stored with encryption at rest and in transit. There is no file size limit for standard documents.</p>
+      </section>
+
+      <!-- Collaboration -->
+      <section id="collaboration" class="ob-section">
+        <h2>Contacts, Tasks &amp; Messaging</h2>
+
+        <h3>Contacts</h3>
+        <p>Maintain a centralized contact database for agencies, prime contractors, subcontractors, teaming partners, and key stakeholders. Link contacts to specific opportunities and contracts so you always know who to call.</p>
+
+        <h3>Tasks</h3>
+        <p>Create and assign tasks for yourself and your team. Each task can be linked to an opportunity, proposal, or contract. Set due dates, assign owners, and track completion status. Tasks approved from AI Findings are automatically created here.</p>
+
+        <h3>Messaging</h3>
+        <p>Communicate with team members directly within the platform. Messages are tied to specific records so conversations stay in context. Use messaging for internal coordination rather than email to keep everything in one place.</p>
+
+        <h3>Team Management</h3>
+        <p>Workspace owners can invite team members under <strong>Settings → Team</strong>. Each member gets access to the full workspace. Contact the platform administrator if you need to adjust access levels.</p>
+      </section>
+
+      <!-- Best Practices -->
+      <section id="best-practices" class="ob-section">
+        <h2>Tips &amp; Best Practices</h2>
+        <ul>
+          <li><strong>Keep your profile current:</strong> Accurate NAICS codes and certifications improve AI guidance quality</li>
+          <li><strong>Use consistent naming conventions:</strong> Name records clearly (e.g., "USAF IDIQ — IT Services 2025") so your team can find them</li>
+          <li><strong>Link records together:</strong> Connect opportunities → proposals → contracts to maintain a complete pipeline view</li>
+          <li><strong>Review AI guidance daily:</strong> New recommendations appear as your workspace data changes</li>
+          <li><strong>Attach source documents immediately:</strong> Upload RFQs and solicitations when you create an opportunity — don't wait</li>
+          <li><strong>Use tasks for all action items:</strong> If something needs to be done, create a task so it doesn't get lost</li>
+          <li><strong>Run AI Analysis before major submissions:</strong> Catch compliance gaps before they become proposal disqualifiers</li>
+          <li><strong>Communicate through the platform:</strong> Use messaging instead of email for discussions tied to specific records</li>
+          <li><strong>Log out when done:</strong> Use the Sign Out button in the sidebar user menu to end your session securely</li>
+        </ul>
+      </section>
+
+      <!-- Support -->
+      <section id="support" class="ob-section">
+        <h2>Getting Help</h2>
+        <p>We are here to support you. Here are the best ways to get assistance:</p>
+        <ul>
+          <li><strong>In-app guidance:</strong> Look for help tooltips (?) throughout the platform for contextual explanations</li>
+          <li><strong>Email support:</strong> Contact our team at <a href="mailto:support@reedssolutionsllc.org" style="color:#667eea;text-decoration:none;font-weight:600;">support@reedssolutionsllc.org</a></li>
+          <li><strong>Company website:</strong> <a href="https://reedssolutionsllc.org" target="_blank" rel="noopener" style="color:#667eea;text-decoration:none;font-weight:600;">reedssolutionsllc.org</a></li>
+        </ul>
+        <div class="highlight-box">
+          <p><strong>Ready to get started?</strong> Log in to <a href="https://primecontractor-bk79t4ta.manus.space" target="_blank" rel="noopener">PrimeContractorOS</a> now and begin building your contracting pipeline.</p>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <p>&copy; <span id="year"></span> Reed's Solutions LLC. All rights reserved. &bull; UEI: L5W1JWUUDMW3 &bull; CAGE: 157R9</p>
+      <div class="socials">
+        <a href="https://www.linkedin.com/company/reedssolutionsllc" aria-label="LinkedIn"><img src="linkedin.svg" alt="LinkedIn" /></a>
+        <a href="https://www.facebook.com/reedssolutionsllc" aria-label="Facebook"><img src="facebook.svg" alt="Facebook" /></a>
+        <a href="https://www.youtube.com/@reedssolutionsllc" aria-label="YouTube"><img src="youtube.svg" alt="YouTube" /></a>
+      </div>
+      <div class="footer-links" style="margin-top:1rem;">
+        <a href="privacy.html">Privacy Policy</a> |
+        <a href="terms.html">Terms of Use</a> |
+        <a href="accessibility.html">Accessibility</a> |
+        <a href="security-compliance.html">Security &amp; Compliance</a> |
+        <a href="https://primecontractor-bk79t4ta.manus.space" target="_blank" rel="noopener" style="color:#00b894;font-weight:600;">Client Portal &rarr;</a>
+      </div>
+    </div>
+  </footer>
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
