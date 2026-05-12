@@ -8,68 +8,18 @@
   <link rel="stylesheet" href="styles.css" />
   <link rel="icon" href="favicon 2.svg" type="image/svg+xml" />
   <style>
-    body {
-      font-family: "Segoe UI", Arial, sans-serif;
-      margin: 0;
-      background-color: #f9fafc;
-      color: #222;
-      line-height: 1.6;
-    }
-
-    header {
-      background: #0b2242;
-      padding: 1rem 0;
-    }
-
-    .navbar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      width: 90%;
-      margin: 0 auto;
-    }
-
-    .navbar img {
-      height: 50px;
-    }
-
-    .nav-links {
-      list-style: none;
-      display: flex;
-      gap: 1.5rem;
-    }
-
-    .nav-links a {
-      color: white;
-      text-decoration: none;
-      font-weight: 500;
-      transition: color 0.2s;
-    }
-
-    .nav-links a:hover,
-    .nav-links .active {
-      color: #3dc47e;
-    }
-
-    .hero {
+    /* Contact page specific styles — nav/footer handled by global styles.css */
+    .contact-hero {
       background: linear-gradient(to right, #0b2242, #15345a);
       color: white;
       padding: 4rem 1rem;
       text-align: center;
     }
-
-    .hero h1 {
+    .contact-hero h1 {
       font-size: 2.2rem;
       margin-bottom: 0.5rem;
     }
-
-    .contact-section {
-      padding: 3rem 1rem;
-      text-align: center;
-      background: #ffffff;
-    }
-
-    .container {
+    .contact-container {
       max-width: 700px;
       margin: 0 auto;
       background: #f2f5f9;
@@ -77,33 +27,31 @@
       border-radius: 10px;
       box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     }
-
-    form {
+    .contact-container form {
       display: flex;
       flex-direction: column;
       gap: 1rem;
       text-align: left;
     }
-
-    label {
+    .contact-container label {
       font-weight: 600;
+      color: var(--color-navy);
     }
-
-    input, textarea {
+    .contact-container input,
+    .contact-container textarea {
       width: 100%;
       padding: 0.8rem;
       border: 1px solid #ccc;
       border-radius: 6px;
       font-size: 1rem;
     }
-
-    input:focus, textarea:focus {
-      border-color: #0b2242;
+    .contact-container input:focus,
+    .contact-container textarea:focus {
+      border-color: var(--color-green);
       outline: none;
     }
-
-    .btn-primary {
-      background: #0b2242;
+    .contact-container .btn-primary {
+      background: var(--color-navy);
       color: white;
       border: none;
       padding: 0.9rem;
@@ -112,26 +60,15 @@
       cursor: pointer;
       transition: background 0.3s;
     }
-
-    .btn-primary:hover {
+    .contact-container .btn-primary:hover {
       background: #163968;
     }
-
-    .contact-info {
+    .contact-container .contact-info {
       margin-top: 2rem;
       background: #fff;
       padding: 1.5rem;
       border-radius: 8px;
       box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-    }
-
-    footer {
-      text-align: center;
-      padding: 1.5rem;
-      background: #0b2242;
-      color: #fff;
-      margin-top: 3rem;
-      font-size: 0.9rem;
     }
   </style>
 </head>
@@ -142,28 +79,41 @@
       <div class="logo">
         <a href="index.html"><img src="logo-RS-machinery-detailed.svg" alt="Reed's Solutions LLC Logo" /></a>
       </div>
+      <button class="hamburger" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
       <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="capabilities.html">Capabilities</a></li>
         <li><a href="contracting.html">Contracting</a></li>
+        <li class="nav-dropdown">
+          <a href="#" class="dropdown-toggle">Resources <span class="arrow">&#9662;</span></a>
+          <ul class="dropdown-menu">
+            <li><a href="teaming.html">Teaming &amp; Partnerships</a></li>
+            <li><a href="past-performance.html">Past Performance</a></li>
+            <li><a href="capability-statement.html">Capability Statement</a></li>
+            <li><a href="onboarding.html">Employee Onboarding</a></li>
+          </ul>
+        </li>
         <li><a href="careers.html">Careers</a></li>
         <li><a href="news.html">News</a></li>
-        <li><a href="contact.html" class="active">Contact</a></li>
+        <li><a href="contact.html" class="btn">Contact</a></li>
         <li><a href="https://primecontractor-bk79t4ta.manus.space" target="_blank" rel="noopener" class="btn-portal">Client Portal</a></li>
       </ul>
     </nav>
   </header>
 
   <main>
-    <section class="hero">
+    <section class="contact-hero">
       <div class="hero-content">
         <h1>Contact Reed's Solutions LLC</h1>
-        <p>We’re here to answer questions, provide contracting information, and discuss partnership opportunities.</p>
+        <p>We're here to answer questions, provide contracting information, and discuss partnership opportunities.</p>
       </div>
     </section>
 
-    <section class="contact-section">
-      <div class="container">
+    <section class="contact-section" style="padding:3rem 1rem;text-align:center;background:#fff;">
+      <div class="contact-container">
         <h2>Get in Touch</h2>
         <p>Please fill out the form below or use our contact information to reach our team directly.</p>
 
@@ -203,15 +153,82 @@
 
   <footer>
     <div class="footer-content">
-      <p>&copy; <span id="year"></span> Reed's Solutions LLC. All rights reserved. &bull; UEI: L5W1JWUUDMW3 &bull; CAGE: 157R9</p>
-      <div class="footer-links">
-        <a href="privacy.html">Privacy Policy</a> |
-        <a href="terms.html">Terms of Use</a> |
-        <a href="accessibility.html">Accessibility</a> |
-        <a href="security-compliance.html">Security &amp; Compliance</a>
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="careers.html">Careers</a></li>
+            <li><a href="news.html">News &amp; Updates</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="capabilities.html">Capabilities</a></li>
+            <li><a href="contracting.html">Contracting</a></li>
+            <li><a href="teaming.html">Teaming &amp; Partnerships</a></li>
+            <li><a href="past-performance.html">Past Performance</a></li>
+            <li><a href="capability-statement.html">Capability Statement</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Platform</h4>
+          <ul>
+            <li><a href="https://primecontractor-bk79t4ta.manus.space" target="_blank" rel="noopener">PrimeContractorOS</a></li>
+            <li><a href="onboarding.html">Employee Onboarding</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="terms.html">Terms of Use</a></li>
+            <li><a href="accessibility.html">Accessibility</a></li>
+            <li><a href="security-compliance.html">Security &amp; Compliance</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; <span id="year"></span> Reed&#39;s Solutions LLC. All rights reserved. &bull; UEI: L5W1JWUUDMW3 &bull; CAGE: 157R9</p>
+        <div class="socials">
+          <a href="https://www.linkedin.com/company/reedssolutionsllc" aria-label="LinkedIn"><img src="linkedin.svg" alt="LinkedIn" /></a>
+          <a href="https://www.facebook.com/reedssolutionsllc" aria-label="Facebook"><img src="facebook.svg" alt="Facebook" /></a>
+          <a href="https://www.youtube.com/@reedssolutionsllc" aria-label="YouTube"><img src="youtube.svg" alt="YouTube" /></a>
+        </div>
       </div>
     </div>
   </footer>
-  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+  <script>
+    // Year
+    var y = document.getElementById("year"); if(y) y.textContent = new Date().getFullYear();
+    // Hamburger toggle
+    var hb = document.querySelector(".hamburger");
+    var nl = document.querySelector(".nav-links");
+    if(hb && nl) {
+      hb.addEventListener("click", function() {
+        nl.classList.toggle("open");
+        hb.classList.toggle("open");
+        hb.setAttribute("aria-expanded", nl.classList.contains("open"));
+      });
+    }
+    // Dropdown toggle for mobile
+    var dt = document.querySelectorAll(".dropdown-toggle");
+    dt.forEach(function(t) {
+      t.addEventListener("click", function(e) {
+        if(window.innerWidth <= 900) {
+          e.preventDefault();
+          t.parentElement.classList.toggle("dropdown-open");
+        }
+      });
+    });
+    // Active link highlighting
+    var pg = window.location.pathname.split("/").pop() || "index.html";
+    document.querySelectorAll(".nav-links a").forEach(function(a) {
+      var href = a.getAttribute("href");
+      if(href === pg || (pg === "" && href === "index.html")) a.classList.add("active");
+    });
+  </script>
 </body>
 </html>

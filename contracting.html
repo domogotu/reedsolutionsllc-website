@@ -31,15 +31,28 @@
 
 </head>
 <body>
-  <header role="banner">
-    <nav class="navbar" role="navigation" aria-label="Main Navigation">
+  <header>
+    <nav class="navbar">
       <div class="logo">
         <a href="index.html"><img src="logo-RS-machinery-detailed.svg" alt="Reed's Solutions LLC Logo" /></a>
       </div>
+      <button class="hamburger" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
       <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="capabilities.html">Capabilities</a></li>
         <li><a href="contracting.html">Contracting</a></li>
+        <li class="nav-dropdown">
+          <a href="#" class="dropdown-toggle">Resources <span class="arrow">&#9662;</span></a>
+          <ul class="dropdown-menu">
+            <li><a href="teaming.html">Teaming &amp; Partnerships</a></li>
+            <li><a href="past-performance.html">Past Performance</a></li>
+            <li><a href="capability-statement.html">Capability Statement</a></li>
+            <li><a href="onboarding.html">Employee Onboarding</a></li>
+          </ul>
+        </li>
         <li><a href="careers.html">Careers</a></li>
         <li><a href="news.html">News</a></li>
         <li><a href="contact.html" class="btn">Contact</a></li>
@@ -80,19 +93,84 @@
     </section>
   </main>
 
-  <footer role="contentinfo">
+  <footer>
     <div class="footer-content">
-      <p>© <span id="year"></span> Reed's Solutions LLC. All rights reserved.</p>
-      <div class="socials">
-        <a href="https://www.linkedin.com/company/reedssolutionsllc" aria-label="LinkedIn"><img src="linkedin.svg" alt="LinkedIn" /></a>
-        <a href="https://www.facebook.com/reedssolutionsllc" aria-label="Facebook"><img src="facebook.svg" alt="Facebook" /></a>
-        <a href="https://www.youtube.com/@reedssolutionsllc" aria-label="YouTube"><img src="youtube.svg" alt="YouTube" /></a>
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="careers.html">Careers</a></li>
+            <li><a href="news.html">News &amp; Updates</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="capabilities.html">Capabilities</a></li>
+            <li><a href="contracting.html">Contracting</a></li>
+            <li><a href="teaming.html">Teaming &amp; Partnerships</a></li>
+            <li><a href="past-performance.html">Past Performance</a></li>
+            <li><a href="capability-statement.html">Capability Statement</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Platform</h4>
+          <ul>
+            <li><a href="https://primecontractor-bk79t4ta.manus.space" target="_blank" rel="noopener">PrimeContractorOS</a></li>
+            <li><a href="onboarding.html">Employee Onboarding</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="terms.html">Terms of Use</a></li>
+            <li><a href="accessibility.html">Accessibility</a></li>
+            <li><a href="security-compliance.html">Security &amp; Compliance</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; <span id="year"></span> Reed&#39;s Solutions LLC. All rights reserved. &bull; UEI: L5W1JWUUDMW3 &bull; CAGE: 157R9</p>
+        <div class="socials">
+          <a href="https://www.linkedin.com/company/reedssolutionsllc" aria-label="LinkedIn"><img src="linkedin.svg" alt="LinkedIn" /></a>
+          <a href="https://www.facebook.com/reedssolutionsllc" aria-label="Facebook"><img src="facebook.svg" alt="Facebook" /></a>
+          <a href="https://www.youtube.com/@reedssolutionsllc" aria-label="YouTube"><img src="youtube.svg" alt="YouTube" /></a>
+        </div>
       </div>
     </div>
   </footer>
-
   <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
+    // Year
+    var y = document.getElementById("year"); if(y) y.textContent = new Date().getFullYear();
+    // Hamburger toggle
+    var hb = document.querySelector(".hamburger");
+    var nl = document.querySelector(".nav-links");
+    if(hb && nl) {
+      hb.addEventListener("click", function() {
+        nl.classList.toggle("open");
+        hb.classList.toggle("open");
+        hb.setAttribute("aria-expanded", nl.classList.contains("open"));
+      });
+    }
+    // Dropdown toggle for mobile
+    var dt = document.querySelectorAll(".dropdown-toggle");
+    dt.forEach(function(t) {
+      t.addEventListener("click", function(e) {
+        if(window.innerWidth <= 900) {
+          e.preventDefault();
+          t.parentElement.classList.toggle("dropdown-open");
+        }
+      });
+    });
+    // Active link highlighting
+    var pg = window.location.pathname.split("/").pop() || "index.html";
+    document.querySelectorAll(".nav-links a").forEach(function(a) {
+      var href = a.getAttribute("href");
+      if(href === pg || (pg === "" && href === "index.html")) a.classList.add("active");
+    });
   </script>
 </body>
 </html>
