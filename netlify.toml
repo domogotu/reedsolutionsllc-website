@@ -1,4 +1,5 @@
-# Netlify Configuration for Reed's Solutions LLC
+# Netlify Configuration for Reeds Solutions LLC
+# Note: This site is hosted on GitHub Pages, not Netlify
 
 # Publish directory - serve files from root
 publish = "."
@@ -32,6 +33,26 @@ status = 200
 [[redirects]]
 from = "/privacy"
 to = "/privacy.html"
+status = 200
+
+[[redirects]]
+from = "/accessibility"
+to = "/accessibility.html"
+status = 200
+
+[[redirects]]
+from = "/security"
+to = "/security-compliance.html"
+status = 200
+
+[[redirects]]
+from = "/capabilities-statement"
+to = "/capability-statement.html"
+status = 200
+
+[[redirects]]
+from = "/careers"
+to = "/careers.html"
 status = 200
 
 # 404 handling

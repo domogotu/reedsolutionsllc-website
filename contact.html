@@ -3,21 +3,23 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Contact | Reed's Solutions LLC">
-  <title>Contact | Reed's Solutions LLC</title>
+  <meta name="description" content="Contact | Reeds Solutions LLC | Get in Touch">
+  <title>Contact | Reeds Solutions LLC</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <header>
-    <nav class="navbar">
+        <nav class="navbar">
       <div class="container">
-        <div class="logo">Reed's Solutions LLC</div>
+        <a href="index.html" class="logo">Reeds Solutions LLC</a>
         <ul class="nav-links">
           <li><a href="index.html">Home</a></li>
           <li><a href="about.html">About</a></li>
           <li><a href="capabilities.html">Capabilities</a></li>
           <li><a href="contracting.html">Contracting</a></li>
-          <li><a href="contact.html" class="active">Contact</a></li>
+          <li><a href="platform.html">Platform</a></li>
+          <li><a href="careers.html">Careers</a></li>
+          <li><a href="contact.html">Contact</a></li>
         </ul>
       </div>
     </nav>
@@ -26,53 +28,158 @@
   <main>
     <section class="page-header">
       <div class="container">
-        <h1>Contact Us</h1>
+        <h1>Contact Reeds Solutions LLC</h1>
+        <p>We're ready to discuss your contracting, IT services, or facilities support needs.</p>
       </div>
     </section>
 
     <section class="content">
       <div class="container">
-        <h2>Get in Touch</h2>
-        <p>Have questions about our services? We'd love to hear from you.</p>
+        <div class="contact-container">
+          <div class="contact-form-section">
+            <h2>Send Us a Message</h2>
+            <form class="contact-form" id="contactForm">
+              <div class="form-group">
+                <label for="name">Full Name *</label>
+                <input type="text" id="name" name="name" required>
+              </div>
 
-        <div class="contact-info">
-          <h3>Contact Information</h3>
-          <p><strong>Company:</strong> Reed's Solutions LLC</p>
-          <p><strong>UEI:</strong> L5W1JWUUDMW3</p>
-          <p><strong>CAGE:</strong> 157R9</p>
-        </div>
+              <div class="form-group">
+                <label for="email">Email Address *</label>
+                <input type="email" id="email" name="email" required>
+              </div>
 
-        <div class="contact-form">
-          <h3>Send us a Message</h3>
-          <form>
-            <div class="form-group">
-              <label for="name">Name</label>
-              <input type="text" id="name" name="name" required>
+              <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone">
+              </div>
+
+              <div class="form-group">
+                <label for="company">Company Name</label>
+                <input type="text" id="company" name="company">
+              </div>
+
+              <div class="form-group">
+                <label for="inquiry-type">Inquiry Type *</label>
+                <select id="inquiry-type" name="inquiry-type" required>
+                  <option value="">-- Select an option --</option>
+                  <option value="contracting">Government Contracting Inquiry</option>
+                  <option value="subcontracting">Subcontractor / Teaming Inquiry</option>
+                  <option value="it-services">IT Services</option>
+                  <option value="facilities">Facilities Support</option>
+                  <option value="careers">Careers / Work Interest</option>
+                  <option value="vendor">Vendor Inquiry</option>
+                  <option value="general">General Question</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="subject">Subject *</label>
+                <input type="text" id="subject" name="subject" required>
+              </div>
+
+              <div class="form-group">
+                <label for="message">Message *</label>
+                <textarea id="message" name="message" rows="6" required></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary">Send Message</button>
+            </form>
+            <p class="form-note">* Required fields</p>
+            <p class="form-note" style="margin-top: 1rem; font-size: 0.9rem; color: #666;">Your message will open in your email client. Please send it to complete your inquiry.</p>
+          </div>
+
+          <div class="contact-info-section">
+            <h2>Contact Information</h2>
+            
+            <div class="contact-info-item">
+              <h3>Email</h3>
+              <p><a href="mailto:info@reedssolutionsllc.org">info@reedssolutionsllc.org</a></p>
             </div>
-            <div class="form-group">
-              <label for="email">Email</label>
-              <input type="email" id="email" name="email" required>
+
+            <div class="contact-info-item">
+              <h3>Business Hours</h3>
+              <p>Monday–Friday, 8:00 AM–5:00 PM</p>
             </div>
-            <div class="form-group">
-              <label for="message">Message</label>
-              <textarea id="message" name="message" rows="5" required></textarea>
+
+            <div class="contact-info-item">
+              <h3>Business Registration</h3>
+              <p>UEI/CAGE information available upon appropriate business or contracting request.</p>
             </div>
-            <button type="submit" class="btn btn-primary">Send Message</button>
-          </form>
+
+            <div class="contact-info-item">
+              <h3>Response Time</h3>
+              <p>We aim to respond to all inquiries within 1-2 business days.</p>
+            </div>
+
+            <div class="contact-info-item">
+              <h3>Service Areas</h3>
+              <ul>
+                <li>Government Contracting Support</li>
+                <li>IT Services & Technology Support</li>
+                <li>Facilities Coordination & Support</li>
+                <li>Subcontractor & Teaming Coordination</li>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
     </section>
   </main>
 
-  <footer>
+    <footer>
     <div class="container">
-      <p>&copy; 2026 Reed's Solutions LLC. All rights reserved.</p>
-      <ul class="footer-links">
-        <li><a href="privacy.html">Privacy Policy</a></li>
-        <li><a href="terms.html">Terms of Use</a></li>
-        <li><a href="accessibility.html">Accessibility</a></li>
-      </ul>
+      <div class="footer-content">
+        <div class="footer-section">
+          <h4>Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="capabilities.html">Capabilities</a></li>
+            <li><a href="contracting.html">Contracting</a></li>
+            <li><a href="platform.html">Platform</a></li>
+            <li><a href="careers.html">Careers</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>Resources</h4>
+          <ul class="footer-links">
+            <li><a href="teaming.html">Teaming & Partnerships</a></li>
+            <li><a href="past-performance.html">Past Performance & Readiness</a></li>
+            <li><a href="capability-statement.html">Capability Statement</a></li>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="terms.html">Terms of Use</a></li>
+            <li><a href="accessibility.html">Accessibility</a></li>
+            <li><a href="security-compliance.html">Security & Compliance</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Reeds Solutions LLC. All rights reserved. • UEI: L5W1JWUUDMW3 • CAGE: 157R9</p>
+      </div>
     </div>
   </footer>
+
+  <script>
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      // Get form values
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const phone = document.getElementById('phone').value;
+      const company = document.getElementById('company').value;
+      const inquiryType = document.getElementById('inquiry-type').value;
+      const subject = document.getElementById('subject').value;
+      const message = document.getElementById('message').value;
+      
+      // Build email body
+      const emailBody = `Name: ${name}%0AEmail: ${email}%0APhone: ${phone}%0ACompany/Organization: ${company}%0AInquiry Type: ${inquiryType}%0ASubject: ${subject}%0A%0AMessage:%0A${message}`;
+      
+      // Open mailto link
+      window.location.href = `mailto:info@reedssolutionsllc.org?subject=${encodeURIComponent(subject)}&body=${emailBody}`;
+    });
+  </script>
 </body>
 </html>
