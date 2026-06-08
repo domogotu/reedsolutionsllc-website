@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="PrimeContractorOS Pricing — Flexible plans for government contractors">
+  <title>Pricing | Reeds Solutions LLC</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      margin: 2rem 0;
+    }
+    .pricing-card {
+      background: white;
+      border: 2px solid #e0e0e0;
+      border-radius: 8px;
+      padding: 2rem;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+    .pricing-card:hover {
+      border-color: #00b894;
+      box-shadow: 0 8px 24px rgba(0, 184, 148, 0.15);
+    }
+    .pricing-card.featured {
+      border-color: #00b894;
+      box-shadow: 0 8px 24px rgba(0, 184, 148, 0.15);
+    }
+    .price {
+      font-size: 2.5rem;
+      font-weight: bold;
+      color: #00b894;
+      margin: 1rem 0;
+    }
+    .price-period {
+      color: #666;
+      font-size: 0.9rem;
+    }
+    .features-list {
+      text-align: left;
+      margin: 2rem 0;
+      list-style: none;
+      padding: 0;
+    }
+    .features-list li {
+      padding: 0.5rem 0;
+      border-bottom: 1px solid #f0f0f0;
+    }
+    .features-list li:before {
+      content: "✓ ";
+      color: #00b894;
+      font-weight: bold;
+      margin-right: 0.5rem;
+    }
+    .cta-btn {
+      display: inline-block;
+      background: #00b894;
+      color: white;
+      padding: 0.75rem 2rem;
+      border-radius: 4px;
+      text-decoration: none;
+      margin-top: 1rem;
+      transition: background 0.3s ease;
+    }
+    .cta-btn:hover {
+      background: #009973;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="container">
+        <a href="index.html" class="logo">Reeds Solutions LLC</a>
+        <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="capabilities.html">Capabilities</a></li>
+        <li><a href="contracting.html">Contracting</a></li>
+        <li><a href="platform.html">PrimeContractorOS</a></li>
+        <li><a href="features.html">Features</a></li>
+        <li><a href="pricing.html">Pricing</a></li>
+        <li><a href="help.html">Help</a></li>
+        <li><a href="contact.html" class="btn">Contact</a></li>
+        <li>
+          <a href="https://primecontractor-ihy8ydow.manus.space" target="_blank" rel="noopener" class="btn-portal">
+            Client Portal
+          </a>
+        </li>
+      </ul>
+      </div>
+    </nav>
+  </header>
+  <main>
+    <section class="page-header">
+      <div class="container">
+        <h1>PrimeContractorOS Pricing</h1>
+        <p>Flexible, transparent pricing designed for government contractors of all sizes.</p>
+      </div>
+    </section>
+    <section class="content">
+      <div class="container">
+        <p style="text-align: center; color: #666; margin-bottom: 2rem;">Pricing shown is a planned structure and may change as the platform is finalized, tested, and launched.</p>
+
+        <div class="pricing-grid">
+          <div class="pricing-card">
+            <h3>Starter</h3>
+            <div class="price">$149<span class="price-period">/month</span></div>
+            <ul class="features-list">
+              <li>Up to 3 active contracts</li>
+              <li>Basic opportunity tracking</li>
+              <li>File storage (5 GB)</li>
+              <li>Email support</li>
+              <li>Single user workspace</li>
+            </ul>
+            <a href="get-started.html" class="cta-btn">Get Started</a>
+          </div>
+
+          <div class="pricing-card featured">
+            <h3>Professional</h3>
+            <div class="price">$299<span class="price-period">/month</span></div>
+            <ul class="features-list">
+              <li>Unlimited contracts</li>
+              <li>Advanced opportunity tracking</li>
+              <li>File storage (50 GB)</li>
+              <li>Priority email support</li>
+              <li>Up to 5 team members</li>
+              <li>AI-assisted review</li>
+            </ul>
+            <a href="get-started.html" class="cta-btn">Get Started</a>
+          </div>
+
+          <div class="pricing-card">
+            <h3>Advanced</h3>
+            <div class="price">$499<span class="price-period">/month</span></div>
+            <ul class="features-list">
+              <li>Unlimited contracts</li>
+              <li>Full feature access</li>
+              <li>File storage (200 GB)</li>
+              <li>Priority phone support</li>
+              <li>Up to 15 team members</li>
+              <li>Advanced reporting</li>
+            </ul>
+            <a href="get-started.html" class="cta-btn">Get Started</a>
+          </div>
+
+          <div class="pricing-card">
+            <h3>Enterprise</h3>
+            <div class="price">Custom</div>
+            <ul class="features-list">
+              <li>Unlimited everything</li>
+              <li>Dedicated support</li>
+              <li>Custom integrations</li>
+              <li>SLA guarantees</li>
+              <li>Unlimited team members</li>
+              <li>Training &amp; onboarding</li>
+            </ul>
+            <a href="contact.html" class="cta-btn">Contact Sales</a>
+          </div>
+        </div>
+
+        <h2 style="margin-top: 3rem;">Frequently Asked Questions</h2>
+        <h3>What is included in all plans?</h3>
+        <p>All plans include access to core PrimeContractorOS features including opportunity tracking, proposal management, contract administration, file storage, task management, and basic reporting.</p>
+
+        <h3>Can I change plans?</h3>
+        <p>Yes, you can upgrade or downgrade your plan at any time. Changes take effect at the beginning of your next billing cycle.</p>
+
+        <h3>Do you offer annual billing discounts?</h3>
+        <p>Yes, all plans offer discounted annual billing options. Contact us for details.</p>
+
+        <h3>Is there a free trial?</h3>
+        <p>Contact us to discuss trial options or early access to PrimeContractorOS.</p>
+
+        <h2>Ready to Get Started?</h2>
+        <p><a href="get-started.html">Choose your plan</a> and start organizing your government-contracting workflow today.</p>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="careers.html">Careers</a></li>
+            <li><a href="news.html">News &amp; Updates</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="capabilities.html">Capabilities</a></li>
+            <li><a href="contracting.html">Contracting</a></li>
+            <li><a href="teaming.html">Teaming &amp; Partnerships</a></li>
+            <li><a href="past-performance.html">Past Performance</a></li>
+            <li><a href="capability-statement.html">Capability Statement</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Platform</h4>
+          <ul>
+            <li><a href="platform.html">PrimeContractorOS</a></li>
+            <li><a href="features.html">Features</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="help.html">Help Center</a></li>
+            <li><a href="glossary.html">Glossary</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="terms.html">Terms of Use</a></li>
+            <li><a href="accessibility.html">Accessibility</a></li>
+            <li><a href="security-compliance.html">Security &amp; Compliance</a></li>
+          </ul>
+        </div>
+
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Reeds Solutions LLC. All rights reserved. &bull; UEI: L5W1JWUUDMW3 &bull; CAGE: 157R9</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
