@@ -28,7 +28,7 @@
     <li><a href="help.html">Help</a></li>
     <li><a href="contact.html" class="btn">Contact</a></li>
     <li>
-     <a href="https://primecontractoros.netlify.app" target="_blank" rel="noopener" class="btn-portal">
+     <a href="https://primecontractoros.com" target="_blank" rel="noopener" class="btn-portal">
       Client Portal
      </a>
     </li>
@@ -59,11 +59,6 @@
        <div class="form-group">
         <label for="email">Email Address *</label>
         <input type="email" id="email" name="email" required>
-       </div>
-
-       <div class="form-group">
-        <label for="phone">Phone Number</label>
-        <input type="tel" id="phone" name="phone">
        </div>
 
        <div class="form-group">
@@ -180,14 +175,13 @@
    // Get form values
    const name = document.getElementById('name').value;
    const email = document.getElementById('email').value;
-   const phone = document.getElementById('phone').value;
    const company = document.getElementById('company').value;
    const inquiryType = document.getElementById('inquiry-type').value;
    const subject = document.getElementById('subject').value;
    const message = document.getElementById('message').value;
    
    // Build email body
-   const emailBody = `Name: ${name}%0AEmail: ${email}%0APhone: ${phone}%0ACompany/Organization: ${company}%0AInquiry Type: ${inquiryType}%0ASubject: ${subject}%0A%0AMessage:%0A${message}`;
+   const emailBody = `Name: ${name}%0AEmail: ${email}%0ACompany/Organization: ${company}%0AInquiry Type: ${inquiryType}%0ASubject: ${subject}%0A%0AMessage:%0A${message}`;
    
    // Open mailto link
    window.location.href = `mailto:info@reedssolutionsllc.org?subject=${encodeURIComponent(subject)}&body=${emailBody}`;
