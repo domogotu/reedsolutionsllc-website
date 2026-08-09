@@ -1,0 +1,43 @@
+name: Normalize site links
+
+on:
+  push:
+    branches:
+      - fix/website-link-audit
+
+permissions:
+  contents: write
+
+jobs:
+  normalize:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Normalize production links and public contact email
+        shell: bash
+        run: |
+          set -euo pipefail
+          find . -maxdepth 1 -type f -name '*.html' -print0 | while IFS= read -r -d '' file; do
+            sed -i \
+              -e 's#https://primecontractoros\.netlify\.app#https://primecontractoros.com#g' \
+              -e 's#https://primeos-phghy5ib\.manus\.space#https://primecontractoros.com#g' \
+              -e 's#https://primeconos-gedxfump\.manus\.space#https://primecontractoros.com#g' \
+              -e 's#https://primeos-7bb7jyhw\.manus\.space#https://primecontractoros.com#g' \
+              -e 's#https://primeupdate-remjsdr2\.manus\.space#https://primecontractoros.com#g' \
+              -e 's#Reedssolutionsllcorg@gmail\.com#info@reedssolutionsllc.org#g' \
+              "$file"
+          done
+      - name: Commit normalized files
+        shell: bash
+        run: |
+          if git diff --quiet; then
+            echo 'No normalization changes needed.'
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -- '*.html'
+          git commit -m 'Normalize production links and public contact email'
+          git push origin HEAD:fix/website-link-audit
