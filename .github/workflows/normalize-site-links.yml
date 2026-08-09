@@ -10,25 +10,92 @@ permissions:
 
 jobs:
   normalize:
+    if: github.actor != 'github-actions[bot]'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
         with:
+          ref: fix/website-link-audit
           fetch-depth: 0
-      - name: Normalize production links and public contact email
+
+      - name: Repair website consistency issues
         shell: bash
         run: |
           set -euo pipefail
-          find . -maxdepth 1 -type f -name '*.html' -print0 | while IFS= read -r -d '' file; do
-            sed -i \
-              -e 's#https://primecontractoros\.netlify\.app#https://primecontractoros.com#g' \
-              -e 's#https://primeos-phghy5ib\.manus\.space#https://primecontractoros.com#g' \
-              -e 's#https://primeconos-gedxfump\.manus\.space#https://primecontractoros.com#g' \
-              -e 's#https://primeos-7bb7jyhw\.manus\.space#https://primecontractoros.com#g' \
-              -e 's#https://primeupdate-remjsdr2\.manus\.space#https://primecontractoros.com#g' \
-              -e 's#Reedssolutionsllcorg@gmail\.com#info@reedssolutionsllc.org#g' \
-              "$file"
-          done
+          python - <<'PY'
+          from pathlib import Path
+          import re
+
+          canonical_app = "https://primecontractoros.com"
+          old_app_urls = [
+              "https://primecontractoros.netlify.app",
+              "https://primeos-phghy5ib.manus.space",
+              "https://primeconos-gedxfump.manus.space",
+              "https://primeos-7bb7jyhw.manus.space",
+              "https://primeupdate-remjsdr2.manus.space",
+          ]
+
+          html_files = list(Path('.').glob('*.html'))
+          existing = {p.name for p in html_files}
+
+          for path in html_files:
+              text = path.read_text(encoding='utf-8')
+              for old in old_app_urls:
+                  text = text.replace(old, canonical_app)
+              text = text.replace('Reedssolutionsllcorg@gmail.com', 'info@reedssolutionsllc.org')
+              # There is no news.html page, so remove dead News & Updates navigation items.
+              text = re.sub(r'\s*<li><a href="news\.html">News(?: &amp;| &) Updates</a></li>', '', text)
+              path.write_text(text, encoding='utf-8')
+
+          # The corporate website must not collect or imitate PrimeContractorOS passwords.
+          # Authentication belongs to the application itself.
+          login = Path('login.html')
+          if login.exists():
+              text = login.read_text(encoding='utf-8')
+              text = re.sub(
+                  r'\s*<form method="POST" action="https://primecontractoros\.com/login">.*?</form>\s*<div class="divider">or</div>',
+                  '''\n   <div style="text-align:center;">\n    <p>PrimeContractorOS authentication is handled securely by the application.</p>\n    <p><a href="https://primecontractoros.com/login" class="login-btn" style="display:inline-block;text-decoration:none;box-sizing:border-box;">Continue to PrimeContractorOS Login</a></p>\n    <div class="login-links" style="justify-content:center; gap:1rem;">\n     <a href="help.html">Need help?</a>\n     <a href="contact.html">Contact Support</a>\n    </div>\n   </div>\n\n   <div class="divider">New to PrimeContractorOS?</div>''',
+                  text,
+                  flags=re.S,
+              )
+              login.write_text(text, encoding='utf-8')
+
+          # Public contact preference is email-only. Remove the phone-number field and
+          # corresponding client-side mail body variable while leaving the email workflow intact.
+          contact = Path('contact.html')
+          if contact.exists():
+              text = contact.read_text(encoding='utf-8')
+              text = re.sub(
+                  r'\s*<div class="form-group">\s*<label for="phone">Phone Number</label>\s*<input type="tel" id="phone" name="phone">\s*</div>',
+                  '',
+                  text,
+                  flags=re.S,
+              )
+              text = re.sub(r"\n\s*const phone = document\.getElementById\('phone'\)\.value;", '', text)
+              text = text.replace('%0APhone: ${phone}', '')
+              contact.write_text(text, encoding='utf-8')
+
+          # Validate all local .html links point to files that exist.
+          broken = []
+          href_re = re.compile(r'href="([^"#?]+)')
+          for path in html_files:
+              text = path.read_text(encoding='utf-8')
+              for href in href_re.findall(text):
+                  if href.startswith(('http://', 'https://', 'mailto:', 'tel:', 'javascript:', '/')):
+                      continue
+                  if href.endswith('.html') and href not in existing:
+                      broken.append((path.name, href))
+          if broken:
+              raise SystemExit('Broken internal links remain: ' + repr(broken))
+
+          # Validate obsolete application hosts are completely gone.
+          for path in html_files:
+              text = path.read_text(encoding='utf-8')
+              for old in old_app_urls:
+                  if old in text:
+                      raise SystemExit(f'Obsolete app URL remains in {path}: {old}')
+          PY
+
       - name: Commit normalized files
         shell: bash
         run: |
@@ -39,5 +106,5 @@ jobs:
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add -- '*.html'
-          git commit -m 'Normalize production links and public contact email'
+          git commit -m 'Fix website links, login handoff, and contact consistency'
           git push origin HEAD:fix/website-link-audit
