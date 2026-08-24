@@ -7,9 +7,13 @@
  <title>AI Business Automation Services | Reeds Solutions LLC</title>
  <link rel="stylesheet" href="styles.css?v=2">
  <style>
+  .ai-automation-page main { background: radial-gradient(circle at 12% 8%, rgba(34, 197, 94, 0.18), transparent 28rem), radial-gradient(circle at 88% 18%, rgba(56, 189, 248, 0.12), transparent 24rem), linear-gradient(180deg, #eefdf4 0%, #f8fafc 42%, #eef4ff 100%); }
+  .ai-automation-page .content, .ai-automation-page .features { background: transparent; }
+  .ai-automation-page .content > .container, .ai-automation-page .features > .container { background: rgba(255, 255, 255, 0.92); border: 1px solid rgba(148, 163, 184, 0.28); border-radius: 14px; box-shadow: 0 24px 70px rgba(15, 23, 42, 0.12); padding-top: 2rem; padding-bottom: 2rem; backdrop-filter: blur(10px); }
   .service-matrix { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.25rem; margin: 2rem 0; }
-  .service-panel, .intake-card, .form-section { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius-lg); box-shadow: var(--shadow-md); }
-  .service-panel { border-top: 3px solid var(--green); padding: 1.5rem; }
+  .service-panel, .intake-card, .form-section { background: rgba(255, 255, 255, 0.97); border: 1px solid rgba(148, 163, 184, 0.24); border-radius: var(--radius-lg); box-shadow: var(--shadow-md); }
+  .service-panel { border-top: 3px solid var(--green); padding: 1.5rem; position: relative; overflow: hidden; }
+  .service-panel::after { content: ""; position: absolute; right: -2rem; top: -2rem; width: 6rem; height: 6rem; border-radius: 50%; background: rgba(34, 197, 94, 0.11); }
   .service-panel h3, .form-section h3 { margin-top: 0; color: var(--navy); }
   .workflow-showcase { margin: 2.5rem 0; }
   .workflow-showcase-header { display: flex; justify-content: space-between; gap: 1rem; align-items: flex-end; margin-bottom: 1rem; }
@@ -18,20 +22,28 @@
   .workflow-carousel { display: grid; grid-auto-flow: column; grid-auto-columns: minmax(290px, 380px); gap: 1rem; overflow-x: auto; padding: 0.5rem 0 1rem; scroll-snap-type: x mandatory; }
   .workflow-carousel::-webkit-scrollbar { height: 0.65rem; }
   .workflow-carousel::-webkit-scrollbar-thumb { background: var(--green); border-radius: 999px; }
-  .workflow-preview-card { scroll-snap-align: start; background: var(--white); border: 1px solid var(--border); border-radius: var(--radius-lg); box-shadow: var(--shadow-md); padding: 1.25rem; display: flex; flex-direction: column; min-height: 520px; }
+  .workflow-preview-card { scroll-snap-align: start; background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%); border: 1px solid rgba(148, 163, 184, 0.3); border-radius: var(--radius-lg); box-shadow: var(--shadow-md); padding: 1.25rem; display: flex; flex-direction: column; min-height: 560px; position: relative; overflow: hidden; }
+  .workflow-preview-card::before { content: ""; position: absolute; inset: 0; background: linear-gradient(135deg, rgba(22, 163, 74, 0.08), transparent 42%); pointer-events: none; }
+  .workflow-preview-card > * { position: relative; }
   .workflow-preview-card.featured { border-top: 4px solid var(--green); }
   .tier-label { color: var(--green); font-size: 0.78rem; font-weight: 800; letter-spacing: 0.04em; text-transform: uppercase; }
   .price-line { color: var(--navy); font-weight: 800; margin: 0.25rem 0 0.75rem; }
   .workflow-map { display: grid; gap: 0.55rem; margin: 1rem 0; }
-  .workflow-step { border: 1px solid var(--border); border-left: 4px solid var(--green); border-radius: var(--radius); padding: 0.7rem 0.75rem; background: var(--silver-light); position: relative; }
+  .workflow-step { border: 1px solid var(--border); border-left: 4px solid var(--green); border-radius: var(--radius); padding: 0.7rem 0.75rem; background: rgba(243, 244, 246, 0.95); position: relative; }
   .workflow-step + .workflow-step::before { content: ""; position: absolute; left: 1.1rem; top: -0.6rem; width: 2px; height: 0.6rem; background: var(--green); }
   .workflow-step strong { display: block; color: var(--navy); font-size: 0.95rem; }
   .workflow-step span { color: var(--text-medium); font-size: 0.86rem; line-height: 1.45; }
+  .app-badges { display: flex; flex-wrap: wrap; gap: 0.45rem; margin: 0.9rem 0 0.4rem; }
+  .app-badge { display: inline-flex; align-items: center; gap: 0.35rem; background: #ffffff; border: 1px solid rgba(148, 163, 184, 0.35); border-radius: 999px; padding: 0.28rem 0.55rem 0.28rem 0.28rem; color: var(--navy); font-size: 0.78rem; font-weight: 700; box-shadow: var(--shadow-sm); }
+  .app-icon { width: 1.45rem; height: 1.45rem; border-radius: 50%; display: grid; place-items: center; color: #ffffff; font-size: 0.72rem; font-weight: 900; }
+  .google { background: #4285f4; } .shopify { background: #16a34a; } .slack { background: #611f69; } .stripe { background: #635bff; } .hubspot { background: #ff7a59; } .airtable { background: #fcb400; color: #111827; } .calendar { background: #34a853; } .database { background: #0f172a; } .custom-api { background: #0284c7; } .dropbox { background: #0061ff; } .quickbooks { background: #2ca01c; } .sms { background: #10b981; }
   .included-list { margin-top: auto; }
   .included-list h4 { color: var(--navy); margin-bottom: 0.5rem; }
-  .protected-note { background: var(--silver-light); border-left: 4px solid var(--navy); padding: 1rem; border-radius: var(--radius); }
+  .protected-note { background: rgba(255, 255, 255, 0.92); border-left: 4px solid var(--navy); padding: 1rem; border-radius: var(--radius); }
   .intake-layout { display: grid; grid-template-columns: minmax(0, 2fr) minmax(280px, 1fr); gap: 2rem; align-items: start; }
-  .intake-card { background: var(--silver-light); padding: 1.5rem; }
+  .intake-card { background: linear-gradient(180deg, rgba(255,255,255,0.98), rgba(241,245,249,0.98)); padding: 1.5rem; }
+  .intake-card .status-chips { display: flex; flex-wrap: wrap; gap: 0.45rem; margin: 0.65rem 0 1rem; }
+  .intake-card .status-chips span { background: #ffffff; border: 1px solid rgba(148, 163, 184, 0.35); border-radius: 999px; padding: 0.3rem 0.65rem; color: var(--navy); font-size: 0.84rem; font-weight: 700; }
   .form-section { padding: 1.5rem; margin-bottom: 1.5rem; }
   .checkbox-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 0.7rem; margin-top: 0.5rem; }
   .check-option { display: flex; gap: 0.5rem; align-items: flex-start; color: var(--text-medium); font-size: 0.95rem; }
@@ -40,12 +52,13 @@
   .service-specific.active { display: block; }
   .small-note { font-size: 0.9rem; color: var(--text-light); line-height: 1.6; }
   .process-list { counter-reset: step; list-style: none; margin-left: 0; }
-  .process-list li { counter-increment: step; padding: 1rem 0 1rem 3rem; border-bottom: 1px solid var(--border); position: relative; }
-  .process-list li::before { content: counter(step); position: absolute; left: 0; top: 1rem; width: 2rem; height: 2rem; border-radius: 50%; background: var(--green); color: var(--white); display: grid; place-items: center; font-weight: 700; }
-  @media (max-width: 900px) { .intake-layout { grid-template-columns: 1fr; } .workflow-showcase-header { display: block; } .workflow-carousel { grid-auto-columns: minmax(280px, 88vw); } }
+  .process-list li { counter-increment: step; padding: 1rem 0 1rem 4rem; border-bottom: 1px solid var(--border); position: relative; }
+  .process-list li::before { content: counter(step); position: absolute; left: 0.5rem; top: 1rem; width: 2.25rem; height: 2.25rem; border-radius: 50%; background: var(--green); color: var(--white); display: grid; place-items: center; font-weight: 700; box-shadow: 0 8px 20px rgba(22, 163, 74, 0.28); }
+  @media (max-width: 900px) { .ai-automation-page .content > .container, .ai-automation-page .features > .container { border-radius: 0; padding-left: 1.15rem; padding-right: 1.15rem; } .intake-layout { grid-template-columns: 1fr; } .workflow-showcase-header { display: block; } .workflow-carousel { grid-auto-columns: minmax(280px, 88vw); } .process-list li { padding-left: 4.4rem; } }
+  @media (max-width: 700px) { table, thead, tbody, tr, td, th { display: block; } thead { display: none; } table { border: 0; } tbody tr { background: #ffffff; border: 1px solid rgba(148, 163, 184, 0.28); border-radius: var(--radius-lg); box-shadow: var(--shadow-sm); margin: 0 0 1rem; padding: 0.85rem; } tbody td { border: 0; padding: 0.35rem 0; } tbody td::before { display: block; color: var(--green); font-size: 0.75rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 0.15rem; } tbody td:nth-child(1)::before { content: "Category"; } tbody td:nth-child(2)::before { content: "Example connections"; } tbody td:nth-child(3)::before { content: "Usually automates"; } }
  </style>
 </head>
-<body>
+<body class="ai-automation-page">
  <header>
   <nav class="navbar">
    <div class="container">
@@ -91,7 +104,7 @@
      <div class="workflow-showcase-header">
       <div>
        <h2 id="workflow-previews-title">Example Workflow Previews</h2>
-       <p>Swipe through sample build levels to see the kind of system a customer receives. These maps show the business outcome and control points without exposing private implementation logic, prompts, credentials, or exact n8n build recipes.</p>
+       <p>Swipe through sample build levels to see the kind of system a customer receives. These maps show the business outcome and control points without exposing private implementation logic, prompts, credentials, or private build recipes.</p>
       </div>
       <span class="swipe-hint">Swipe left to right</span>
      </div>
@@ -101,6 +114,7 @@
        <h3>Starter Lead Capture</h3>
        <p class="price-line">$300 - $750 setup</p>
        <p>For a business that needs one clean workflow to stop losing messages or manual follow-ups.</p>
+       <div class="app-badges" aria-label="Example connected apps"><span class="app-badge"><span class="app-icon google">G</span>Forms</span><span class="app-badge"><span class="app-icon google">G</span>Gmail</span><span class="app-badge"><span class="app-icon airtable">A</span>Sheets</span></div>
        <div class="workflow-map" aria-label="Starter lead capture example">
         <div class="workflow-step"><strong>Customer Request</strong><span>Website form, email, or simple intake source.</span></div>
         <div class="workflow-step"><strong>Sort and File</strong><span>Basic category, urgency, and contact details captured.</span></div>
@@ -115,6 +129,7 @@
        <h3>AI Lead and Reply System</h3>
        <p class="price-line">$750 - $1,500 focused build</p>
        <p>For a business that needs requests classified, drafted, logged, and followed up with human approval.</p>
+       <div class="app-badges" aria-label="Example connected apps"><span class="app-badge"><span class="app-icon google">G</span>Gmail</span><span class="app-badge"><span class="app-icon slack">#</span>Slack</span><span class="app-badge"><span class="app-icon hubspot">H</span>CRM</span><span class="app-badge"><span class="app-icon calendar">C</span>Calendar</span></div>
        <div class="workflow-map" aria-label="AI lead and reply example">
         <div class="workflow-step"><strong>Multi-Source Intake</strong><span>Website, email, form, CRM, chat, or selected customer channel.</span></div>
         <div class="workflow-step"><strong>AI Classification</strong><span>Service type, urgency, missing info, and connection needs identified.</span></div>
@@ -130,6 +145,7 @@
        <h3>Store and Order Operations</h3>
        <p class="price-line">$1,500 - $3,000 multi-workflow build</p>
        <p>For stores that need order issues, customer support, supplier tasks, and reporting connected.</p>
+       <div class="app-badges" aria-label="Example connected apps"><span class="app-badge"><span class="app-icon shopify">S</span>Shopify</span><span class="app-badge"><span class="app-icon stripe">$</span>Stripe</span><span class="app-badge"><span class="app-icon sms">M</span>Messages</span><span class="app-badge"><span class="app-icon quickbooks">Q</span>Books</span></div>
        <div class="workflow-map" aria-label="Store and order operations example">
         <div class="workflow-step"><strong>Order Event</strong><span>Order, refund request, tracking issue, supplier message, or product task.</span></div>
         <div class="workflow-step"><strong>Issue Triage</strong><span>Classify customer impact, risk, owner approval needs, and next action.</span></div>
@@ -145,6 +161,7 @@
        <h3>Business Automation Layer</h3>
        <p class="price-line">Custom scoped build + support</p>
        <p>For businesses that need several departments, tools, approvals, monitoring, and reporting connected.</p>
+       <div class="app-badges" aria-label="Example connected apps"><span class="app-badge"><span class="app-icon database">DB</span>Database</span><span class="app-badge"><span class="app-icon dropbox">D</span>Files</span><span class="app-badge"><span class="app-icon custom-api">API</span>Custom</span><span class="app-badge"><span class="app-icon slack">#</span>Team</span></div>
        <div class="workflow-map" aria-label="Business command center example">
         <div class="workflow-step"><strong>Unified Intake</strong><span>Requests from website, email, store, CRM, files, calendar, or custom systems.</span></div>
         <div class="workflow-step"><strong>Decision Routing</strong><span>Classify work by department, service type, risk level, and deadline.</span></div>
@@ -155,7 +172,7 @@
        <div class="included-list"><h4>Customer Receives</h4><ul><li>Multi-workflow operating system</li><li>Lead and task visibility</li><li>Approval and audit structure</li><li>Support roadmap for expansion</li></ul></div>
       </article>
      </div>
-     <p class="protected-note"><strong>Protected product note:</strong> Public examples explain what the workflow does for the customer. Exact prompts, credentials, node settings, database schemas, approval rules, and custom connection logic are only built inside the paid project.</p>
+     <p class="protected-note"><strong>Protected product note:</strong> Public examples explain what the workflow does for the customer. Exact prompts, credentials, automation settings, database schemas, approval rules, and custom connection logic are only built inside the paid project.</p>
     </div>
 
     <h2>Connection Possibilities</h2>
@@ -270,14 +287,14 @@
       </div>
 
       <button type="submit" class="btn btn-primary">Prepare Intake Email</button>
-      <p class="small-note">This form prepares a structured intake email. The next system step is connecting this form to an n8n webhook for automatic lead tracking, reply drafts, status monitoring, and follow-up reminders.</p>
+      <p class="small-note">This form prepares a structured intake email. Full backend tracking, reply drafts, owner approvals, and follow-up monitoring are available in the connected automation build.</p>
      </form>
 
      <aside class="intake-card">
       <h3>What This Intake Captures</h3>
       <ul><li>Who is requesting the work</li><li>What service they need</li><li>How the workflow works today</li><li>Which systems are involved</li><li>Custom or unlisted connection needs</li><li>When they need it</li><li>Budget range</li><li>Approval and safety rules</li><li>Success criteria</li><li>What to monitor after launch</li></ul>
-      <h3>Status Pipeline</h3><p class="small-note">New -> Needs Review -> Missing Information -> Qualified -> Reply Drafted -> Approved to Send -> Sent -> Follow Up Needed -> Won / Lost / Not Qualified.</p>
-      <h3>Monitoring Targets</h3><p class="small-note">Website traffic source, lead source, service interest, response status, unresolved messages, orders where applicable, follow-up dates, and workflow failures.</p>
+      <h3>Project Updates</h3><div class="status-chips"><span>New Request</span><span>Review</span><span>Quote</span><span>Build</span><span>Launch</span><span>Support</span></div>
+      <h3>Monitoring Targets</h3><p class="small-note">Website traffic source, lead source, service interest, response status, unresolved messages, orders where applicable, follow-up dates, and service health.</p>
      </aside>
     </div>
    </div>
@@ -291,7 +308,7 @@
    <div class="footer-section"><h4>Navigation</h4><ul class="footer-links"><li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="capabilities.html">Capabilities</a></li><li><a href="contracting.html">Contracting</a></li><li><a href="platform.html">Platform</a></li><li><a href="ai-automation.html">AI Automation</a></li><li><a href="contact.html">Contact</a></li></ul></div>
    <div class="footer-section"><h4>Resources</h4><ul class="footer-links"><li><a href="teaming.html">Teaming & Partnerships</a></li><li><a href="past-performance.html">Past Performance & Readiness</a></li><li><a href="capability-statement.html">Capability Statement</a></li><li><a href="privacy.html">Privacy Policy</a></li><li><a href="terms.html">Terms of Use</a></li><li><a href="security-compliance.html">Security & Compliance</a></li></ul></div>
   </div>
-  <div class="footer-bottom"><p>&copy; 2026 Reeds Solutions LLC. All rights reserved. • UEI: L5W1JWUUDMW3 • CAGE: 157R9</p></div>
+  <div class="footer-bottom"><p>&copy; 2026 Reeds Solutions LLC. All rights reserved.</p></div>
  </footer>
 
  <script>
@@ -320,3 +337,4 @@
  </script>
 </body>
 </html>
+
