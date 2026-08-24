@@ -11,6 +11,25 @@
   .service-panel, .intake-card, .form-section { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius-lg); box-shadow: var(--shadow-md); }
   .service-panel { border-top: 3px solid var(--green); padding: 1.5rem; }
   .service-panel h3, .form-section h3 { margin-top: 0; color: var(--navy); }
+  .workflow-showcase { margin: 2.5rem 0; }
+  .workflow-showcase-header { display: flex; justify-content: space-between; gap: 1rem; align-items: flex-end; margin-bottom: 1rem; }
+  .workflow-showcase-header p { max-width: 720px; margin-bottom: 0; }
+  .swipe-hint { color: var(--green); font-weight: 700; font-size: 0.9rem; white-space: nowrap; }
+  .workflow-carousel { display: grid; grid-auto-flow: column; grid-auto-columns: minmax(290px, 380px); gap: 1rem; overflow-x: auto; padding: 0.5rem 0 1rem; scroll-snap-type: x mandatory; }
+  .workflow-carousel::-webkit-scrollbar { height: 0.65rem; }
+  .workflow-carousel::-webkit-scrollbar-thumb { background: var(--green); border-radius: 999px; }
+  .workflow-preview-card { scroll-snap-align: start; background: var(--white); border: 1px solid var(--border); border-radius: var(--radius-lg); box-shadow: var(--shadow-md); padding: 1.25rem; display: flex; flex-direction: column; min-height: 520px; }
+  .workflow-preview-card.featured { border-top: 4px solid var(--green); }
+  .tier-label { color: var(--green); font-size: 0.78rem; font-weight: 800; letter-spacing: 0.04em; text-transform: uppercase; }
+  .price-line { color: var(--navy); font-weight: 800; margin: 0.25rem 0 0.75rem; }
+  .workflow-map { display: grid; gap: 0.55rem; margin: 1rem 0; }
+  .workflow-step { border: 1px solid var(--border); border-left: 4px solid var(--green); border-radius: var(--radius); padding: 0.7rem 0.75rem; background: var(--silver-light); position: relative; }
+  .workflow-step + .workflow-step::before { content: ""; position: absolute; left: 1.1rem; top: -0.6rem; width: 2px; height: 0.6rem; background: var(--green); }
+  .workflow-step strong { display: block; color: var(--navy); font-size: 0.95rem; }
+  .workflow-step span { color: var(--text-medium); font-size: 0.86rem; line-height: 1.45; }
+  .included-list { margin-top: auto; }
+  .included-list h4 { color: var(--navy); margin-bottom: 0.5rem; }
+  .protected-note { background: var(--silver-light); border-left: 4px solid var(--navy); padding: 1rem; border-radius: var(--radius); }
   .intake-layout { display: grid; grid-template-columns: minmax(0, 2fr) minmax(280px, 1fr); gap: 2rem; align-items: start; }
   .intake-card { background: var(--silver-light); padding: 1.5rem; }
   .form-section { padding: 1.5rem; margin-bottom: 1.5rem; }
@@ -23,7 +42,7 @@
   .process-list { counter-reset: step; list-style: none; margin-left: 0; }
   .process-list li { counter-increment: step; padding: 1rem 0 1rem 3rem; border-bottom: 1px solid var(--border); position: relative; }
   .process-list li::before { content: counter(step); position: absolute; left: 0; top: 1rem; width: 2rem; height: 2rem; border-radius: 50%; background: var(--green); color: var(--white); display: grid; place-items: center; font-weight: 700; }
-  @media (max-width: 900px) { .intake-layout { grid-template-columns: 1fr; } }
+  @media (max-width: 900px) { .intake-layout { grid-template-columns: 1fr; } .workflow-showcase-header { display: block; } .workflow-carousel { grid-auto-columns: minmax(280px, 88vw); } }
  </style>
 </head>
 <body>
@@ -66,6 +85,77 @@
      <div class="service-panel"><h3>AI Email and Lead Response</h3><p>Capture incoming messages, classify the request, draft a response, and keep the owner in control.</p><ul><li>Website inquiry capture</li><li>Lead type classification</li><li>Reply drafts for approval</li><li>Follow-up reminders</li><li>Lead status log</li></ul></div>
      <div class="service-panel"><h3>Store and Order Automation</h3><p>Workflow support for online stores, orders, customers, suppliers, and product tasks.</p><ul><li>Order issue triage</li><li>Customer support drafts</li><li>Supplier and product tracking</li><li>Store task organization</li><li>Owner approval gates</li></ul></div>
      <div class="service-panel"><h3>Business Command Center</h3><p>A connected workflow system using automation, database storage, email, AI, approval gates, and reporting.</p><ul><li>Multi-workflow intake and routing</li><li>Memory-backed business context</li><li>Approval-controlled execution</li><li>Traffic, lead, order, and task monitoring</li><li>Monthly improvement roadmap</li></ul></div>
+    </div>
+
+    <div class="workflow-showcase" aria-labelledby="workflow-previews-title">
+     <div class="workflow-showcase-header">
+      <div>
+       <h2 id="workflow-previews-title">Example Workflow Previews</h2>
+       <p>Swipe through sample build levels to see the kind of system a customer receives. These maps show the business outcome and control points without exposing private implementation logic, prompts, credentials, or exact n8n build recipes.</p>
+      </div>
+      <span class="swipe-hint">Swipe left to right</span>
+     </div>
+     <div class="workflow-carousel" tabindex="0" aria-label="Swipeable automation service examples">
+      <article class="workflow-preview-card">
+       <span class="tier-label">Base Build</span>
+       <h3>Starter Lead Capture</h3>
+       <p class="price-line">$300 - $750 setup</p>
+       <p>For a business that needs one clean workflow to stop losing messages or manual follow-ups.</p>
+       <div class="workflow-map" aria-label="Starter lead capture example">
+        <div class="workflow-step"><strong>Customer Request</strong><span>Website form, email, or simple intake source.</span></div>
+        <div class="workflow-step"><strong>Sort and File</strong><span>Basic category, urgency, and contact details captured.</span></div>
+        <div class="workflow-step"><strong>Owner Alert</strong><span>Summary sent to the business owner for review.</span></div>
+        <div class="workflow-step"><strong>Follow-Up Log</strong><span>Request saved to spreadsheet or simple database.</span></div>
+       </div>
+       <div class="included-list"><h4>Customer Receives</h4><ul><li>One working automation path</li><li>Basic status tracking</li><li>Simple owner notification</li><li>Launch notes and safe-use rules</li></ul></div>
+      </article>
+
+      <article class="workflow-preview-card featured">
+       <span class="tier-label">Growth Build</span>
+       <h3>AI Lead and Reply System</h3>
+       <p class="price-line">$750 - $1,500 focused build</p>
+       <p>For a business that needs requests classified, drafted, logged, and followed up with human approval.</p>
+       <div class="workflow-map" aria-label="AI lead and reply example">
+        <div class="workflow-step"><strong>Multi-Source Intake</strong><span>Website, email, form, CRM, chat, or selected customer channel.</span></div>
+        <div class="workflow-step"><strong>AI Classification</strong><span>Service type, urgency, missing info, and connection needs identified.</span></div>
+        <div class="workflow-step"><strong>Draft Response</strong><span>Reply prepared with business rules, tone, and safe limits.</span></div>
+        <div class="workflow-step"><strong>Approval Gate</strong><span>Owner reviews before customer-facing messages are sent.</span></div>
+        <div class="workflow-step"><strong>Status Tracking</strong><span>Lead status, reply status, next follow-up, and outcome recorded.</span></div>
+       </div>
+       <div class="included-list"><h4>Customer Receives</h4><ul><li>Lead pipeline with reply drafts</li><li>Missing-info detection</li><li>Approval-controlled sending path</li><li>Follow-up reminders</li></ul></div>
+      </article>
+
+      <article class="workflow-preview-card">
+       <span class="tier-label">Advanced Build</span>
+       <h3>Store and Order Operations</h3>
+       <p class="price-line">$1,500 - $3,000 multi-workflow build</p>
+       <p>For stores that need order issues, customer support, supplier tasks, and reporting connected.</p>
+       <div class="workflow-map" aria-label="Store and order operations example">
+        <div class="workflow-step"><strong>Order Event</strong><span>Order, refund request, tracking issue, supplier message, or product task.</span></div>
+        <div class="workflow-step"><strong>Issue Triage</strong><span>Classify customer impact, risk, owner approval needs, and next action.</span></div>
+        <div class="workflow-step"><strong>Task Routing</strong><span>Create support, supplier, fulfillment, or owner review task.</span></div>
+        <div class="workflow-step"><strong>Customer Draft</strong><span>Prepare safe response for approval using store-specific rules.</span></div>
+        <div class="workflow-step"><strong>Operations Monitor</strong><span>Track open issues, unresolved messages, order exceptions, and workflow failures.</span></div>
+       </div>
+       <div class="included-list"><h4>Customer Receives</h4><ul><li>Connected order support path</li><li>Customer reply draft system</li><li>Exception and task monitoring</li><li>Owner approval protection</li></ul></div>
+      </article>
+
+      <article class="workflow-preview-card">
+       <span class="tier-label">Command Center</span>
+       <h3>Business Automation Layer</h3>
+       <p class="price-line">Custom scoped build + support</p>
+       <p>For businesses that need several departments, tools, approvals, monitoring, and reporting connected.</p>
+       <div class="workflow-map" aria-label="Business command center example">
+        <div class="workflow-step"><strong>Unified Intake</strong><span>Requests from website, email, store, CRM, files, calendar, or custom systems.</span></div>
+        <div class="workflow-step"><strong>Decision Routing</strong><span>Classify work by department, service type, risk level, and deadline.</span></div>
+        <div class="workflow-step"><strong>Approval and Execution</strong><span>Draft, route, notify, file, update, or escalate based on rules.</span></div>
+        <div class="workflow-step"><strong>Monitoring Dashboard</strong><span>Traffic, leads, orders, replies, tasks, failures, and follow-ups tracked.</span></div>
+        <div class="workflow-step"><strong>Improvement Cycle</strong><span>Review what worked, what failed, and what should be upgraded next.</span></div>
+       </div>
+       <div class="included-list"><h4>Customer Receives</h4><ul><li>Multi-workflow operating system</li><li>Lead and task visibility</li><li>Approval and audit structure</li><li>Support roadmap for expansion</li></ul></div>
+      </article>
+     </div>
+     <p class="protected-note"><strong>Protected product note:</strong> Public examples explain what the workflow does for the customer. Exact prompts, credentials, node settings, database schemas, approval rules, and custom connection logic are only built inside the paid project.</p>
     </div>
 
     <h2>Connection Possibilities</h2>
