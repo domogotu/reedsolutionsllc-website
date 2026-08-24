@@ -44,6 +44,7 @@ Public examples must not reveal:
 
 - private prompts
 - credentials or connection details
+- private backend tool names when not needed for sales
 - exact n8n node settings
 - database schemas
 - internal routing logic
@@ -56,6 +57,8 @@ Base Build -> Growth Build -> Advanced Build -> Command Center
 ```
 
 Each card should help a customer understand the difference in value, complexity, monitoring, and support level before they submit intake.
+
+Public cards may use app-style visual badges for common connection examples such as email, forms, store platforms, payment tools, CRM tools, calendars, files, databases, APIs, and messaging apps. These should make the page feel more alive while staying general enough that Reeds Solutions is not promising a specific integration until intake confirms access, connection options, and customer approval rules.
 
 ## Connection Categories
 
@@ -277,3 +280,4 @@ If the requested system is not recognized, the system should not reject it. It s
 ## First Implementation Stage
 
 The first live implementation can use the static `ai-automation.html` page to generate a structured email. The next stage should connect the form to an n8n webhook and a database table so Reeds Solutions can monitor traffic, leads, requests, replies, orders where applicable, and follow-ups.
+
