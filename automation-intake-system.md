@@ -12,15 +12,37 @@ The core intake question is:
 Who wants what, why, how should it work, when is it needed, what systems are involved, what rules apply, and what result counts as done?
 ```
 
+## Tailored Connection Rule
+
+The customer should not be limited to a short list of apps. Intake must support known platforms, custom APIs, manual processes, documents, spreadsheets, databases, webhooks, and systems not yet listed. If a connection is not directly available, the request should still be captured and marked for review so Reeds Solutions can decide whether to use an API, webhook, email parsing, file import, spreadsheet bridge, manual approval step, or custom build path.
+
+Never collect passwords through the website form. Access should be handled later through secure account authorization or owner-controlled credential setup.
+
 ## Public Service Categories
 
 | Service | Primary Outcome | Typical Build |
 |---|---|---|
 | Starter Automation Setup | One focused workflow | Lead routing, email drafts, task follow-ups, spreadsheet/database logging |
 | AI Email and Lead Response | Capture, classify, draft, approve, send/log replies | Website form/email intake, AI reply draft, owner approval, follow-up status |
-| Shopify Automation Support | Store task and support workflow organization | Customer support drafts, order issue triage, supplier/product tracking |
+| Store and Order Automation | Store task and support workflow organization | Customer support drafts, order issue triage, supplier/product tracking |
 | Business Command Center | Connected multi-workflow operating layer | n8n, database, email, approval gates, monitoring, reporting |
 | Ongoing Workflow Support | Keep workflows working and improving | Monitoring, fixes, prompt updates, status reviews, expansion |
+| Custom Automation | Anything not listed | Review tools, process, API options, data flow, and owner approval requirements |
+
+## Connection Categories
+
+| Category | Examples | Intake Goal |
+|---|---|---|
+| Email and communication | Gmail, Outlook, Microsoft 365, website forms, SMS, chat, Slack, Teams, Discord | Know where messages come from and where replies should go |
+| Stores and orders | Shopify, WooCommerce, WordPress, Square, Etsy, Amazon, eBay, custom storefronts | Know how orders, products, customers, returns, suppliers, and issues flow |
+| CRM and sales | HubSpot, Salesforce, Zoho, Pipedrive, GoHighLevel, custom CRM | Know how leads are captured, qualified, followed up, and closed |
+| Payments and billing | Stripe, Square, PayPal, QuickBooks, Wave, invoices | Know what can be monitored and what requires approval before billing action |
+| Files and documents | Google Drive, Dropbox, OneDrive, Box, PDFs, spreadsheets, scanned docs | Know what files must be routed, summarized, named, checked, or stored |
+| Scheduling and tasks | Google Calendar, Calendly, Trello, Asana, ClickUp, Monday, Notion, Airtable | Know due dates, reminders, appointments, task owners, and status rules |
+| Data and reporting | Google Sheets, Excel, Airtable, PostgreSQL, dashboards, BI tools | Know where records live and what reporting is needed |
+| Marketing and web | Mailchimp, social platforms, forms, landing pages, analytics | Know traffic sources, campaigns, inquiries, and customer touchpoints |
+| Custom systems | APIs, webhooks, internal software, portals, manual workflows | Capture system names, available docs, login owner, data flow, and constraints |
+| Unknown / not sure | Customer does not know the tool names | Capture screenshots, descriptions, links, and current manual steps later |
 
 ## Required Intake Fields
 
@@ -56,10 +78,11 @@ For email and leads:
 - required_disclaimers
 - follow_up_rules
 
-For Shopify/store support:
+For store/order support:
 
 - store_platform
 - store_domain
+- marketplace_or_pos_system
 - product_sources
 - order_issue_types
 - customer_support_needs
@@ -77,16 +100,26 @@ For command center builds:
 - data_retention_needs
 - workflow_failure_alerts
 
+For custom automation:
+
+- system_names
+- links_or_vendor_names
+- manual_steps_today
+- files_or_templates_used
+- available_api_or_export_options_if_known
+- required approval points
+- fallback process if a system cannot connect directly
+
 ### Tools and Access
 
 - current_tools
+- desired_connections
+- other_systems_not_listed
 - accounts_needed_later
 - data_sensitivity
 - login_owner
 - integration_limitations
 - file_or_template_locations
-
-Never collect passwords through the website form. Access should be handled later through secure account authorization or owner-controlled credential setup.
 
 ### Timing and Budget
 
@@ -112,6 +145,7 @@ New
 Needs Review
 Missing Information
 Qualified
+Connection Review Needed
 Not Qualified
 Reply Drafted
 Approved to Send
@@ -137,6 +171,7 @@ Every accepted request should produce a build file with:
 - workflow_goal
 - current_process_summary
 - required_integrations
+- connection_path_direct_api_webhook_email_file_manual_or_custom
 - approval_rules
 - data_sensitivity
 - implementation_scope
@@ -155,6 +190,8 @@ The operating system should track:
 - traffic_source
 - submission_time
 - service_interest
+- selected_connections
+- unlisted_connections
 - lead_status
 - reply_status
 - owner_approval_status
@@ -175,7 +212,9 @@ Website Intake Form
 -> Validate Required Fields
 -> Normalize Intake Record
 -> Classify Service Type
+-> Classify Connection Categories
 -> Score Completeness
+-> Mark Missing Information or Connection Review Needed
 -> Store Lead and Intake Record
 -> Draft Owner Summary
 -> Draft Customer Reply
@@ -193,6 +232,8 @@ AI may draft replies that:
 - acknowledge the request
 - summarize what the requester asked for
 - list any missing information
+- identify connection categories involved
+- flag any custom connection review needed
 - recommend a discovery call or next step
 - avoid guaranteeing results
 - avoid legal, accounting, medical, or regulated advice
@@ -202,6 +243,8 @@ AI may draft replies that:
 ## Information Quality Rule
 
 If the intake is incomplete, the system should not guess. It should mark the request as `Missing Information` and generate a targeted follow-up asking only for the missing fields needed to scope the service.
+
+If the requested system is not recognized, the system should not reject it. It should mark the request as `Connection Review Needed` and ask for the system name, link, screenshots if appropriate, current manual steps, and whether the platform has API, webhook, export, or email notification options.
 
 ## First Implementation Stage
 
