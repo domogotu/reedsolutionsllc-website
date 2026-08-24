@@ -286,8 +286,8 @@
        <div class="form-group"><label for="extraNotes">Anything else we should know before building?</label><textarea id="extraNotes" rows="4"></textarea></div>
       </div>
 
-      <button type="submit" class="btn btn-primary">Prepare Intake Email</button>
-      <p class="small-note">This form prepares a structured intake email. Lead tracking, reply drafts, owner approvals, and follow-up monitoring are available in the connected automation build.</p>
+      <button type="submit" class="btn btn-primary">Submit Automation Intake</button>
+      <p class="small-note">This form sends a structured intake for review. AI may organize the request and draft an internal plan, but customer replies are not sent until approved by Reeds Solutions LLC.</p>
      </form>
 
      <aside class="intake-card">
@@ -316,14 +316,47 @@
   const sections = {'email-leads': document.getElementById('email-leads-section'), 'store-orders': document.getElementById('store-orders-section'), 'command-center': document.getElementById('command-center-section')};
   serviceType.addEventListener('change', function() { Object.values(sections).forEach(section => section.classList.remove('active')); if (sections[this.value]) sections[this.value].classList.add('active'); });
   function checkedValues(name) { return Array.from(document.querySelectorAll(`input[name="${name}"]:checked`)).map(item => item.value).join(', ') || 'None selected'; }
-  document.getElementById('automationIntakeForm').addEventListener('submit', function(e) {
+  const REEDS_INTAKE_WEBHOOK_URL = 'https://shopify-automation-n8n.onrender.com/webhook/reeds-service-intake';
+  document.getElementById('automationIntakeForm').addEventListener('submit', async function(e) {
    e.preventDefault();
    const fields = ['fullName','email','phone','businessName','role','industry','serviceType','mainGoal','currentProcess','successOutcome','leadSources','replyRules','storePlatform','storeTasks','departments','reportingNeeds','otherSystems','accessNotes','dataSensitivity','approvalLevel','deadline','budget','mustNotDo','extraNotes'];
    const data = {};
    fields.forEach(id => { const el = document.getElementById(id); data[id] = el ? el.value.trim() : ''; });
    data.tools = checkedValues('tools');
    data.sourcePage = 'ai-automation.html';
-   data.intakeVersion = '2026-08-24-v2-expanded-connections';
+   data.intakeVersion = '2026-08-24-v3-ai-agent-orchestrator';
+   const payload = {
+    customer_name: data.fullName,
+    business_name: data.businessName,
+    requester_role: data.role,
+    email: data.email,
+    phone: data.phone,
+    preferred_contact_method: 'Email',
+    lead_source: 'Website',
+    traffic_source: document.referrer || 'Direct',
+    service_interest: data.serviceType,
+    requested_outcome: data.mainGoal,
+    current_workflow: data.currentProcess,
+    desired_workflow: data.successOutcome,
+    apps_systems: data.tools,
+    connection_needs: data.otherSystems,
+    data_sources: [data.leadSources, data.storePlatform, data.departments].filter(Boolean).join(' | '),
+    message_volume: data.replyRules,
+    order_volume: data.storeTasks,
+    admin_access: data.accessNotes,
+    sensitive_data: data.dataSensitivity,
+    urgency: data.deadline,
+    deadline: data.deadline,
+    budget_range: data.budget,
+    decision_maker: data.role,
+    approval_rules: `${data.approvalLevel}. Never automate without approval: ${data.mustNotDo}`,
+    must_have_features: data.mainGoal,
+    nice_to_have_features: data.extraNotes,
+    success_criteria: data.successOutcome,
+    monitoring_needs: data.reportingNeeds,
+    source_page: data.sourcePage,
+    intake_version: data.intakeVersion
+   };
    const body = [
     'AI AUTOMATION INTAKE', '', 'Requester', `Name: ${data.fullName}`, `Email: ${data.email}`, `Phone: ${data.phone}`, `Business: ${data.businessName}`, `Role: ${data.role}`, `Industry: ${data.industry}`, '',
     'Service Request', `Primary Service: ${data.serviceType}`, `Main Goal: ${data.mainGoal}`, `Current Process: ${data.currentProcess}`, `Success Outcome: ${data.successOutcome}`, '',
@@ -332,9 +365,18 @@
     'Rules, Timing, and Budget', `Approval Level: ${data.approvalLevel}`, `Deadline: ${data.deadline}`, `Budget: ${data.budget}`, `Never Automate Without Approval: ${data.mustNotDo}`, `Extra Notes: ${data.extraNotes}`, '',
     'System Metadata', `Source Page: ${data.sourcePage}`, `Intake Version: ${data.intakeVersion}`
    ].join('\n');
-   window.location.href = `mailto:info@reedssolutionsllc.org?subject=${encodeURIComponent('AI Automation Intake - ' + data.businessName)}&body=${encodeURIComponent(body)}`;
+   try {
+    const response = await fetch(REEDS_INTAKE_WEBHOOK_URL, {
+     method: 'POST',
+     headers: { 'Content-Type': 'application/json' },
+     body: JSON.stringify(payload)
+    });
+    if (!response.ok) throw new Error('Intake webhook unavailable');
+    window.location.href = 'thanks.html';
+   } catch (error) {
+    window.location.href = `mailto:info@reedssolutionsllc.org?subject=${encodeURIComponent('AI Automation Intake - ' + data.businessName)}&body=${encodeURIComponent(body)}`;
+   }
   });
  </script>
 </body>
 </html>
-
