@@ -45,7 +45,10 @@ body {
   font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, 'Helvetica Neue', Arial, sans-serif;
   line-height: 1.7;
   color: var(--text-dark);
-  background-color: var(--white);
+  background:
+    radial-gradient(circle at 14% 8%, rgba(34, 197, 94, 0.12), transparent 28rem),
+    radial-gradient(circle at 86% 18%, rgba(56, 189, 248, 0.08), transparent 24rem),
+    linear-gradient(180deg, #f8fafc 0%, #eefdf4 48%, #f8fafc 100%);
   font-size: 16px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -298,11 +301,24 @@ header {
    ============================================ */
 main {
   min-height: calc(100vh - 200px);
+  background:
+    radial-gradient(circle at 10% 0%, rgba(34, 197, 94, 0.12), transparent 26rem),
+    radial-gradient(circle at 90% 12%, rgba(56, 189, 248, 0.08), transparent 24rem);
 }
 
 /* Content Section */
 .content {
   padding: 3.5rem 0;
+}
+
+.content > .container {
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(148, 163, 184, 0.24);
+  border-radius: 14px;
+  box-shadow: 0 20px 55px rgba(15, 23, 42, 0.1);
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  backdrop-filter: blur(10px);
 }
 
 .content h2 {
@@ -348,7 +364,18 @@ main {
    ============================================ */
 .features {
   padding: 4rem 0;
-  background-color: var(--silver-light);
+  background:
+    linear-gradient(180deg, rgba(243, 244, 246, 0.78), rgba(255, 255, 255, 0.78));
+}
+
+.features > .container {
+  background: rgba(255, 255, 255, 0.88);
+  border: 1px solid rgba(148, 163, 184, 0.22);
+  border-radius: 14px;
+  box-shadow: 0 20px 55px rgba(15, 23, 42, 0.08);
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  backdrop-filter: blur(10px);
 }
 
 .features h2 {
@@ -375,7 +402,7 @@ main {
 }
 
 .feature-card {
-  background: var(--white);
+  background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
   padding: 2rem;
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-md);
@@ -469,7 +496,7 @@ main {
 }
 
 .pricing-card {
-  background: var(--white);
+  background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
   padding: 2.5rem 2rem;
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-md);
@@ -942,6 +969,13 @@ footer .container {
     padding: 2rem 0;
   }
 
+  .content > .container,
+  .features > .container {
+    border-radius: 0;
+    padding-left: 1.15rem;
+    padding-right: 1.15rem;
+  }
+
   .page-header h1 {
     font-size: 1.5rem;
   }
@@ -998,3 +1032,4 @@ footer .container {
     line-height: 1.5;
   }
 }
+

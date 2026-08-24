@@ -5,7 +5,7 @@
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
  <meta name="description" content="AI business automation services and structured intake for small business workflows by Reeds Solutions LLC.">
  <title>AI Business Automation Services | Reeds Solutions LLC</title>
- <link rel="stylesheet" href="styles.css?v=2">
+ <link rel="stylesheet" href="styles.css?v=3">
  <style>
   .ai-automation-page main { background: radial-gradient(circle at 12% 8%, rgba(34, 197, 94, 0.18), transparent 28rem), radial-gradient(circle at 88% 18%, rgba(56, 189, 248, 0.12), transparent 24rem), linear-gradient(180deg, #eefdf4 0%, #f8fafc 42%, #eef4ff 100%); }
   .ai-automation-page .content, .ai-automation-page .features { background: transparent; }
@@ -52,9 +52,9 @@
   .service-specific.active { display: block; }
   .small-note { font-size: 0.9rem; color: var(--text-light); line-height: 1.6; }
   .process-list { counter-reset: step; list-style: none; margin-left: 0; }
-  .process-list li { counter-increment: step; padding: 1rem 0 1rem 4rem; border-bottom: 1px solid var(--border); position: relative; }
-  .process-list li::before { content: counter(step); position: absolute; left: 0.5rem; top: 1rem; width: 2.25rem; height: 2.25rem; border-radius: 50%; background: var(--green); color: var(--white); display: grid; place-items: center; font-weight: 700; box-shadow: 0 8px 20px rgba(22, 163, 74, 0.28); }
-  @media (max-width: 900px) { .ai-automation-page .content > .container, .ai-automation-page .features > .container { border-radius: 0; padding-left: 1.15rem; padding-right: 1.15rem; } .intake-layout { grid-template-columns: 1fr; } .workflow-showcase-header { display: block; } .workflow-carousel { grid-auto-columns: minmax(280px, 88vw); } .process-list li { padding-left: 4.4rem; } }
+  .process-list li { counter-increment: step; display: flex; align-items: flex-start; gap: 1.1rem; padding: 1rem 0; border-bottom: 1px solid var(--border); }
+  .process-list li::before { content: counter(step); flex: 0 0 2.45rem; width: 2.45rem; height: 2.45rem; margin-top: 0.15rem; border-radius: 50%; background: var(--green); color: var(--white); display: grid; place-items: center; font-weight: 700; box-shadow: 0 8px 20px rgba(22, 163, 74, 0.28); }
+  @media (max-width: 900px) { .ai-automation-page .content > .container, .ai-automation-page .features > .container { border-radius: 0; padding-left: 1.15rem; padding-right: 1.15rem; } .intake-layout { grid-template-columns: 1fr; } .workflow-showcase-header { display: block; } .workflow-carousel { grid-auto-columns: minmax(280px, 88vw); } .process-list li { gap: 1rem; } }
   @media (max-width: 700px) { table, thead, tbody, tr, td, th { display: block; } thead { display: none; } table { border: 0; } tbody tr { background: #ffffff; border: 1px solid rgba(148, 163, 184, 0.28); border-radius: var(--radius-lg); box-shadow: var(--shadow-sm); margin: 0 0 1rem; padding: 0.85rem; } tbody td { border: 0; padding: 0.35rem 0; } tbody td::before { display: block; color: var(--green); font-size: 0.75rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 0.15rem; } tbody td:nth-child(1)::before { content: "Category"; } tbody td:nth-child(2)::before { content: "Example connections"; } tbody td:nth-child(3)::before { content: "Usually automates"; } }
  </style>
 </head>
