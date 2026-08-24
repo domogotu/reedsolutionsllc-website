@@ -29,6 +29,34 @@ Never collect passwords through the website form. Access should be handled later
 | Ongoing Workflow Support | Keep workflows working and improving | Monitoring, fixes, prompt updates, status reviews, expansion |
 | Custom Automation | Anything not listed | Review tools, process, API options, data flow, and owner approval requirements |
 
+## Public Workflow Preview Rule
+
+The website should visually show what customers receive without giving away the private product. Public examples may show:
+
+- service level
+- general price range
+- business outcome
+- simplified workflow stages
+- approval and monitoring points
+- customer deliverables
+
+Public examples must not reveal:
+
+- private prompts
+- credentials or connection details
+- exact n8n node settings
+- database schemas
+- internal routing logic
+- customer-specific implementation recipes
+
+The preferred website presentation is a swipeable card set moving from base to advanced:
+
+```text
+Base Build -> Growth Build -> Advanced Build -> Command Center
+```
+
+Each card should help a customer understand the difference in value, complexity, monitoring, and support level before they submit intake.
+
 ## Connection Categories
 
 | Category | Examples | Intake Goal |
