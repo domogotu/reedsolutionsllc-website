@@ -206,7 +206,7 @@
     <h2>Automation Intake Form</h2>
     <p>Use this form to collect enough detail to file the request properly before the build starts.</p>
     <div class="intake-layout">
-     <form class="contact-form" id="automationIntakeForm">
+     <form class="contact-form" id="automationIntakeForm" autocomplete="off">
       <div class="form-section">
        <h3>1. Requester and Business</h3>
        <div class="form-group"><label for="fullName">Full Name *</label><input type="text" id="fullName" required></div>
@@ -286,7 +286,8 @@
        <div class="form-group"><label for="extraNotes">Anything else we should know before building?</label><textarea id="extraNotes" rows="4"></textarea></div>
       </div>
 
-      <button type="submit" class="btn btn-primary">Submit Automation Intake</button>
+      <button type="submit" class="btn btn-primary" id="automationSubmitButton">Submit Automation Intake</button>
+      <div id="automationIntakeStatus" class="notice" role="status" aria-live="polite" style="display:none; margin-top: 1rem;"></div>
       <p class="small-note">This form sends a structured intake for review. AI may organize the request and draft an internal plan, but customer replies are not sent until approved by Reeds Solutions LLC.</p>
      </form>
 
@@ -316,16 +317,45 @@
   const sections = {'email-leads': document.getElementById('email-leads-section'), 'store-orders': document.getElementById('store-orders-section'), 'command-center': document.getElementById('command-center-section')};
   serviceType.addEventListener('change', function() { Object.values(sections).forEach(section => section.classList.remove('active')); if (sections[this.value]) sections[this.value].classList.add('active'); });
   function checkedValues(name) { return Array.from(document.querySelectorAll(`input[name="${name}"]:checked`)).map(item => item.value).join(', ') || 'None selected'; }
+  function showIntakeStatus(message, type = 'success') {
+   const status = document.getElementById('automationIntakeStatus');
+   if (!status) return;
+   status.style.display = 'block';
+   status.style.borderLeftColor = type === 'error' ? '#dc2626' : 'var(--green)';
+   status.innerHTML = message;
+  }
+  function clearIntakeForm(form) {
+   form.reset();
+   Object.values(sections).forEach(section => section.classList.remove('active'));
+   try {
+    sessionStorage.removeItem('automationIntakeForm');
+    localStorage.removeItem('automationIntakeForm');
+   } catch (error) {}
+  }
+  window.addEventListener('pageshow', function(event) {
+   if (event.persisted) clearIntakeForm(document.getElementById('automationIntakeForm'));
+  });
   const REEDS_INTAKE_WEBHOOK_URL = 'https://shopify-automation-n8n.onrender.com/webhook/reeds-service-intake';
   document.getElementById('automationIntakeForm').addEventListener('submit', async function(e) {
    e.preventDefault();
+   const form = this;
+   const submitButton = document.getElementById('automationSubmitButton');
+   if (!form.reportValidity()) return;
+   if (submitButton) {
+    submitButton.disabled = true;
+    submitButton.textContent = 'Submitting...';
+   }
+   showIntakeStatus('<strong>Submitting request...</strong> Please wait while Reeds Solutions receives your intake.', 'success');
+
    const fields = ['fullName','email','phone','businessName','role','industry','serviceType','mainGoal','currentProcess','successOutcome','leadSources','replyRules','storePlatform','storeTasks','departments','reportingNeeds','otherSystems','accessNotes','dataSensitivity','approvalLevel','deadline','budget','mustNotDo','extraNotes'];
    const data = {};
    fields.forEach(id => { const el = document.getElementById(id); data[id] = el ? el.value.trim() : ''; });
    data.tools = checkedValues('tools');
    data.sourcePage = 'ai-automation.html';
-   data.intakeVersion = '2026-08-24-v3-ai-agent-orchestrator';
+   data.intakeVersion = '2026-08-25-v4-confirmation-reset';
    const payload = {
+    request_id: `RS-${Date.now()}`,
+    received_at: new Date().toISOString(),
     customer_name: data.fullName,
     business_name: data.businessName,
     requester_role: data.role,
@@ -365,18 +395,28 @@
     'Rules, Timing, and Budget', `Approval Level: ${data.approvalLevel}`, `Deadline: ${data.deadline}`, `Budget: ${data.budget}`, `Never Automate Without Approval: ${data.mustNotDo}`, `Extra Notes: ${data.extraNotes}`, '',
     'System Metadata', `Source Page: ${data.sourcePage}`, `Intake Version: ${data.intakeVersion}`
    ].join('\n');
+
    try {
-    const response = await fetch(REEDS_INTAKE_WEBHOOK_URL, {
+    const formBody = new URLSearchParams();
+    Object.entries(payload).forEach(([key, value]) => formBody.append(key, Array.isArray(value) ? value.join(', ') : String(value || '')));
+    await fetch(REEDS_INTAKE_WEBHOOK_URL, {
      method: 'POST',
-     headers: { 'Content-Type': 'application/json' },
-     body: JSON.stringify(payload)
+     mode: 'no-cors',
+     body: formBody
     });
-    if (!response.ok) throw new Error('Intake webhook unavailable');
-    window.location.href = 'thanks.html';
+    clearIntakeForm(form);
+    showIntakeStatus('<strong>Request submitted.</strong> Reeds Solutions received your intake for internal review. No customer-facing automation plan has been sent.', 'success');
+    setTimeout(() => {
+     window.location.replace(`thanks.html?submitted=automation&request=${encodeURIComponent(payload.request_id)}`);
+    }, 1600);
    } catch (error) {
+    showIntakeStatus('<strong>Online submission did not complete.</strong> Your email app will open with a backup copy of the intake.', 'error');
     window.location.href = `mailto:info@reedssolutionsllc.org?subject=${encodeURIComponent('AI Automation Intake - ' + data.businessName)}&body=${encodeURIComponent(body)}`;
+    if (submitButton) {
+     submitButton.disabled = false;
+     submitButton.textContent = 'Submit Automation Intake';
+    }
    }
-  });
- </script>
+  }); </script>
 </body>
 </html>
