@@ -3,302 +3,197 @@
 <head>
  <meta charset="UTF-8">
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <meta name="description" content="Pricing for PrimeContractorOS and AI automation services from Reeds Solutions LLC.">
- <title>Pricing | Reeds Solutions LLC</title>
+ <meta name="description" content="Explore website design, development, and ongoing website management services from Reed's Solutions, LLC. Custom quotes are based on design, functionality, and support needs.">
+ <title>Website Services & Service Options | Reed's Solutions, LLC</title>
  <link rel="stylesheet" href="styles.css?v=3">
  <style>
-  .pricing-grid {
-   display: grid;
-   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-   gap: 2rem;
-   margin: 2rem 0;
-  }
-  .pricing-card {
-   background: white;
-   border: 2px solid #e0e0e0;
-   border-radius: 8px;
-   padding: 2rem;
-   text-align: center;
-   transition: all 0.3s ease;
-  }
-  .pricing-card:hover {
-   border-color: #00b894;
-   box-shadow: 0 8px 24px rgba(0, 184, 148, 0.15);
-  }
-  .pricing-card.featured {
-   border-color: #00b894;
-   box-shadow: 0 8px 24px rgba(0, 184, 148, 0.15);
-  }
-  .price {
-   font-size: 2.5rem;
-   font-weight: bold;
-   color: #00b894;
-   margin: 1rem 0;
-  }
-  .price-period {
-   color: #666;
-   font-size: 0.9rem;
-  }
-  .features-list {
-   text-align: left;
-   margin: 2rem 0;
-   list-style: none;
-   padding: 0;
-  }
-  .features-list li {
-   padding: 0.5rem 0;
-   border-bottom: 1px solid #f0f0f0;
-  }
-  .features-list li:before {
-   content: "✓ ";
-   color: #00b894;
-   font-weight: bold;
-   margin-right: 0.5rem;
-  }
-  .cta-btn {
-   display: inline-block;
-   background: #00b894;
-   color: white;
-   padding: 0.75rem 2rem;
-   border-radius: 4px;
-   text-decoration: none;
-   margin-top: 1rem;
-   transition: background 0.3s ease;
-  }
-  .cta-btn:hover {
-   background: #009973;
-  }
+  .service-intro { max-width: 820px; margin: 0 auto 2rem; text-align: center; }
+  .service-card { background: linear-gradient(180deg,#fff 0%,#f8fafc 100%); border:1px solid var(--border); border-top:3px solid var(--green); border-radius:var(--radius-lg); padding:2rem; box-shadow:var(--shadow-md); }
+  .service-card h3 { margin-top:0; }
+  .service-card ul { margin:1rem 0 1.5rem 1.25rem; }
+  .service-card li { margin-bottom:.45rem; }
+  .service-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:1.5rem; margin:2rem 0; }
+  .service-note { background:var(--silver-light); border-left:4px solid var(--green); padding:1rem 1.25rem; border-radius:0 var(--radius) var(--radius) 0; margin:1.5rem 0; }
+  .service-steps { counter-reset:step; list-style:none; margin:1.5rem 0; padding:0; }
+  .service-steps li { counter-increment:step; position:relative; padding:.85rem 1rem .85rem 3.25rem; margin:.6rem 0; background:#f8fafc; border:1px solid var(--border); border-radius:var(--radius); }
+  .service-steps li::before { content:counter(step); position:absolute; left:1rem; top:.8rem; width:1.5rem; height:1.5rem; display:grid; place-items:center; border-radius:50%; background:var(--navy); color:white; font-weight:700; font-size:.85rem; }
  </style>
 </head>
 <body>
  <header>
   <nav class="navbar">
    <div class="container">
-    <a href="index.html" class="logo">Reeds Solutions LLC</a>
+    <a href="index.html" class="logo">Reed's Solutions, LLC</a>
     <button class="menu-toggle" aria-label="Toggle navigation menu" onclick="document.querySelector('.nav-links').classList.toggle('active')">
-     <span></span>
-     <span></span>
-     <span></span>
+     <span></span><span></span><span></span>
     </button>
     <ul class="nav-links">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="about.html">About</a></li>
-    <li><a href="capabilities.html">Capabilities</a></li>
-    <li><a href="contracting.html">Contracting</a></li>
-    <li><a href="platform.html">PrimeContractorOS</a></li>
-    <li><a href="ai-automation.html">AI Automation</a></li>
-    <li><a href="features.html">Features</a></li>
-    <li><a href="pricing.html">Pricing</a></li>
-    <li><a href="help.html">Help</a></li>
-    <li><a href="contact.html" class="btn">Contact</a></li>
-    <li>
-     <a href="https://primecontractoros.com" target="_blank" rel="noopener" class="btn-portal">
-      Client Portal
-     </a>
-    </li>
-   </ul>
+     <li><a href="index.html">Home</a></li>
+     <li><a href="about.html">About</a></li>
+     <li><a href="capabilities.html">Capabilities</a></li>
+     <li><a href="contracting.html">Contracting</a></li>
+     <li><a href="platform.html">PrimeContractorOS</a></li>
+     <li><a href="ai-automation.html">AI Automation</a></li>
+     <li><a href="features.html">Features</a></li>
+     <li><a href="pricing.html" class="active">Pricing & Services</a></li>
+     <li><a href="help.html">Help</a></li>
+     <li><a href="contact.html" class="btn">Contact</a></li>
+     <li><a href="https://primecontractoros.com" target="_blank" rel="noopener" class="btn-portal">Client Portal</a></li>
+    </ul>
    </div>
   </nav>
  </header>
  <main>
   <section class="page-header">
    <div class="container">
-    <h1>Pricing and Service Options</h1>
-    <p>Flexible pricing for PrimeContractorOS platform access and scoped AI business automation services.</p>
+    <h1>Website Design, Development & Management</h1>
+    <p>Professional websites built around your business, with optional ongoing support to keep your online presence current.</p>
    </div>
   </section>
   <section class="content">
    <div class="container">
-    <p style="text-align: center; color: #666; margin-bottom: 2rem;">PrimeContractorOS pricing shown is a planned structure and may change as the platform is finalized, tested, and launched.</p>
-
-    <h2>PrimeContractorOS Platform Pricing</h2>
-
-    <div class="pricing-grid">
-     <div class="pricing-card">
-      <h3>Starter</h3>
-      <div class="price">$149<span class="price-period">/month</span></div>
-      <ul class="features-list">
-       <li>Up to 3 active contracts</li>
-       <li>Basic opportunity tracking</li>
-       <li>File storage (5 GB)</li>
-       <li>Email support</li>
-       <li>Single user workspace</li>
-      </ul>
-      <a href="get-started.html" class="cta-btn">Get Started</a>
-     </div>
-
-     <div class="pricing-card featured">
-      <h3>Professional</h3>
-      <div class="price">$299<span class="price-period">/month</span></div>
-      <ul class="features-list">
-       <li>Unlimited contracts</li>
-       <li>Advanced opportunity tracking</li>
-       <li>File storage (50 GB)</li>
-       <li>Priority email support</li>
-       <li>Up to 5 team members</li>
-       <li>AI-assisted review</li>
-      </ul>
-      <a href="get-started.html" class="cta-btn">Get Started</a>
-     </div>
-
-     <div class="pricing-card">
-      <h3>Advanced</h3>
-      <div class="price">$499<span class="price-period">/month</span></div>
-      <ul class="features-list">
-       <li>Unlimited contracts</li>
-       <li>Full feature access</li>
-       <li>File storage (200 GB)</li>
-       <li>Priority phone support</li>
-       <li>Up to 15 team members</li>
-       <li>Advanced reporting</li>
-      </ul>
-      <a href="get-started.html" class="cta-btn">Get Started</a>
-     </div>
-
-     <div class="pricing-card">
-      <h3>Enterprise</h3>
-      <div class="price">Custom</div>
-      <ul class="features-list">
-       <li>Unlimited everything</li>
-       <li>Dedicated support</li>
-       <li>Custom integrations</li>
-       <li>SLA guarantees</li>
-       <li>Unlimited team members</li>
-       <li>Training &amp; onboarding</li>
-      </ul>
-      <a href="contact.html" class="cta-btn">Contact Sales</a>
-     </div>
+    <div class="service-intro">
+     <h2>Website Services for Your Business</h2>
+     <p>Whether you need a new website or help maintaining an existing one, Reed's Solutions, LLC can scope a service around your business goals, content, design preferences, and required functionality.</p>
+     <p><strong>Project pricing is determined by design, functionality, content needs, and the level of ongoing support selected.</strong> Request a consultation for a custom proposal.</p>
+     <a href="contact.html?service=website" class="btn btn-primary">Request a Website Consultation</a>
     </div>
 
-    <h2 style="margin-top: 3rem;">AI Automation Service Pricing</h2>
-    <p>AI automation services are scoped based on the number of systems involved, approval rules, data sensitivity, customer touchpoints, and support needs. Final pricing is confirmed after intake.</p>
-    <div class="pricing-grid">
-     <div class="pricing-card">
-      <h3>Starter Automation Setup</h3>
-      <div class="price">$300-$750</div>
-      <ul class="features-list">
-       <li>One intake or request workflow</li>
-       <li>Basic email notification setup</li>
-       <li>Simple service routing</li>
-       <li>Customer-ready intake questions</li>
-       <li>Launch checklist</li>
+    <div class="service-grid">
+     <article class="service-card">
+      <h3>Website Build</h3>
+      <p>A professionally designed website created and prepared for launch.</p>
+      <ul>
+       <li>Custom website design aligned with your business identity.</li>
+       <li>Up to five standard pages, based on the agreed project scope.</li>
+       <li>Mobile, tablet, and desktop-friendly layout.</li>
+       <li>Homepage, About, Services, Contact, and one additional agreed page.</li>
+       <li>Business information and service descriptions supplied or approved by you.</li>
+       <li>Click-to-call, email, map, and contact links as appropriate.</li>
+       <li>Contact or inquiry form, as scoped for the project.</li>
+       <li>Basic page titles, descriptions, and search indexing setup.</li>
+       <li>Domain connection and launch assistance.</li>
+       <li>One revision round before launch and post-launch correction support.</li>
       </ul>
-      <a href="ai-automation.html" class="cta-btn">View Service</a>
-     </div>
+      <p><strong>Best for:</strong> Businesses that want a new website and plan to manage routine changes themselves.</p>
+     </article>
 
-     <div class="pricing-card featured">
-      <h3>AI Lead and Reply System</h3>
-      <div class="price">$750-$1,500</div>
-      <ul class="features-list">
-       <li>Lead capture and qualification</li>
-       <li>AI-assisted reply drafts</li>
-       <li>Owner approval steps</li>
-       <li>Follow-up reminders</li>
-       <li>Status tracking plan</li>
+     <article class="service-card">
+      <h3>Website + Basic Management</h3>
+      <p>Website development plus routine website care and a defined amount of monthly content support.</p>
+      <ul>
+       <li>Everything included in Website Build.</li>
+       <li>Hosting and domain configuration management, within the agreed arrangement.</li>
+       <li>SSL certificate and website availability monitoring.</li>
+       <li>Monthly website functionality review.</li>
+       <li>Configured backup-process monitoring, where supported by the hosting setup.</li>
+       <li>Broken-link and contact-form checks.</li>
+       <li>Up to two minor content updates per month.</li>
+       <li>Support request acknowledgment within two business days.</li>
+       <li>Monthly service activity summary.</li>
       </ul>
-      <a href="ai-automation.html" class="cta-btn">Start Intake</a>
-     </div>
+      <p><strong>Best for:</strong> Businesses that want routine website upkeep without handling every small change themselves.</p>
+     </article>
 
-     <div class="pricing-card">
-      <h3>Store and Order Automation</h3>
-      <div class="price">$1,500-$3,000</div>
-      <ul class="features-list">
-       <li>Order and customer support workflows</li>
-       <li>Supplier or fulfillment notes</li>
-       <li>App connection planning</li>
-       <li>Monitoring targets</li>
-       <li>Testing and handoff support</li>
+     <article class="service-card">
+      <h3>Website + Expanded Management</h3>
+      <p>Website development with a broader monthly management and online-presence support allowance.</p>
+      <ul>
+       <li>Everything included in Website + Basic Management.</li>
+       <li>Up to six minor content updates per month.</li>
+       <li>Priority support request acknowledgment within the same business day.</li>
+       <li>Monthly website performance and functionality review.</li>
+       <li>Basic on-page SEO maintenance, including existing page titles, descriptions, headings, and content adjustments.</li>
+       <li>Google Business Profile assistance, where authorized by the business owner.</li>
+       <li>Monthly website activity and service summary, where analytics are configured and available.</li>
+       <li>Practical website improvement recommendations.</li>
+       <li>Review of key contact and inquiry paths.</li>
       </ul>
-      <a href="ai-automation.html" class="cta-btn">View Options</a>
-     </div>
-
-     <div class="pricing-card">
-      <h3>Ongoing Workflow Support</h3>
-      <div class="price">$100-$300<span class="price-period">/month</span></div>
-      <ul class="features-list">
-       <li>Workflow checks</li>
-       <li>Minor updates</li>
-       <li>Reply and intake adjustments</li>
-       <li>Monitoring review</li>
-       <li>Priority support options</li>
-      </ul>
-      <a href="contact.html" class="cta-btn">Contact Us</a>
-     </div>
+      <p><strong>Best for:</strong> Businesses that want more frequent updates and additional help maintaining their online presence.</p>
+     </article>
     </div>
 
-    <h2 style="margin-top: 3rem;">Frequently Asked Questions</h2>
-    <h3>What is included in PrimeContractorOS plans?</h3>
-    <p>All plans include access to core PrimeContractorOS features including opportunity tracking, proposal management, contract administration, file storage, task management, and basic reporting.</p>
+    <div class="service-note">
+     <strong>Custom proposal:</strong> Final scope and pricing are confirmed after a discussion of your website, design preferences, content, required features, domain and hosting arrangements, and support needs. No work begins until the scope is approved and the service agreement and payment requirements are completed.
+    </div>
 
-    <h3>Are AI automation services separate from PrimeContractorOS?</h3>
-    <p>Yes. AI automation services are scoped service builds for businesses that need intake, replies, app connections, monitoring, or order support. They can support a business even if it is not using PrimeContractorOS.</p>
+    <h2>How the Website Process Works</h2>
+    <ol class="service-steps">
+     <li><strong>Consultation:</strong> We discuss your business, goals, existing website, and the type of customers you want to reach.</li>
+     <li><strong>Project scope:</strong> We identify the pages, content, design direction, functionality, and support level required.</li>
+     <li><strong>Proposal and agreement:</strong> You receive a written scope, custom quote, timeline, and service terms for approval.</li>
+     <li><strong>Onboarding:</strong> You provide approved business details, branding, photographs, contact information, and any required access.</li>
+     <li><strong>Development:</strong> We create a private website for your review based on the agreed scope.</li>
+     <li><strong>Review:</strong> You review the website and provide the included revision feedback.</li>
+     <li><strong>Approval and launch:</strong> After written approval and launch authorization, we publish the website and test its key pages and contact paths.</li>
+     <li><strong>Ongoing management:</strong> If selected, the management service begins according to the agreement and includes the stated monthly support allowance.</li>
+    </ol>
 
-    <h3>Can I change plans?</h3>
-    <p>Yes, you can upgrade or downgrade your plan at any time. Changes take effect at the beginning of your next billing cycle.</p>
+    <h2>What Is a Minor Content Update?</h2>
+    <p>Examples include changing business hours or contact details, replacing a customer-supplied image, editing an existing service description, updating an existing link, or revising a short announcement on an existing page.</p>
+    <p>Monthly update allowances do not roll over. New pages, major redesigns, extensive copywriting, custom software, online stores, advanced booking systems, and new integrations are outside routine minor updates and are quoted separately.</p>
 
-    <h3>Do you offer annual billing discounts?</h3>
-    <p>Yes, all plans offer discounted annual billing options. Contact us for details.</p>
+    <h2>What May Require a Separate Quote?</h2>
+    <ul>
+     <li>Domain registration and renewal fees.</li>
+     <li>Third-party hosting charges or premium hosting plans.</li>
+     <li>Paid themes, plugins, software, or integrations.</li>
+     <li>Business email services.</li>
+     <li>Professional photography, video, or logo design.</li>
+     <li>E-commerce, online payments, appointment booking, customer portals, or custom applications.</li>
+     <li>Additional pages, major redesigns, or work beyond the selected monthly update allowance.</li>
+    </ul>
+    <p>Any third-party expense or additional work will be identified for your approval before it is incurred.</p>
 
-    <h3>Is there a free trial?</h3>
-    <p>Contact us to discuss trial options or early access to PrimeContractorOS.</p>
+    <h2>Frequently Asked Questions</h2>
+    <h3>Do you publish the website before I approve it?</h3>
+    <p>No. Your website remains a private review project until you approve the final version and authorize publication.</p>
+    <h3>Do I need to provide the website content?</h3>
+    <p>You provide or approve the business facts, services, contact details, photographs, and other information used on the website. We can discuss additional content-development work if needed.</p>
+    <h3>Does website management guarantee search rankings or new customers?</h3>
+    <p>No. Search setup and visibility support help maintain website information and technical basics, but search rankings, traffic, leads, and sales are not guaranteed.</p>
+    <h3>Can you work with my existing domain or website?</h3>
+    <p>Yes. We can review an existing website and domain to determine whether an update, redesign, or new build is the best fit. Access and ownership must be confirmed before changes are made.</p>
+    <h3>When does ongoing management begin?</h3>
+    <p>If you select a management service, its start date, recurring billing, and cancellation terms will be stated in your written agreement. The standard proposed arrangement is to begin management at website launch.</p>
 
-    <h2>Ready to Get Started?</h2>
-    <p><a href="get-started.html">Choose your PrimeContractorOS plan</a> or <a href="ai-automation.html">start an AI automation intake</a>.</p>
+    <div class="service-note">
+     <strong>Ready to discuss your website?</strong>
+     <p style="margin:.5rem 0 1rem;">Tell us what you need. We will review the project and prepare a scope based on the design, functionality, and support required.</p>
+     <a href="contact.html?service=website" class="btn btn-primary">Request a Custom Website Quote</a>
+    </div>
    </div>
   </section>
  </main>
  <footer>
   <div class="container">
-   <div class="footer-grid">
-
-    <div class="footer-col">
-     <h4>Company</h4>
-     <ul>
-      <li><a href="about.html">About Us</a></li>
-      <li><a href="careers.html">Careers</a></li>
-      <li><a href="contact.html">Contact</a></li>
-     </ul>
-    </div>
-
-    <div class="footer-col">
-     <h4>Services</h4>
-     <ul>
-      <li><a href="capabilities.html">Capabilities</a></li>
-      <li><a href="contracting.html">Contracting</a></li>
-      <li><a href="teaming.html">Teaming &amp; Partnerships</a></li>
-      <li><a href="past-performance.html">Past Performance</a></li>
-      <li><a href="capability-statement.html">Capability Statement</a></li>
-     </ul>
-    </div>
-
-    <div class="footer-col">
-     <h4>Platform</h4>
-     <ul>
-      <li><a href="platform.html">PrimeContractorOS</a></li>
-    <li><a href="ai-automation.html">AI Automation</a></li>
-      <li><a href="features.html">Features</a></li>
-      <li><a href="pricing.html">Pricing</a></li>
-      <li><a href="help.html">Help Center</a></li>
-      <li><a href="glossary.html">Glossary</a></li>
-     </ul>
-    </div>
-
-    <div class="footer-col">
-     <h4>Legal</h4>
-     <ul>
-      <li><a href="privacy.html">Privacy Policy</a></li>
-      <li><a href="terms.html">Terms of Use</a></li>
-      <li><a href="accessibility.html">Accessibility</a></li>
-      <li><a href="security-compliance.html">Security &amp; Compliance</a></li>
-     </ul>
-    </div>
-
+   <div class="footer-section">
+    <h4>Navigation</h4>
+    <ul class="footer-links">
+     <li><a href="index.html">Home</a></li>
+     <li><a href="about.html">About</a></li>
+     <li><a href="capabilities.html">Capabilities</a></li>
+     <li><a href="contracting.html">Contracting</a></li>
+     <li><a href="platform.html">PrimeContractorOS</a></li>
+     <li><a href="ai-automation.html">AI Automation</a></li>
+     <li><a href="pricing.html">Pricing & Services</a></li>
+     <li><a href="contact.html">Contact</a></li>
+    </ul>
    </div>
-   <div class="footer-bottom">
-    <p>&copy; 2026 Reeds Solutions LLC. All rights reserved. &bull; UEI: L5W1JWUUDMW3 &bull; CAGE: 157R9</p>
+   <div class="footer-section">
+    <h4>Resources</h4>
+    <ul class="footer-links">
+     <li><a href="teaming.html">Teaming & Partnerships</a></li>
+     <li><a href="capability-statement.html">Capability Statement</a></li>
+     <li><a href="privacy.html">Privacy Policy</a></li>
+     <li><a href="terms.html">Terms of Use</a></li>
+     <li><a href="accessibility.html">Accessibility</a></li>
+    </ul>
    </div>
+  </div>
+  <div class="footer-bottom">
+   <p>&copy; 2026 Reed's Solutions, LLC. All rights reserved.</p>
   </div>
  </footer>
 </body>
 </html>
-
