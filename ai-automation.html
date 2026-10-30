@@ -206,41 +206,47 @@
     <h2>Automation Intake Form</h2>
     <p>Use this form to collect enough detail to file the request properly before the build starts.</p>
     <div class="intake-layout">
-     <form class="contact-form" id="automationIntakeForm" autocomplete="off">
+     <form class="contact-form" id="automationIntakeForm" method="POST" action="https://formsubmit.co/ReedsSolutionsLLCOrg@gmail.com" autocomplete="off">
+      <input type="hidden" name="_cc" value="dominiquereed35@gmail.com">
+      <input type="hidden" name="_subject" value="New Reed's Solutions AI Automation Intake">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_next" value="https://reedssolutionsllc.org/thanks.html">
+      <input type="text" id="intakeHoney" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" style="display:none">
       <div class="form-section">
        <h3>1. Requester and Business</h3>
-       <div class="form-group"><label for="fullName">Full Name *</label><input type="text" id="fullName" required></div>
-       <div class="form-group"><label for="email">Email Address *</label><input type="email" id="email" required></div>
-       <div class="form-group"><label for="phone">Phone Number</label><input type="tel" id="phone"></div>
-       <div class="form-group"><label for="businessName">Business Name *</label><input type="text" id="businessName" required></div>
-       <div class="form-group"><label for="role">Your Role / Decision Authority *</label><select id="role" required><option value="">-- Select one --</option><option>Owner / Founder</option><option>Manager</option><option>Operations Lead</option><option>Marketing / Sales Lead</option><option>Technical Contact</option><option>Other / Not Sure</option></select></div>
-       <div class="form-group"><label for="industry">Business Type / Industry *</label><input type="text" id="industry" placeholder="Example: Shopify store, contractor, service business, local retailer" required></div>
+       <div class="form-group"><label for="fullName">Full Name *</label><input type="text" id="fullName" required name="fullName"></div>
+       <div class="form-group"><label for="email">Email Address *</label><input type="email" id="email" required name="email"></div>
+       <div class="form-group"><label for="phone">Phone Number</label><input type="tel" id="phone" name="phone"></div>
+       <div class="form-group"><label for="businessName">Business Name *</label><input type="text" id="businessName" required name="businessName"></div>
+       <div class="form-group"><label for="role">Your Role / Decision Authority *</label><select id="role" required name="role"><option value="">-- Select one --</option><option>Owner / Founder</option><option>Manager</option><option>Operations Lead</option><option>Marketing / Sales Lead</option><option>Technical Contact</option><option>Other / Not Sure</option></select></div>
+       <div class="form-group"><label for="industry">Business Type / Industry *</label><input type="text" id="industry" placeholder="Example: Shopify store, contractor, service business, local retailer" required name="industry"></div>
       </div>
 
       <div class="form-section">
        <h3>2. Service Needed</h3>
-       <div class="form-group"><label for="serviceType">Primary Service *</label><select id="serviceType" required><option value="">-- Select one --</option><option value="starter">Starter Automation Setup</option><option value="email-leads">AI Email and Lead Response System</option><option value="store-orders">Store / Order Automation Support</option><option value="command-center">Business Command Center</option><option value="ongoing-support">Ongoing Workflow Support</option><option value="custom">Custom Automation / Not Listed</option><option value="not-sure">Not Sure - Need Recommendation</option></select></div>
-       <div class="form-group"><label for="mainGoal">What do you want automated or improved? *</label><textarea id="mainGoal" rows="4" required placeholder="Explain the exact problem, task, or workflow you want fixed."></textarea></div>
-       <div class="form-group"><label for="currentProcess">How do you handle this now? *</label><textarea id="currentProcess" rows="4" required placeholder="Example: manually checking email, copying orders into a spreadsheet, replying one by one."></textarea></div>
-       <div class="form-group"><label for="successOutcome">What would a successful result look like? *</label><textarea id="successOutcome" rows="3" required placeholder="Example: every website lead is logged, categorized, drafted, and ready for approval within 5 minutes."></textarea></div>
+       <div class="form-group"><label for="serviceType">Primary Service *</label><select id="serviceType" required name="serviceType"><option value="">-- Select one --</option><option value="starter">Starter Automation Setup</option><option value="email-leads">AI Email and Lead Response System</option><option value="store-orders">Store / Order Automation Support</option><option value="command-center">Business Command Center</option><option value="ongoing-support">Ongoing Workflow Support</option><option value="custom">Custom Automation / Not Listed</option><option value="not-sure">Not Sure - Need Recommendation</option></select></div>
+       <div class="form-group"><label for="mainGoal">What do you want automated or improved? *</label><textarea id="mainGoal" rows="4" required placeholder="Explain the exact problem, task, or workflow you want fixed." name="mainGoal"></textarea></div>
+       <div class="form-group"><label for="currentProcess">How do you handle this now? *</label><textarea id="currentProcess" rows="4" required placeholder="Example: manually checking email, copying orders into a spreadsheet, replying one by one." name="currentProcess"></textarea></div>
+       <div class="form-group"><label for="successOutcome">What would a successful result look like? *</label><textarea id="successOutcome" rows="3" required placeholder="Example: every website lead is logged, categorized, drafted, and ready for approval within 5 minutes." name="successOutcome"></textarea></div>
       </div>
 
       <div class="form-section service-specific" id="email-leads-section">
        <h3>Email / Lead Response Details</h3>
-       <div class="form-group"><label for="leadSources">Where do leads or messages come from?</label><textarea id="leadSources" rows="3" placeholder="Website form, Gmail, Outlook, Facebook, Instagram, Google Business, phone calls, text, chat, etc."></textarea></div>
-       <div class="form-group"><label for="replyRules">What should replies include or avoid?</label><textarea id="replyRules" rows="3" placeholder="Tone, pricing limits, required disclaimers, questions to ask, things not to promise."></textarea></div>
+       <div class="form-group"><label for="leadSources">Where do leads or messages come from?</label><textarea id="leadSources" rows="3" placeholder="Website form, Gmail, Outlook, Facebook, Instagram, Google Business, phone calls, text, chat, etc." name="leadSources"></textarea></div>
+       <div class="form-group"><label for="replyRules">What should replies include or avoid?</label><textarea id="replyRules" rows="3" placeholder="Tone, pricing limits, required disclaimers, questions to ask, things not to promise." name="replyRules"></textarea></div>
       </div>
 
       <div class="form-section service-specific" id="store-orders-section">
        <h3>Store / Order Details</h3>
-       <div class="form-group"><label for="storePlatform">Store Platform and Domain</label><input type="text" id="storePlatform" placeholder="Example: Shopify, WooCommerce, Square, Etsy, Amazon, eBay, custom store"></div>
-       <div class="form-group"><label for="storeTasks">Which store or order tasks need help?</label><textarea id="storeTasks" rows="3" placeholder="Customer support, order issues, product research, supplier messages, returns, abandoned carts, tracking updates."></textarea></div>
+       <div class="form-group"><label for="storePlatform">Store Platform and Domain</label><input type="text" id="storePlatform" placeholder="Example: Shopify, WooCommerce, Square, Etsy, Amazon, eBay, custom store" name="storePlatform"></div>
+       <div class="form-group"><label for="storeTasks">Which store or order tasks need help?</label><textarea id="storeTasks" rows="3" placeholder="Customer support, order issues, product research, supplier messages, returns, abandoned carts, tracking updates." name="storeTasks"></textarea></div>
       </div>
 
       <div class="form-section service-specific" id="command-center-section">
        <h3>Command Center Details</h3>
-       <div class="form-group"><label for="departments">Which parts of the business should be connected?</label><textarea id="departments" rows="3" placeholder="Sales, customer support, orders, email, files, calendar, accounting, vendors, projects, field operations."></textarea></div>
-       <div class="form-group"><label for="reportingNeeds">What do you need to monitor?</label><textarea id="reportingNeeds" rows="3" placeholder="Traffic, leads, orders, unresolved messages, response time, revenue, task backlog, workflow failures."></textarea></div>
+       <div class="form-group"><label for="departments">Which parts of the business should be connected?</label><textarea id="departments" rows="3" placeholder="Sales, customer support, orders, email, files, calendar, accounting, vendors, projects, field operations." name="departments"></textarea></div>
+       <div class="form-group"><label for="reportingNeeds">What do you need to monitor?</label><textarea id="reportingNeeds" rows="3" placeholder="Traffic, leads, orders, unresolved messages, response time, revenue, task backlog, workflow failures." name="reportingNeeds"></textarea></div>
       </div>
 
       <div class="form-section">
@@ -272,18 +278,18 @@
          <label class="check-option"><input type="checkbox" name="tools" value="Not sure"> Not sure</label>
         </div>
        </div>
-       <div class="form-group"><label for="otherSystems">Other systems, apps, websites, or manual processes not listed</label><textarea id="otherSystems" rows="3" placeholder="List anything else the workflow may need to connect to or replace."></textarea></div>
-       <div class="form-group"><label for="accessNotes">What access or accounts may be needed later?</label><textarea id="accessNotes" rows="3" placeholder="Do not paste passwords. List systems only, such as business email, store admin, CRM, calendar, database, forms, file storage, etc."></textarea></div>
-       <div class="form-group"><label for="dataSensitivity">Data Sensitivity *</label><select id="dataSensitivity" required><option value="">-- Select one --</option><option>Low - public or general business info</option><option>Medium - customer messages or business records</option><option>High - payments, private customer data, legal, medical, financial, or regulated data</option><option>Not Sure</option></select></div>
+       <div class="form-group"><label for="otherSystems">Other systems, apps, websites, or manual processes not listed</label><textarea id="otherSystems" rows="3" placeholder="List anything else the workflow may need to connect to or replace." name="otherSystems"></textarea></div>
+       <div class="form-group"><label for="accessNotes">What access or accounts may be needed later?</label><textarea id="accessNotes" rows="3" placeholder="Do not paste passwords. List systems only, such as business email, store admin, CRM, calendar, database, forms, file storage, etc." name="accessNotes"></textarea></div>
+       <div class="form-group"><label for="dataSensitivity">Data Sensitivity *</label><select id="dataSensitivity" required name="dataSensitivity"><option value="">-- Select one --</option><option>Low - public or general business info</option><option>Medium - customer messages or business records</option><option>High - payments, private customer data, legal, medical, financial, or regulated data</option><option>Not Sure</option></select></div>
       </div>
 
       <div class="form-section">
        <h3>4. Rules, Timing, and Budget</h3>
-       <div class="form-group"><label for="approvalLevel">Human Approval Requirement *</label><select id="approvalLevel" required><option value="">-- Select one --</option><option>Draft only - I approve before anything is sent or changed</option><option>Send low-risk replies after review rules are approved</option><option>Automate routine tasks, but require approval for sensitive actions</option><option>Not sure - recommend safest setup</option></select></div>
-       <div class="form-group"><label for="deadline">When do you need this working? *</label><select id="deadline" required><option value="">-- Select one --</option><option>Urgent - within 1 week</option><option>Soon - 2 to 3 weeks</option><option>This month</option><option>No rush - planning ahead</option></select></div>
-       <div class="form-group"><label for="budget">Budget Range *</label><select id="budget" required><option value="">-- Select one --</option><option>Starter workflow scope</option><option>Focused workflow build</option><option>Advanced or multi-workflow build</option><option>Ongoing support</option><option>Need recommendation</option></select></div>
-       <div class="form-group"><label for="mustNotDo">What should the automation never do without approval? *</label><textarea id="mustNotDo" rows="3" required placeholder="Example: send refunds, publish products, change pricing, send legal promises, access bank data, delete records."></textarea></div>
-       <div class="form-group"><label for="extraNotes">Anything else we should know before building?</label><textarea id="extraNotes" rows="4"></textarea></div>
+       <div class="form-group"><label for="approvalLevel">Human Approval Requirement *</label><select id="approvalLevel" required name="approvalLevel"><option value="">-- Select one --</option><option>Draft only - I approve before anything is sent or changed</option><option>Send low-risk replies after review rules are approved</option><option>Automate routine tasks, but require approval for sensitive actions</option><option>Not sure - recommend safest setup</option></select></div>
+       <div class="form-group"><label for="deadline">When do you need this working? *</label><select id="deadline" required name="deadline"><option value="">-- Select one --</option><option>Urgent - within 1 week</option><option>Soon - 2 to 3 weeks</option><option>This month</option><option>No rush - planning ahead</option></select></div>
+       <div class="form-group"><label for="budget">Budget Range *</label><select id="budget" required name="budget"><option value="">-- Select one --</option><option>Starter workflow scope</option><option>Focused workflow build</option><option>Advanced or multi-workflow build</option><option>Ongoing support</option><option>Need recommendation</option></select></div>
+       <div class="form-group"><label for="mustNotDo">What should the automation never do without approval? *</label><textarea id="mustNotDo" rows="3" required placeholder="Example: send refunds, publish products, change pricing, send legal promises, access bank data, delete records." name="mustNotDo"></textarea></div>
+       <div class="form-group"><label for="extraNotes">Anything else we should know before building?</label><textarea id="extraNotes" rows="4" name="extraNotes"></textarea></div>
       </div>
 
       <button type="submit" class="btn btn-primary" id="automationSubmitButton">Submit Automation Intake</button>
@@ -335,7 +341,7 @@
   window.addEventListener('pageshow', function(event) {
    if (event.persisted) clearIntakeForm(document.getElementById('automationIntakeForm'));
   });
-  const REEDS_INTAKE_WEBHOOK_URL = 'https://shopify-automation-n8n.onrender.com/webhook/reeds-service-intake';
+  const REEDS_INTAKE_EMAIL_ENDPOINT = 'https://formsubmit.co/ajax/ReedsSolutionsLLCOrg@gmail.com';
   document.getElementById('automationIntakeForm').addEventListener('submit', async function(e) {
    e.preventDefault();
    const form = this;
@@ -397,21 +403,49 @@
    ].join('\n');
 
    try {
-    const formBody = new URLSearchParams();
-    Object.entries(payload).forEach(([key, value]) => formBody.append(key, Array.isArray(value) ? value.join(', ') : String(value || '')));
-    await fetch(REEDS_INTAKE_WEBHOOK_URL, {
-     method: 'POST',
-     mode: 'no-cors',
-     body: formBody
-    });
+    // One submission to FormSubmit, which sends to the primary inbox and CCs the owner.
+    // This route does not require the separate, unverified n8n webhook.
+    const emailSubmission = {
+     name: data.fullName,
+     email: data.email,
+     business_name: data.businessName,
+     request_id: payload.request_id,
+     service_interest: data.serviceType,
+     message: body,
+     _subject: 'New AI Automation Intake - ' + payload.request_id,
+     _cc: 'dominiquereed35@gmail.com',
+     _replyto: data.email,
+     _template: 'table',
+     _captcha: 'false',
+     _honey: document.getElementById('intakeHoney').value
+    };
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), 25000);
+    let response;
+    try {
+     response = await fetch(REEDS_INTAKE_EMAIL_ENDPOINT, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify(emailSubmission),
+      signal: controller.signal
+     });
+    } finally {
+     clearTimeout(timeout);
+    }
+    const result = await response.json();
+    if (!response.ok || !result || String(result.success).toLowerCase() !== 'true') {
+     throw new Error(result && result.message ? String(result.message) : 'The email service did not confirm the intake.');
+    }
     clearIntakeForm(form);
-    showIntakeStatus('<strong>Request submitted.</strong> Reeds Solutions received your intake for internal review. No customer-facing automation plan has been sent.', 'success');
-    setTimeout(() => {
-     window.location.replace(`thanks.html?submitted=automation&request=${encodeURIComponent(payload.request_id)}`);
-    }, 1600);
+    showIntakeStatus('<strong>Request accepted.</strong> Your intake has been submitted for review.', 'success');
+    window.location.replace(`thanks.html?submitted=automation&request=${encodeURIComponent(payload.request_id)}`);
    } catch (error) {
-    showIntakeStatus('<strong>Online submission did not complete.</strong> Your email app will open with a backup copy of the intake.', 'error');
-    window.location.href = `mailto:reedssolutionsllc@gmail.com?subject=${encodeURIComponent('AI Automation Intake - ' + data.businessName)}&body=${encodeURIComponent(body)}`;
+    const reason = error && error.name === 'AbortError'
+     ? 'The email service did not respond in time.'
+     : 'The email service did not confirm that the request was accepted.';
+    showIntakeStatus('<strong>Request not confirmed.</strong> ' + reason +
+     ' Your entries remain on this page. Please try again or email ' +
+     '<a href="mailto:ReedsSolutionsLLCOrg@gmail.com">ReedsSolutionsLLCOrg@gmail.com</a>.', 'error');
     if (submitButton) {
      submitButton.disabled = false;
      submitButton.textContent = 'Submit Automation Intake';
